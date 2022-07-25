@@ -23,6 +23,8 @@ class HolisticTest(unittest.TestCase):
         self.assertAlmostEqual(cpu1.utilization, 0.416, delta=0.001)
         self.assertAlmostEqual(cpu2.utilization, 0.791, delta=0.001)
         self.assertAlmostEqual(network.utilization, 0.316, delta=0.001)
+        self.assertAlmostEqual(system.max_utilization, 0.791, delta=0.001)
+        self.assertAlmostEqual(system.utilization, 0.508, delta=0.001)
 
         #
         # print(system.processors)

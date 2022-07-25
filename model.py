@@ -29,8 +29,21 @@ class System:
     def processors(self):
         return {task.processor for flow in self.flows for task in flow}
 
+    def processor(self, name):
+        return next((p for p in self.processors if p.name == name), None)
+
     def is_schedulable(self):
         return all(map(lambda f: f.is_schedulable(), self))
+
+    @property
+    def utilization(self):
+        us = [proc.utilization for proc in self.processors]
+        return sum(us)/len(us)
+
+    @property
+    def max_utilization(self):
+        us = [proc.utilization for proc in self.processors]
+        return max(us)
 
 
 class Processor:
