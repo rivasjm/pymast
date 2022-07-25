@@ -30,3 +30,12 @@ class PDAssignment:
                            reverse=True)
             for i, task in enumerate(tasks):
                 task.priority = i+1
+
+
+class HOPAssignment:
+
+    EXCESS = "EXCESS"
+
+    def __init__(self, pairs, iterations):
+        self.pairs = pairs
+        self.iterations = iterations
