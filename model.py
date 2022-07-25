@@ -5,6 +5,10 @@ class System:
 
     def add_flows(self, *flows):
         self.flows += flows
+        for flow in flows:
+            flow.system = self
+            for task in flow:
+                task.processor.system = self
 
     def __getitem__(self, item):
         return self.flows[item]
@@ -22,8 +26,8 @@ class System:
 
 
 class Processor:
-    def __init__(self, system: System, name):
-        self.system = system
+    def __init__(self, name):
+        self.system = None
         self.name = name
 
     def __eq__(self, other):
@@ -44,8 +48,8 @@ class Processor:
 
 
 class Flow:
-    def __init__(self, system, name, period, deadline):
-        self.system = system
+    def __init__(self, name, period, deadline):
+        self.system = None
         self.name = name
         self.period = period
         self.deadline = deadline
@@ -53,6 +57,8 @@ class Flow:
 
     def add_tasks(self, *tasks):
         self.tasks += tasks
+        for task in tasks:
+            task.flow = self
 
     @property
     def wcrt(self):
@@ -75,9 +81,9 @@ class Flow:
 
 
 class Task:
-    def __init__(self, flow: Flow, name: str, wcet: float,
+    def __init__(self, name: str, wcet: float,
                  processor: Processor = None, priority: int = 0):
-        self.flow = flow
+        self.flow = None
         self.name = name
         self.wcet = wcet
 
