@@ -51,16 +51,8 @@ class Processor:
         self.system = None
         self.name = name
 
-    def __eq__(self, other):
-        if isinstance(other, Processor):
-            return self.name == other.name
-        return False
-
-    def __hash__(self):
-        return self.name.__hash__()
-
     def __repr__(self):
-        return self.name
+        return f"{self.name} ({id(self)})"
 
     @property
     def tasks(self):
@@ -85,6 +77,9 @@ class Flow:
         self.tasks += tasks
         for task in tasks:
             task.flow = self
+
+    def __repr__(self):
+        return f"{self.name} ({id(self)})"
 
     @property
     def wcrt(self):
@@ -122,7 +117,11 @@ class Task:
         self.wcrt = None
 
     def __repr__(self):
-        return self.name
+        return f"{self.name} ({id(self)})"
+
+    @property
+    def utilization(self):
+        return self.wcet / self.period
 
     @property
     def period(self):

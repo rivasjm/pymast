@@ -1,5 +1,5 @@
 import unittest
-from generator import uunifast, set_processor_utilization, log_uniform, generate_system, copy
+from generator import uunifast, set_processor_utilization, log_uniform, generate_system, copy, create_series
 from random import Random
 import numpy as np
 from examples import get_palencia_system
@@ -74,6 +74,29 @@ class GeneratorTest(unittest.TestCase):
             self.assertEqual(len(system.flows), n_flows)
             # if some processor has no task, it does not show up in system
             self.assertLessEqual(len(system.processors), n_procs)
+
+    def test_series(self):
+        random = Random(222)
+
+        for _ in range(1, 1000):
+            n_flows = random.randint(1, 10)
+            n_procs = random.randint(1, 5)
+            n_tasks = random.randint(1, 10)
+            utilization = random.uniform(0.1, 1.0)
+            period_min = 100
+            period_max = period_min * random.uniform(2.0, 1000.0)
+            deadline_factor_min = 0.5
+            deadline_factor_max = 2
+
+            template = generate_system(random, n_flows, n_procs, n_tasks, utilization,
+                                       period_min, period_max,
+                                       deadline_factor_min, deadline_factor_max)
+            series = create_series(template=template, utilizations=np.linspace(0.1, 1.0, num=100))
+
+            for system, u in zip(series, np.linspace(0.1, 1.0, num=100)):
+                self.assertAlmostEqual(system.utilization, u, delta=0.00001)
+                for proc in system.processors:
+                    self.assertAlmostEqual(proc.utilization, u, delta=0.00001)
 
 
 if __name__ == '__main__':

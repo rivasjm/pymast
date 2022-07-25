@@ -66,7 +66,17 @@ def copy(system: System):
             new_task = Task(name=task.name, wcet=task.wcet, processor=new_procs[task.processor.name],
                             priority=task.priority)
             new_task.wcrt = task.wcrt
-            new_flow.add_tasks(task)
+            new_flow.add_tasks(new_task)
         new_system.add_flows(new_flow)
 
     return new_system
+
+
+def create_series(template: System, utilizations) -> [System]:
+    systems = []
+    for utilization in utilizations:
+        system = copy(template)
+        for proc in system.processors:
+            set_processor_utilization(proc, utilization)
+        systems.append(system)
+    return systems
