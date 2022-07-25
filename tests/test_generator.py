@@ -1,5 +1,5 @@
 import unittest
-from generator import uunifast, set_processor_utilization, log_uniform
+from generator import uunifast, set_processor_utilization, log_uniform, generate_system
 from random import Random
 import numpy as np
 from examples import get_palencia_system
@@ -7,10 +7,11 @@ from examples import get_palencia_system
 
 class GeneratorTest(unittest.TestCase):
     def test_uunifast(self):
-        random = Random()
-        for n_tasks in range(100):
+        random = Random(11)
+        for n_tasks in range(1, 100):
             for u in np.linspace(0.1, 1.0, num=100):
                 us = uunifast(random, n_tasks, u)
+                self.assertEqual(len(us), n_tasks)
                 self.assertAlmostEqual(sum(us), u, delta=0.00001)
 
     def test_set_processor_utilization(self):
@@ -21,13 +22,35 @@ class GeneratorTest(unittest.TestCase):
                 self.assertAlmostEqual(proc.utilization, u, delta=0.00001)
 
     def test_log_uniform(self):
-        random = Random()
+        random = Random(2)
         for i in range(1000):
             low = random.uniform(10, (i+1)*10)
             high = low*(i+2)
             value = log_uniform(random, low, high)
             self.assertGreater(value, low)
             self.assertLess(value, high)
+
+    def test_generate_system(self):
+        random = Random(42)
+
+        for _ in range(1, 10000):
+            n_flows = random.randint(1, 10)
+            n_procs = random.randint(1, 5)
+            n_tasks = random.randint(1, 10)
+            utilization = random.uniform(0.1, 1.0)
+            period_min = 100
+            period_max = period_min * random.uniform(2.0, 1000.0)
+            deadline_factor_min = 0.5
+            deadline_factor_max = 2
+
+            system = generate_system(random, n_flows, n_procs, n_tasks, utilization,
+                                     period_min, period_max,
+                                     deadline_factor_min, deadline_factor_max)
+
+            self.assertAlmostEqual(system.utilization, utilization, delta=0.000001)
+            self.assertEqual(len(system.flows), n_flows)
+            # if some processor has no task, it does not show up in system
+            self.assertLessEqual(len(system.processors), n_procs)
 
 
 if __name__ == '__main__':

@@ -60,12 +60,12 @@ class Processor:
         return self.name.__hash__()
 
     def __repr__(self):
-        return f"Processor({self.name})"
+        return self.name
 
     @property
     def tasks(self):
         return [task for flow in self.system for task in flow
-                if task.processor == self]
+                if task.processor == self] if self.system else []
 
     @property
     def utilization(self):
@@ -122,7 +122,7 @@ class Task:
         self.wcrt = None
 
     def __repr__(self):
-        return f"Task({self.name})"
+        return self.name
 
     @property
     def period(self):

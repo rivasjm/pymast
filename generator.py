@@ -7,7 +7,7 @@ def uunifast(random: Random, n_tasks: int, utilization: float) -> [float]:
     sum_u = utilization
     us = []
 
-    for i in range(n_tasks):
+    for i in range(1, n_tasks):
         next_sum_u = sum_u * pow(random.random(), 1 / (n_tasks - i))
         us.append(sum_u - next_sum_u)
         sum_u = next_sum_u
@@ -25,3 +25,31 @@ def set_processor_utilization(processor: Processor, utilization: float):
     factor = utilization/processor.utilization
     for task in processor.tasks:
         task.wcet *= factor
+
+
+def generate_system(random: Random, n_flows, n_procs, n_tasks, utilization,
+                    period_min, period_max, deadline_factor_min, deadline_factor_max) -> System:
+
+    procs = [Processor(name=f"proc{i}") for i in range(n_procs)]
+    system = System()
+
+    # set the general structure
+    for f in range(n_flows):
+        period = log_uniform(random, period_min, period_max)
+        deadline = random.uniform(period * n_tasks * deadline_factor_min, period * n_tasks * deadline_factor_max)
+        flow = Flow(name=f"flow{f}", period=period, deadline=deadline)
+
+        # for now leave the WCET empty
+        tasks = [Task(name=f"task{f},{t}", wcet=0, processor=random.choice(procs)) for t in range(n_tasks)]
+        flow.add_tasks(*tasks)
+        system.add_flows(flow)
+
+    # set the WCET's
+    for proc in procs:
+        tasks = proc.tasks
+        if tasks:
+            us = uunifast(random, len(tasks), utilization)
+            for task, u in zip(tasks, us):
+                task.wcet = u * task.period
+
+    return system
