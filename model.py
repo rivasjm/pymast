@@ -11,7 +11,12 @@ class System:
                 task.processor.system = self
 
     def __getitem__(self, item):
-        return self.flows[item]
+        if isinstance(item, int):
+            return self.flows[item]
+        elif isinstance(item, str):
+            match =[flow for flow in self.flows if flow.name == item]
+            return match[0] if len(match) > 0 else None
+        return None
 
     def apply(self, function):
         function.apply(self)
@@ -78,6 +83,7 @@ class Flow:
         elif isinstance(item, str):
             match = [task for task in self.tasks if task.name == item]
             return match[0] if len(match) > 0 else None
+        return None
 
 
 class Task:
