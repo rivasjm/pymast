@@ -29,6 +29,9 @@ class System:
     def processors(self):
         return {task.processor for flow in self.flows for task in flow}
 
+    def is_schedulable(self):
+        return all(map(lambda f: f.is_schedulable(), self))
+
 
 class Processor:
     def __init__(self, name):
@@ -77,6 +80,9 @@ class Flow:
         i = self.tasks.index(task)
         return [self.tasks[i + 1]] if i < len(self.tasks)-1 else []
 
+    def is_schedulable(self):
+        return self.wcrt and self.wcrt <= self.deadline
+
     def __getitem__(self, item):
         if isinstance(item, int):
             return self.tasks.__getitem__(item)
@@ -95,7 +101,7 @@ class Task:
 
         self.processor: processor.Processor = processor
         self.priority: int = priority
-        self.wcrt = 0
+        self.wcrt = None
 
     @property
     def period(self):

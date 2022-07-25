@@ -39,6 +39,7 @@ class HolisticTest(unittest.TestCase):
         #
         self.assertEqual(flow1.wcrt, 42)
         self.assertEqual(flow2.wcrt, 30)
+        self.assertTrue(system.is_schedulable())
 
         #
         # print(system.processors)

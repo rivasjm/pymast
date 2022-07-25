@@ -7,16 +7,42 @@ def higher_priority(task: Task) -> [Task]:
             if t.priority > task.priority and t != task]
 
 
+def init_wcrt(system: System):
+    for task in system.tasks:
+        task.wcrt = 0
+
+
+def reset_wcrt(system: System):
+    for task in system.tasks:
+        task.wcrt = None
+
+
+class LimitFactorReachedException(Exception):
+    def __init__(self, task, response_time, limit):
+        self.message = f"Analysis stopped because provisional response time for task {task.name} (R={response_time}) " \
+                  f"reached the limit (limit={limit})"
+        super().__init__(self.message)
+
+
 class HolisticAnalyis:
+    def __init__(self, limit_factor = 10):
+        self.limit_factor = limit_factor
+
     def apply(self, system: System) -> None:
-        while True:
-            changed = False
+        init_wcrt(system)
 
-            for task in system.tasks:
-                changed |= self._task_analysis(task)
+        try:
+            while True:
+                changed = False
 
-            if not changed:
-                break
+                for task in system.tasks:
+                    changed |= self._task_analysis(task)
+
+                if not changed:
+                    break
+        except LimitFactorReachedException as e:
+            print(e.message)
+            reset_wcrt(system)
 
     def _task_analysis(self, task: Task) -> bool:
         p = 1
@@ -24,16 +50,16 @@ class HolisticAnalyis:
 
         while True:
             wip = self._wip(p, task)
-            r = self._rip(p, wip, task)
-
+            r = wip - (p-1)*task.period + task.jitter
             if r > rmax:
                 rmax = r
 
-            # print(f"id={task.name}, wip={wip}, r={r}, rmax={rmax}, p*T={p*task.period}")
+            if r > task.flow.deadline * self.limit_factor:
+                raise LimitFactorReachedException(task, r, task.flow.deadline * self.limit_factor)
 
+            # print(f"id={task.name}, wip={wip}, r={r}, rmax={rmax}, p*T={p*task.period}")
             if wip <= p * task.period:
                 break
-
             p += 1
 
         if math.isclose(task.wcrt, rmax):
@@ -41,10 +67,6 @@ class HolisticAnalyis:
         else:
             task.wcrt = rmax
             return True
-
-    def _rip(self, p: int, wip: float, task: Task) -> float:
-        r = wip - (p-1)*task.period + task.jitter
-        return r
 
     def _wip(self, p: int, task: Task) -> float:
         w_ini = p * task.wcet
