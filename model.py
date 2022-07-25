@@ -54,6 +54,11 @@ class Processor:
         return [task for flow in self.system for task in flow
                 if task.processor == self]
 
+    @property
+    def utilization(self):
+        u = [task.wcet / task.period for task in self.tasks]
+        return sum(u)
+
 
 class Flow:
     def __init__(self, name, period, deadline):
@@ -102,6 +107,9 @@ class Task:
         self.processor: processor.Processor = processor
         self.priority: int = priority
         self.wcrt = None
+
+    def __repr__(self):
+        return f"Task({self.name})"
 
     @property
     def period(self):

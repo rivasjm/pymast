@@ -40,6 +40,7 @@ class HolisticAnalyis:
 
                 if not changed:
                     break
+
         except LimitFactorReachedException as e:
             print(e.message)
             reset_wcrt(system)
