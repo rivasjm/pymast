@@ -2,33 +2,36 @@ import numpy as np
 from model import System, Processor
 
 
-def task_attr_matrix(system: System, shape, procs: [str], attr):
+def task_attr_matrix(system: System, shape, procs: [str], attr, default_value=0):
     n_flows, n_tasks, n_procs = shape
-    matrix = np.zeros(shape)
+    matrix = np.full(shape, default_value, dtype=float)
     matrix_titles = np.zeros(shape, dtype='object')
 
-    for f, flow in enumerate(system.flows):
-        if f >= n_flows: break
-        for t, task in enumerate(flow.tasks):
-            if t >= n_tasks: break
-            for p, processor_name in enumerate(procs):
-                if p >= n_procs: break
-                matrix[f, t, p] = task.__getattribute__(attr) if task.processor.name == processor_name else 0
-                matrix_titles[f, t, p] = f"{attr}_{flow.name}_{task.name}_{processor_name}"
+    for f in range(n_flows):
+        for t in range(n_tasks):
+            for p in range(n_procs):
+                matrix_titles[f, t, p] = f"{attr}_flow{f}_task{t}_proc{p}"
+                try:
+                    flow = system.flows[f]
+                    task = flow.tasks[t]
+                    matrix[f, t, p] = task.__getattribute__(attr) if task.processor.name == procs[p] else 0
+                except IndexError:
+                    continue
 
     return matrix, matrix_titles
 
 
-def flow_attr_matrix(system: System, shape, attrs, prefix=""):
+def flow_attr_matrix(system: System, shape, attrs, prefix="", default_value=0):
     n_flows, n_tasks, n_procs = shape
-    matrix = np.zeros((n_flows, len(attrs)))
+    flows = system.flows
+    matrix = np.full((n_flows, len(attrs)), default_value, dtype=float)
     matrix_titles = np.zeros((n_flows, len(attrs)), dtype='object')
 
-    for f, flow in enumerate(system.flows):
-        if f >= n_flows: break
+    for f in range(n_flows):
         for a, attr in enumerate(attrs):
-            matrix[f, a] = flow.__getattribute__(attr)
-            matrix_titles[f, a] = f"{prefix}{attr}_{flow.name}"
+            matrix_titles[f, a] = f"{prefix}{attr}_flow{f}"
+            if f < len(flows):
+                matrix[f, a] = flows[f].__getattribute__(attr)
 
     return matrix, matrix_titles
 
@@ -41,7 +44,6 @@ def to_vector(system: System, shape, normalize=False) -> str:
     n_flows, n_tasks, n_procs = shape
     # for consistency, sort processors by their name
     procs = [p.name for p in sorted(system.processors, key=lambda p: p.name)]
-
     d_max = max([flow.deadline for flow in system.flows])  # normalization factor
 
     # matrix with flow periods and deadlines
@@ -78,3 +80,10 @@ def to_vector(system: System, shape, normalize=False) -> str:
     titles = flatten(periods_deadlines_titles, wcets_titles, priorities_titles, flow_slacks_titles, system_labels_titles)
 
     return vector, titles
+
+
+def infer_shape(systems: [System]):
+    nflows = max([len(system.flows) for system in systems])
+    ntasks = max([len(flow.tasks) for system in systems for flow in system])
+    nprocs = max([len(system.processors) for system in systems])
+    return nflows, ntasks, nprocs
