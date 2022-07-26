@@ -1,6 +1,11 @@
 import unittest
+from random import Random
+
+import numpy as np
 from examples import *
-from assignment import PDAssignment
+from assignment import PDAssignment, HOPAssignment
+from analysis import HolisticAnalyis
+from generator import create_series, generate_system
 from model import *
 
 
@@ -24,6 +29,50 @@ class PDAssignmentTest(unittest.TestCase):
         #
         # for task in flow2:
         #     print(f"name={task.name}, proc={task.processor.name}, wcet={task.wcet}, priority={task.priority}")
+
+
+class HOPAAssignmentTest(unittest.TestCase):
+
+    def test_palencia(self):
+        system = get_palencia_system()
+        analysis = HolisticAnalyis()
+        hopa = HOPAssignment(analysis=analysis, verbose=True)
+        system.apply(hopa)
+        self.assertTrue(system.is_schedulable())
+
+    def test_palencia_series(self):
+        template = get_palencia_system()
+        analysis = HolisticAnalyis()
+        hopa = HOPAssignment(analysis=analysis, verbose=True)
+
+        series = create_series(template, np.linspace(0.1, 0.99, 100))
+        for system in series:
+            print(f"Test: HOPA for Palencia with utilization={system.utilization}")
+            system.apply(hopa)
+
+    def test_random(self):
+        random = Random(222)
+        analysis = HolisticAnalyis()
+        hopa = HOPAssignment(analysis=analysis, verbose=True)
+
+        for _ in range(1, 5):
+            n_flows = random.randint(1, 10)
+            n_procs = random.randint(1, 5)
+            n_tasks = random.randint(1, 10)
+            utilization = random.uniform(0.1, 1.0)
+            period_min = 100
+            period_max = period_min * random.uniform(2.0, 1000.0)
+            deadline_factor_min = 0.5
+            deadline_factor_max = 2
+
+            template = generate_system(random, n_flows, n_procs, n_tasks, utilization,
+                                       period_min, period_max,
+                                       deadline_factor_min, deadline_factor_max)
+            series = create_series(template=template, utilizations=np.linspace(0.1, 0.9, num=50))
+
+            for system in series:
+                print(f"Test: HOPA for Random with utilization={system.utilization}")
+                system.apply(hopa)
 
 
 if __name__ == '__main__':

@@ -78,7 +78,7 @@ class GeneratorTest(unittest.TestCase):
     def test_series(self):
         random = Random(222)
 
-        for _ in range(1, 1000):
+        for _ in range(1, 100):
             n_flows = random.randint(1, 10)
             n_procs = random.randint(1, 5)
             n_tasks = random.randint(1, 10)

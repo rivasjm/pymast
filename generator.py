@@ -63,9 +63,8 @@ def copy(system: System):
         new_flow = Flow(name=flow.name, period=flow.period, deadline=flow.deadline)
 
         for task in flow:
-            new_task = Task(name=task.name, wcet=task.wcet, processor=new_procs[task.processor.name],
-                            priority=task.priority)
-            new_task.wcrt = task.wcrt
+            new_task = task.copy()
+            new_task.processor = new_procs[task.processor.name]
             new_flow.add_tasks(new_task)
         new_system.add_flows(new_flow)
 

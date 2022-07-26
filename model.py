@@ -1,3 +1,5 @@
+import sys
+
 
 class System:
     def __init__(self):
@@ -45,6 +47,11 @@ class System:
         us = [proc.utilization for proc in self.processors]
         return max(us)
 
+    @property
+    def slack(self):
+        slacks = [flow.slack for flow in self.flows]
+        return min(slacks) if len(slacks) > 0 else sys.float_info.min
+
 
 class Processor:
     def __init__(self, name):
@@ -85,6 +92,13 @@ class Flow:
     def wcrt(self):
         return self.tasks[-1].wcrt
 
+    @property
+    def slack(self):
+        if self.wcrt:
+            return (self.deadline - self.wcrt)/self.deadline
+        else:
+            return sys.float_info.min
+
     def predecessors(self, task):
         i = self.tasks.index(task)
         return [self.tasks[i-1]] if i > 0 else []
@@ -114,6 +128,7 @@ class Task:
 
         self.processor: processor.Processor = processor
         self.priority: int = priority
+        self.local_deadline = None
         self.wcrt = None
 
     def __repr__(self):
@@ -131,3 +146,10 @@ class Task:
     def jitter(self):
         wcrts = list(map(lambda t: t.wcrt, self.flow.predecessors(self)))
         return max(wcrts) if len(wcrts) > 0 else 0
+
+    def copy(self):
+        new_task = Task(name=self.name, wcet=self.wcet, processor=None,
+                        priority=self.priority)
+        new_task.wcrt = self.wcrt
+        new_task.local_deadline = self.local_deadline
+        return new_task
