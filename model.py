@@ -29,7 +29,7 @@ class System:
 
     @property
     def processors(self):
-        return {task.processor for flow in self.flows for task in flow}
+        return sorted({task.processor for flow in self.flows for task in flow}, key=lambda p: p.name)
 
     def processor(self, name):
         return next((p for p in self.processors if p.name == name), None)
@@ -97,7 +97,7 @@ class Flow:
         if self.wcrt:
             return (self.deadline - self.wcrt)/self.deadline
         else:
-            return sys.float_info.min
+            return float("-inf")
 
     def predecessors(self, task):
         i = self.tasks.index(task)
