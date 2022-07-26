@@ -58,6 +58,8 @@ class HOPAssignment:
                 patience = patience-1 if not changed else patience
 
                 system.apply(self.analysis)  # update response times
+                self.clean_response_times(system)
+
                 if self.verbose:
                     sched = "SCHEDULABLE" if system.is_schedulable() else "NOT SCHEDULABLE"
                     print(f"slack={system.slack} {sched}")
@@ -89,8 +91,8 @@ class HOPAssignment:
 
     def save_local_deadline(self, task: Task, ka, kr):
         mex_pr = task.flow.system.mex_pr
-        second = 1 + task.processor.excess/(kr * mex_pr)
-        third = 1 + task.excess/(ka * task.flow.excess)
+        second = 1 + task.processor.excess/(kr * mex_pr) if kr * mex_pr != 0 else sys.float_info.max
+        third = 1 + task.excess/(ka * task.flow.excess) if ka * task.flow.excess != 0 else sys.float_info.max
         task.local_deadline = task.local_deadline * second * third
 
     def save_task_excess(self, task: Task):
@@ -127,3 +129,8 @@ class HOPAssignment:
             d_sum = sum([task.local_deadline for task in flow])
             for task in flow:
                 task.local_deadline = task.local_deadline * flow.deadline / d_sum
+
+    def clean_response_times(self, system):
+        for task in system.tasks:
+            if task.wcrt is None:
+                task.wcrt = sys.float_info.max

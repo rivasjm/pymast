@@ -4,7 +4,7 @@ import math
 
 def higher_priority(task: Task) -> [Task]:
     return [t for t in task.processor.tasks
-            if t.priority > task.priority and t != task]
+            if t.priority >= task.priority and t != task]
 
 
 def init_wcrt(system: System):
@@ -22,7 +22,7 @@ class LimitFactorReachedException(Exception):
         self.task = task
         self.response_time = response_time
         self.limit = limit
-        self.message = f"Analysis stopped because provisional response time for task {task.name} (R={response_time}) " \
+        self.message = f"\nAnalysis stopped because provisional response time for task {task.name} (R={response_time}) " \
                        f"reached the limit (limit={limit})"
         super().__init__(self.message)
 

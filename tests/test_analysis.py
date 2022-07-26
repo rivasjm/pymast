@@ -1,7 +1,11 @@
 import unittest
+from random import Random
+
+from assignment import PDAssignment, HOPAssignment
 from model import *
 from examples import *
 from analysis import HolisticAnalyis
+from generator import generate_system
 
 
 class HolisticTest(unittest.TestCase):
@@ -28,6 +32,24 @@ class HolisticTest(unittest.TestCase):
 
         #
         # print(system.processors)
+
+    def test_random(self):
+        random = Random(10)
+        pd = PDAssignment()
+        holistic = HolisticAnalyis(reset=True)
+        hopa = HOPAssignment(analysis=HolisticAnalyis(reset=False), verbose=True)
+
+        utilization = 0.85
+        system = generate_system(random, n_flows=random.randint(1, 10), n_procs=random.randint(1, 5),
+                                 n_tasks=random.randint(1, 10), utilization=utilization,
+                                 period_min=100, period_max=100 * random.uniform(2.0, 1000.0),
+                                 deadline_factor_min=0.5, deadline_factor_max=2)
+
+        # this one should be schedulable at the third iteration
+        # in the first iteration it triggers the stop factor
+        system.apply(hopa)
+        system.apply(holistic)
+        print(system.is_schedulable())
 
 
 if __name__ == '__main__':
