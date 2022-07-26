@@ -29,7 +29,7 @@ class System:
 
     @property
     def processors(self):
-        return sorted({task.processor for flow in self.flows for task in flow}, key=lambda p: p.name)
+        return {task.processor for flow in self.flows for task in flow}
 
     def processor(self, name):
         return next((p for p in self.processors if p.name == name), None)
