@@ -2,19 +2,38 @@ import numpy as np
 from model import System, Processor
 
 
-def task_attr_matrix(system: System, shape, procs: [str], attr, default_value=0):
+def task_attr_matrix(system: System, shape, attrs, default_value=0):
     n_flows, n_tasks, n_procs = shape
-    matrix = np.full(shape, default_value, dtype=float)
-    matrix_titles = np.zeros(shape, dtype='object')
+    matrix = np.full((n_flows, n_tasks, len(attrs)), default_value, dtype=float)
+    matrix_titles = np.zeros(matrix.shape, dtype='object')
+
+    for f in range(n_flows):
+        for t in range(n_tasks):
+            for a, attr in enumerate(attrs):
+                matrix_titles[f, t] = f"{attr}_flow{f}_task{t}"
+                try:
+                    flow = system.flows[f]
+                    task = flow.tasks[t]
+                    matrix[f, t, a] = task.__getattribute__(attr)
+                except IndexError:
+                    continue
+
+    return matrix, matrix_titles
+
+
+def task_mapping_onehot(system: System, shape, procs):
+    n_flows, n_tasks, n_procs = shape
+    matrix = np.zeros(shape, dtype=float)
+    matrix_titles = np.zeros(matrix.shape, dtype='object')
 
     for f in range(n_flows):
         for t in range(n_tasks):
             for p in range(n_procs):
-                matrix_titles[f, t, p] = f"{attr}_flow{f}_task{t}_proc{p}"
+                matrix_titles[f, t, p] = f"mapping_proc{p}_flow{f}_task{t}"
                 try:
                     flow = system.flows[f]
                     task = flow.tasks[t]
-                    matrix[f, t, p] = task.__getattribute__(attr) if task.processor.name == procs[p] else 0
+                    matrix[f, t, p] = 1 if task.processor.name == procs[p] else 0
                 except IndexError:
                     continue
 
@@ -25,7 +44,7 @@ def flow_attr_matrix(system: System, shape, attrs, prefix="", default_value=0):
     n_flows, n_tasks, n_procs = shape
     flows = system.flows
     matrix = np.full((n_flows, len(attrs)), default_value, dtype=float)
-    matrix_titles = np.zeros((n_flows, len(attrs)), dtype='object')
+    matrix_titles = np.zeros(matrix.shape, dtype='object')
 
     for f in range(n_flows):
         for a, attr in enumerate(attrs):
@@ -52,14 +71,19 @@ def to_vector(system: System, shape, normalize=False) -> str:
         periods_deadlines = periods_deadlines/d_max
     # print(periods_deadlines)
 
-    # wcet 3d matrix
-    wcets, wcets_titles = task_attr_matrix(system, shape, procs, "wcet")
+    # mapping matrix
+    mapping, mapping_titles = task_mapping_onehot(system, shape, procs)
+    # print(mapping_titles)
+    # print(mapping)
+
+    # wcet, priority 3d matrix
+    wcets, wcets_titles = task_attr_matrix(system, shape, ["wcet"])
     if normalize:
         wcets = wcets/d_max
     # print(wcets_titles)
 
     # priority 3d matrix
-    priorities, priorities_titles = task_attr_matrix(system, shape, procs, "priority")
+    priorities, priorities_titles = task_attr_matrix(system, shape, ["priority"])
     if normalize:
         priorities = priorities/priorities.max()  # normalize by max, wouldn't make sense to normalize with time (d_max)
 
@@ -76,8 +100,8 @@ def to_vector(system: System, shape, normalize=False) -> str:
                                      "label_dmax"])
 
     # vectorize system: flatten all matrices + horizontally append them to form one big vector
-    vector = flatten(periods_deadlines, wcets, priorities, flow_slacks, system_labels)
-    titles = flatten(periods_deadlines_titles, wcets_titles, priorities_titles, flow_slacks_titles, system_labels_titles)
+    vector = flatten(periods_deadlines, mapping, wcets, priorities, flow_slacks, system_labels)
+    titles = flatten(periods_deadlines_titles, mapping_titles, wcets_titles, priorities_titles, flow_slacks_titles, system_labels_titles)
 
     return vector, titles
 
