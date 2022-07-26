@@ -19,14 +19,18 @@ def reset_wcrt(system: System):
 
 class LimitFactorReachedException(Exception):
     def __init__(self, task, response_time, limit):
+        self.task = task
+        self.response_time = response_time
+        self.limit = limit
         self.message = f"Analysis stopped because provisional response time for task {task.name} (R={response_time}) " \
-                  f"reached the limit (limit={limit})"
+                       f"reached the limit (limit={limit})"
         super().__init__(self.message)
 
 
 class HolisticAnalyis:
-    def __init__(self, limit_factor = 10):
+    def __init__(self, limit_factor = 10, reset=True):
         self.limit_factor = limit_factor
+        self.reset = reset
 
     def apply(self, system: System) -> None:
         init_wcrt(system)
@@ -34,21 +38,22 @@ class HolisticAnalyis:
         try:
             while True:
                 changed = False
-
                 for task in system.tasks:
                     changed |= self._task_analysis(task)
-
                 if not changed:
                     break
 
         except LimitFactorReachedException as e:
             print(e.message)
-            reset_wcrt(system)
+            if self.reset:
+                reset_wcrt(system)
+            else:
+                for task in e.task.all_successors:
+                    task.wcrt = e.limit
 
     def _task_analysis(self, task: Task) -> bool:
         p = 1
         rmax = 0
-
         while True:
             wip = self._wip(p, task)
             r = wip - (p-1)*task.period + task.jitter

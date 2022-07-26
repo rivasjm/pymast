@@ -107,6 +107,10 @@ class Flow:
         i = self.tasks.index(task)
         return [self.tasks[i + 1]] if i < len(self.tasks)-1 else []
 
+    def all_successors(self, task):
+        i = self.tasks.index(task)
+        return self.tasks[i+1:]
+
     def is_schedulable(self):
         return self.wcrt and self.wcrt <= self.deadline
 
@@ -141,6 +145,10 @@ class Task:
     @property
     def period(self):
         return self.flow.period
+
+    @property
+    def all_successors(self):
+        return self.flow.all_successors(self)
 
     @property
     def jitter(self):
