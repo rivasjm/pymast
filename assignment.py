@@ -16,6 +16,16 @@ def calculate_priorities(system) -> bool:
     return changed
 
 
+def save_priorities(system: System):
+    for task in system.tasks:
+        task.saved_priority = task.priority
+
+
+def restore_saved_priorities(system: System):
+    for task in system.tasks:
+        task.priority = task.saved_priority
+
+
 class PDAssignment:
 
     def apply(self, system: System):
