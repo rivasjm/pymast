@@ -3,7 +3,7 @@ from random import Random
 
 import numpy as np
 from examples import *
-from assignment import PDAssignment, HOPAssignment
+from assignment import PDAssignment, HOPAssignment, random_search
 from analysis import HolisticAnalyis
 from generator import create_series, generate_system
 from model import *
@@ -73,6 +73,17 @@ class HOPAAssignmentTest(unittest.TestCase):
             for system in series:
                 print(f"Test: HOPA for Random with utilization={system.utilization}")
                 system.apply(hopa)
+
+
+class MiscTests(unittest.TestCase):
+
+    def test_random_search(self):
+        system = get_palencia_system()
+
+        count = 0
+        f = lambda s: print(s)
+
+        random_search(system, 10, 10, f)
 
 
 if __name__ == '__main__':

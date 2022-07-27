@@ -37,7 +37,7 @@ class HolisticTest(unittest.TestCase):
         random = Random(10)
         pd = PDAssignment()
         holistic = HolisticAnalyis(reset=True)
-        hopa = HOPAssignment(analysis=HolisticAnalyis(reset=False), verbose=True)
+        hopa = HOPAssignment(analysis=HolisticAnalyis(reset=False), over_iterations=10, verbose=True)
 
         utilization = 0.85
         system = generate_system(random, n_flows=random.randint(1, 10), n_procs=random.randint(1, 5),
@@ -50,6 +50,7 @@ class HolisticTest(unittest.TestCase):
         system.apply(hopa)
         system.apply(holistic)
         print(system.is_schedulable())
+        print(system.slack)
 
 
 if __name__ == '__main__':
