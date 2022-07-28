@@ -130,3 +130,13 @@ def write_to_csv(system: System, shape, file_path, normalize=True):
             writer.writerow(header)
 
         writer.writerow(row)
+
+
+def get_xy(df, label_name):
+    labels = [c for c in df.columns if c.startswith("label")]
+    if label_name not in labels:
+        return None
+
+    x = df.drop(labels, axis=1).values
+    y = df[label_name].values
+    return x, y
