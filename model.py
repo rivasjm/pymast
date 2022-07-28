@@ -161,3 +161,27 @@ class Task:
         new_task.wcrt = self.wcrt
         new_task.local_deadline = self.local_deadline
         return new_task
+
+
+def save_attrs(elements: [], attrs: [str]) -> None:
+    for element in elements:
+        for attr in attrs:
+            if hasattr(element, attr):
+                value = getattr(element, attr)
+                setattr(element, "_saved_" + attr, value)
+
+
+def restore_attrs(elements: [], attrs: [str]) -> None:
+    for element in elements:
+        for attr in attrs:
+            if hasattr(element, "_saved_" + attr):
+                value = getattr(element, "_saved_" + attr)
+                setattr(element, attr, value)
+
+
+def save_tasks_params(system: System):
+    save_attrs(system.tasks, ["wcet", "processor", "priority", "local_deadline", "wcrt"])
+
+
+def restore_tasks_params(system: System):
+    restore_attrs(system.tasks, ["wcet", "processor", "priority", "local_deadline", "wcrt"])

@@ -79,3 +79,13 @@ def create_series(template: System, utilizations) -> [System]:
             set_processor_utilization(proc, utilization)
         systems.append(system)
     return systems
+
+
+def walk_series(system: System, utilizations, callback) -> None:
+    save_tasks_params(system)
+    for utilization in utilizations:
+        for proc in system.processors:
+            set_processor_utilization(proc, utilization)
+        if callback:
+            callback(system)
+    restore_tasks_params(system)

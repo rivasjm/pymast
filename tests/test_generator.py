@@ -1,5 +1,6 @@
 import unittest
-from generator import uunifast, set_processor_utilization, log_uniform, generate_system, copy, create_series
+from generator import uunifast, set_processor_utilization, log_uniform, generate_system, copy, create_series, \
+    walk_series
 from random import Random
 import numpy as np
 from examples import get_palencia_system
@@ -97,6 +98,34 @@ class GeneratorTest(unittest.TestCase):
                 self.assertAlmostEqual(system.utilization, u, delta=0.00001)
                 for proc in system.processors:
                     self.assertAlmostEqual(proc.utilization, u, delta=0.00001)
+
+    def test_walk_series(self):
+        random = Random(333)
+        count = 0
+
+        def inc(system):
+            nonlocal count
+            count += 1
+            self.assertLessEqual(system.utilization, 1.01)
+            self.assertGreaterEqual(system.utilization, 0.099)
+
+        for _ in range(50):
+            n_flows = random.randint(1, 15)
+            n_procs = random.randint(1, 4)
+            n_tasks = random.randint(1, 15)
+            utilization = 0.5  # ignored in the series
+            period_min = 100
+            period_max = period_min * random.uniform(2.0, 1000.0)
+            deadline_factor_min = 0.5
+            deadline_factor_max = 2
+
+            template = generate_system(random, n_flows, n_procs, n_tasks, utilization,
+                                       period_min, period_max,
+                                       deadline_factor_min, deadline_factor_max)
+            walk_series(system=template, utilizations=np.linspace(0.1, 1.0, num=100), callback=inc)
+            self.assertAlmostEqual(0.5, template.utilization, delta=0.0001)
+
+        self.assertEqual(5000, count)
 
 
 if __name__ == '__main__':

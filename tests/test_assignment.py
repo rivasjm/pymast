@@ -3,7 +3,7 @@ from random import Random
 
 import numpy as np
 from examples import *
-from assignment import PDAssignment, HOPAssignment, random_search
+from assignment import PDAssignment, HOPAssignment, walk_random_priorities
 from analysis import HolisticAnalyis
 from generator import create_series, generate_system
 from model import *
@@ -79,11 +79,14 @@ class MiscTests(unittest.TestCase):
 
     def test_random_search(self):
         system = get_palencia_system()
-
         count = 0
-        f = lambda s: print(s)
 
-        random_search(system, 10, 10, f)
+        def inc(ignored_system):
+            nonlocal count
+            count += 1
+
+        walk_random_priorities(system, 10, 10, inc)
+        self.assertEqual(100, count)
 
 
 if __name__ == '__main__':

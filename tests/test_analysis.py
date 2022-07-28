@@ -51,6 +51,7 @@ class HolisticTest(unittest.TestCase):
         system.apply(holistic)
         print(system.is_schedulable())
         print(system.slack)
+        self.assertAlmostEqual(system.slack, 0.58747, delta=0.00001)  # should be from iteration 8 of 12
 
 
 if __name__ == '__main__':

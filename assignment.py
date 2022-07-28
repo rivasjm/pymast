@@ -19,13 +19,11 @@ def calculate_priorities(system) -> bool:
 
 
 def save_priorities(system: System):
-    for task in system.tasks:
-        task.saved_priority = task.priority
+    save_attrs(system.tasks, ["priority"])
 
 
-def restore_saved_priorities(system: System):
-    for task in system.tasks:
-        task.priority = task.saved_priority
+def restore_priorities(system: System):
+    restore_attrs(system.tasks, ["priority"])
 
 
 class PDAssignment:
@@ -45,12 +43,13 @@ class PDAssignment:
 
 class HOPAssignment:
 
-    def __init__(self, analysis, iterations=40, k_pairs=None, patience=20, over_iterations=0, verbose=False):
+    def __init__(self, analysis, iterations=40, k_pairs=None, patience=20, over_iterations=0, callback=None, verbose=False):
         self.analysis = analysis
         self.k_pairs = k_pairs if k_pairs else HOPAssignment.default_k_pairs()
         self.iterations = iterations
         self.patience = patience
         self.over_iterations = over_iterations
+        self.callback = callback
         self.verbose = verbose
 
     @staticmethod
@@ -76,6 +75,8 @@ class HOPAssignment:
 
                 system.apply(self.analysis)  # update response times
                 self.clean_response_times(system)
+                if self.callback:
+                    self.callback(system)
 
                 slack = system.slack
                 if slack > best_slack:
@@ -105,7 +106,7 @@ class HOPAssignment:
                 break
 
         self.delete_excesses(system)
-        restore_saved_priorities(system)
+        restore_priorities(system)
         system.apply(self.analysis)
 
     def update_local_deadlines(self, system: System, ka, kr):
@@ -169,7 +170,7 @@ class HOPAssignment:
                 task.wcrt = sys.float_info.max
 
 
-def random_search(system: System, breadth, depth, callback):
+def walk_random_priorities(system: System, breadth, depth, callback):
     # it must have at least one processor with more than 1 task
     procs = [p for p in system.processors if len(p.tasks) > 1]
     if len(procs) < 1:
@@ -179,7 +180,7 @@ def random_search(system: System, breadth, depth, callback):
     save_priorities(system)  # back up current priorities
 
     for b in range(breadth):
-        restore_saved_priorities(system)
+        restore_priorities(system)
         for d in range(depth):
             # pick a random processor that has more than 1 task
             p = random.choice(procs)
@@ -194,4 +195,4 @@ def random_search(system: System, breadth, depth, callback):
             if callback:
                 callback(system)
 
-    restore_saved_priorities(system)  # restore initial priorities
+    restore_priorities(system)  # restore initial priorities
