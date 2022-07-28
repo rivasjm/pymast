@@ -36,12 +36,15 @@ class HolisticTest(unittest.TestCase):
     def test_random(self):
         random = Random(10)
         pd = PDAssignment()
-        holistic = HolisticAnalyis(reset=True)
+        holistic = HolisticAnalyis()
         hopa = HOPAssignment(analysis=HolisticAnalyis(reset=False), over_iterations=10, verbose=True)
 
         utilization = 0.85
-        system = generate_system(random, n_flows=random.randint(1, 10), n_procs=random.randint(1, 5),
-                                 n_tasks=random.randint(1, 10), utilization=utilization,
+        system = generate_system(random,
+                                 n_flows=random.randint(1, 10),
+                                 n_tasks=random.randint(1, 10),
+                                 n_procs=random.randint(1, 5),
+                                 utilization=utilization,
                                  period_min=100, period_max=100 * random.uniform(2.0, 1000.0),
                                  deadline_factor_min=0.5, deadline_factor_max=2)
 
@@ -51,7 +54,7 @@ class HolisticTest(unittest.TestCase):
         system.apply(holistic)
         print(system.is_schedulable())
         print(system.slack)
-        self.assertAlmostEqual(system.slack, 0.58747, delta=0.00001)  # should be from iteration 8 of 12
+        self.assertAlmostEqual(system.slack, 0.28803, delta=0.00001)  # should be from iteration 8 of 12
 
 
 if __name__ == '__main__':

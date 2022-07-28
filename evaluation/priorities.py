@@ -25,10 +25,13 @@ def hopa_vs_pd():
         for i in range(100):
             print(f"utilization={utilization}, i={i}", end="")
 
-            system = generate_system(random, n_flows=random.randint(1, 10), n_procs=random.randint(1, 5),
-                                       n_tasks=random.randint(1, 10), utilization=utilization,
-                                       period_min=100, period_max=100 * random.uniform(2.0, 1000.0),
-                                       deadline_factor_min=0.5, deadline_factor_max=2)
+            system = generate_system(random,
+                                     n_flows=random.randint(1, 10),
+                                     n_tasks=random.randint(1, 10),
+                                     n_procs=random.randint(1, 5),
+                                     utilization=utilization,
+                                     period_min=100, period_max=100 * random.uniform(2.0, 1000.0),
+                                     deadline_factor_min=0.5, deadline_factor_max=2)
 
             print(" PD", end="")
             reset_wcrt(system)

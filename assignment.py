@@ -18,12 +18,12 @@ def calculate_priorities(system) -> bool:
     return changed
 
 
-def save_priorities(system: System):
-    save_attrs(system.tasks, ["priority"])
+def save_assignment(system: System):
+    save_attrs(system.tasks, ["priority", "local_deadline"])
 
 
-def restore_priorities(system: System):
-    restore_attrs(system.tasks, ["priority"])
+def restore_assignment(system: System):
+    restore_attrs(system.tasks, ["priority", "local_deadline"])
 
 
 class PDAssignment:
@@ -43,7 +43,7 @@ class PDAssignment:
 
 class HOPAssignment:
 
-    def __init__(self, analysis, iterations=40, k_pairs=None, patience=20, over_iterations=0, callback=None, verbose=False):
+    def __init__(self, analysis, iterations=40, k_pairs=None, patience=1000, over_iterations=0, callback=None, verbose=False):
         self.analysis = analysis
         self.k_pairs = k_pairs if k_pairs else HOPAssignment.default_k_pairs()
         self.iterations = iterations
@@ -57,15 +57,18 @@ class HOPAssignment:
         return [(2.0, 2.0), (1.8, 1.8), (3.0, 3.0), (1.5, 1.5)]
 
     def apply(self, system: System):
-        patience = self.patience
+        patience = self.patience if self.patience >= 0 else 1000
         over_iterations = self.over_iterations
         stop = False
         optimizing = False
         best_slack = float("-inf")
 
         PDAssignment.calculate_local_deadlines(system)
+        save_assignment(system)
 
         for ka, kr in self.k_pairs:
+            restore_assignment(system)  # always start each new k-pair iteration with the best
+
             for i in range(self.iterations):
                 if self.verbose:
                     print(f"Iteration={i}, ka={ka}, kr={kr} ", end="")
@@ -81,7 +84,7 @@ class HOPAssignment:
                 slack = system.slack
                 if slack > best_slack:
                     best_slack = slack
-                    save_priorities(system)
+                    save_assignment(system)
 
                 if self.verbose:
                     sched = "SCHEDULABLE" if system.is_schedulable() else "NOT SCHEDULABLE"
@@ -106,8 +109,11 @@ class HOPAssignment:
                 break
 
         self.delete_excesses(system)
-        restore_priorities(system)
+        restore_assignment(system)
         system.apply(self.analysis)
+        if self.verbose:
+            sched = "SCHEDULABLE" if system.is_schedulable() else "NOT SCHEDULABLE"
+            print(f"Returning best assignment: slack={system.slack} {sched}")
 
     def update_local_deadlines(self, system: System, ka, kr):
         # update excesses with last response times
@@ -177,10 +183,10 @@ def walk_random_priorities(system: System, breadth, depth, callback):
         return
 
     random = Random()
-    save_priorities(system)  # back up current priorities
+    save_assignment(system)  # back up current priorities
 
     for b in range(breadth):
-        restore_priorities(system)
+        restore_assignment(system)
         for d in range(depth):
             # pick a random processor that has more than 1 task
             p = random.choice(procs)
@@ -195,4 +201,4 @@ def walk_random_priorities(system: System, breadth, depth, callback):
             if callback:
                 callback(system)
 
-    restore_priorities(system)  # restore initial priorities
+    restore_assignment(system)  # restore initial priorities

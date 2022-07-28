@@ -65,7 +65,7 @@ class HOPAAssignmentTest(unittest.TestCase):
             deadline_factor_min = 0.5
             deadline_factor_max = 2
 
-            template = generate_system(random, n_flows, n_procs, n_tasks, utilization,
+            template = generate_system(random, n_flows, n_tasks, n_procs, utilization,
                                        period_min, period_max,
                                        deadline_factor_min, deadline_factor_max)
             series = create_series(template=template, utilizations=np.linspace(0.1, 0.9, num=50))

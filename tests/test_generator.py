@@ -44,7 +44,7 @@ class GeneratorTest(unittest.TestCase):
             deadline_factor_min = 0.5
             deadline_factor_max = 2
 
-            system = generate_system(random, n_flows, n_procs, n_tasks, utilization,
+            system = generate_system(random, n_flows, n_tasks, n_procs, utilization,
                                      period_min, period_max,
                                      deadline_factor_min, deadline_factor_max)
 
@@ -66,7 +66,7 @@ class GeneratorTest(unittest.TestCase):
             deadline_factor_min = 0.5
             deadline_factor_max = 2
 
-            original = generate_system(random, n_flows, n_procs, n_tasks, utilization,
+            original = generate_system(random, n_flows, n_tasks, n_procs, utilization,
                                        period_min, period_max,
                                        deadline_factor_min, deadline_factor_max)
 
@@ -89,7 +89,7 @@ class GeneratorTest(unittest.TestCase):
             deadline_factor_min = 0.5
             deadline_factor_max = 2
 
-            template = generate_system(random, n_flows, n_procs, n_tasks, utilization,
+            template = generate_system(random, n_flows, n_tasks, n_procs, utilization,
                                        period_min, period_max,
                                        deadline_factor_min, deadline_factor_max)
             series = create_series(template=template, utilizations=np.linspace(0.1, 1.0, num=100))
@@ -119,7 +119,7 @@ class GeneratorTest(unittest.TestCase):
             deadline_factor_min = 0.5
             deadline_factor_max = 2
 
-            template = generate_system(random, n_flows, n_procs, n_tasks, utilization,
+            template = generate_system(random, n_flows, n_tasks, n_procs, utilization,
                                        period_min, period_max,
                                        deadline_factor_min, deadline_factor_max)
             walk_series(system=template, utilizations=np.linspace(0.1, 1.0, num=100), callback=inc)

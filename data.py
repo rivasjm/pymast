@@ -1,3 +1,5 @@
+import os.path
+
 import numpy as np
 from model import System, Processor
 
@@ -59,7 +61,7 @@ def flatten(*matrices):
     return np.hstack([matrix.reshape(-1) for matrix in matrices])
 
 
-def to_vector(system: System, shape, normalize=False) -> str:
+def to_vector(system: System, shape: object, normalize: object = False):
     n_flows, n_tasks, n_procs = shape
     # for consistency, sort processors by their name
     procs = [p.name for p in sorted(system.processors, key=lambda p: p.name)]
@@ -111,3 +113,20 @@ def infer_shape(systems: [System]):
     ntasks = max([len(flow.tasks) for system in systems for flow in system])
     nprocs = max([len(system.processors) for system in systems])
     return nflows, ntasks, nprocs
+
+
+def write_to_csv(system: System, shape, file_path, normalize=True):
+    import csv
+
+    row, header = to_vector(system, shape, normalize)
+    write_header = False
+
+    if not os.path.isfile(file_path) or os.path.getsize(file_path) == 0:
+        write_header = True
+
+    with open(file_path, mode="a+", newline="") as f:
+        writer = csv.writer(f)
+        if write_header:
+            writer.writerow(header)
+
+        writer.writerow(row)

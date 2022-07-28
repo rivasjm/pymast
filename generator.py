@@ -27,7 +27,7 @@ def set_processor_utilization(processor: Processor, utilization: float):
         task.wcet *= factor
 
 
-def generate_system(random: Random, n_flows, n_procs, n_tasks, utilization,
+def generate_system(random: Random, n_flows, n_tasks, n_procs, utilization,
                     period_min, period_max, deadline_factor_min, deadline_factor_max) -> System:
 
     procs = [Processor(name=f"proc{i}") for i in range(n_procs)]
