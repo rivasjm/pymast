@@ -61,7 +61,7 @@ def flatten(*matrices):
     return np.hstack([matrix.reshape(-1) for matrix in matrices])
 
 
-def to_vector(system: System, shape: object, normalize: object = False):
+def to_vector(system: System, shape: object, normalize: object = True):
     n_flows, n_tasks, n_procs = shape
     # for consistency, sort processors by their name
     procs = [p.name for p in sorted(system.processors, key=lambda p: p.name)]
@@ -108,11 +108,22 @@ def to_vector(system: System, shape: object, normalize: object = False):
     return vector, titles
 
 
+def to_prediction_vector(system, shape):
+    vector, title = to_vector(system=system, shape=shape, normalize=True)
+    values = [v for v, t in zip(vector, title) if not t.startswith("label")]
+    return np.array(values).reshape((1, -1))
+
+
 def infer_shape(systems: [System]):
     nflows = max([len(system.flows) for system in systems])
     ntasks = max([len(flow.tasks) for system in systems for flow in system])
     nprocs = max([len(system.processors) for system in systems])
     return nflows, ntasks, nprocs
+
+
+def is_shape_compatible(systems, shape):
+    inferred = infer_shape(systems)
+    return shape >= inferred
 
 
 def write_to_csv(system: System, shape, file_path, normalize=True):
@@ -130,6 +141,20 @@ def write_to_csv(system: System, shape, file_path, normalize=True):
             writer.writerow(header)
 
         writer.writerow(row)
+
+
+def create_dataframe(systems: [System], shape=None):
+    if not shape:
+        shape = infer_shape(systems)
+    if not is_shape_compatible(systems, shape):
+        raise ValueError
+
+    data = [to_vector(system, shape, normalize=True)[0] for system in systems]
+    title = to_vector(systems[0], shape, normalize=True)[1]  # infer title from first system
+
+    import pandas as pd
+    pd.DataFrame(data, columns=title)
+    return pd
 
 
 def get_xy(df, label_name):

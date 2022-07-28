@@ -6,9 +6,10 @@ from pathlib import Path
 import numpy
 
 from analysis import HolisticAnalyis
-from assignment import HOPAssignment
-from data import write_to_csv, get_xy
+from assignment import HOPAssignment, walk_random_priorities
+from data import write_to_csv, get_xy, infer_shape
 from generator import generate_system
+from regressors import SKRegressor
 
 
 def generate_csv():
@@ -39,9 +40,10 @@ def generate_csv():
     analysis = HolisticAnalyis(limit_factor=10, reset=False)
     hopa = HOPAssignment(analysis=analysis, verbose=True, callback=csv_writer_cb)
     system.apply(hopa)
+    return system
 
 
-def model():
+def create_model():
     import pandas as pd
     name = Path(__file__).stem
     csv_path = name + ".csv"
@@ -51,13 +53,27 @@ def model():
     X, y = get_xy(df, "label_slack_system")
 
     from sklearn.neural_network import MLPRegressor
-    reg = MLPRegressor(random_state=1, max_iter=200, verbose=True, hidden_layer_sizes=(1000,))
+    reg = MLPRegressor(random_state=1, max_iter=200, verbose=True, hidden_layer_sizes=(10000, 10000,))
     reg.fit(X, y)
 
     from joblib import dump
     dump(reg, name + ".joblib")
+    return reg
+
+
+def apply_model(model, system):
+    shape = infer_shape([system])
+    regressor = SKRegressor(model=model, shape=shape)
+
+    def predic_cb(s):
+        nonlocal regressor
+        prediction = regressor.predict(s)
+        print(prediction)
+
+    walk_random_priorities(system, 10, 2, predic_cb)
 
 
 if __name__ == '__main__':
-    generate_csv()
-    model()
+    system = generate_csv()
+    reg = create_model()
+    apply_model(reg, system)

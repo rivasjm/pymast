@@ -1,4 +1,4 @@
-from data import to_vector
+from data import to_vector, to_prediction_vector
 from model import System
 
 
@@ -8,14 +8,15 @@ class RegressorInterface:
 
 
 class SKRegressor(RegressorInterface):
-    def __init__(self, model=None, model_file=None):
-        if model is None and model_file:
+    def __init__(self, shape, model=None, model_file=None):
+        self.shape = shape
+        if model:
+            self.model = model
+        elif model_file:
             from joblib import load
             self.model = load(model_file)
-        elif model:
-            self.model = model
 
     def predict(self, system: System):
-        vector, = to_vector(system)
+        vector = to_prediction_vector(system, self.shape)
         prediction = self.model.predict(vector)
         return prediction

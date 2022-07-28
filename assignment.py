@@ -1,5 +1,4 @@
 from random import Random
-
 from model import *
 
 
@@ -9,12 +8,10 @@ def calculate_priorities(system) -> bool:
         tasks = sorted(processor.tasks,
                        key=lambda task: task.local_deadline,
                        reverse=True)
-
         for i, task in enumerate(tasks):
             if not changed and task.priority != i + 1:
                 changed = True
             task.priority = i + 1
-
     return changed
 
 
@@ -27,7 +24,6 @@ def restore_assignment(system: System):
 
 
 class PDAssignment:
-
     def apply(self, system: System):
         PDAssignment.calculate_local_deadlines(system)
         calculate_priorities(system)
@@ -42,7 +38,6 @@ class PDAssignment:
 
 
 class HOPAssignment:
-
     def __init__(self, analysis, iterations=40, k_pairs=None, patience=1000, over_iterations=0, callback=None, verbose=False):
         self.analysis = analysis
         self.k_pairs = k_pairs if k_pairs else HOPAssignment.default_k_pairs()
