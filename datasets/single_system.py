@@ -4,10 +4,13 @@ from random import Random
 from pathlib import Path
 
 import numpy
+import pandas as pd
+from matplotlib import pyplot as plt
+from sklearn.neural_network import MLPRegressor
 
 from analysis import HolisticAnalyis
 from assignment import HOPAssignment, walk_random_priorities, walk_random_priorities_processors
-from data import write_to_csv, get_xy, infer_shape
+from data import write_to_csv, get_xy, infer_shape, read_csv
 from generator import generate_system
 from regressors import SKRegressor
 
@@ -52,13 +55,9 @@ def generate_training_data(name):
 
 
 def train_model(name, csv_path):
-    import pandas as pd
-
-    df: pd.DataFrame = pd.read_csv(csv_path)
-    df.drop_duplicates(inplace=True)
+    df = read_csv(csv_path)
     X, y = get_xy(df, "label_slack_system")
 
-    from sklearn.neural_network import MLPRegressor
     model = MLPRegressor(random_state=1, max_iter=200, verbose=True, hidden_layer_sizes=(1000, 1000,))
     model.fit(X, y)
     return model
@@ -74,19 +73,14 @@ def generate_testing_data(name, system):
         s.apply(analysis)
         write_to_csv(s, shape, csv_path, normalize=True)
 
-    walk_random_priorities(system, 50, 50, test_cb, verbose=True)
+    walk_random_priorities(system, 10, 10, test_cb, verbose=True)
     return csv_path
 
 
 def test_model(name, model, csv_testing):
-    import pandas as pd
-    df: pd.DataFrame = pd.read_csv(csv_testing)
-    df.drop_duplicates(inplace=True)
-
+    df = read_csv(csv_testing)
     X, y = get_xy(df, "label_slack_system")
     y_pred = model.predict(X)
-
-    import matplotlib.pyplot as plt
     plt.scatter(y, y_pred)
     plt.show()
 
