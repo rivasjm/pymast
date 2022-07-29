@@ -3,7 +3,7 @@ from random import Random
 
 import numpy as np
 from examples import *
-from assignment import PDAssignment, HOPAssignment, walk_random_priorities
+from assignment import PDAssignment, HOPAssignment, walk_random_priorities, walk_random_priorities_processors
 from analysis import HolisticAnalyis
 from generator import create_series, generate_system
 from model import *
@@ -77,7 +77,7 @@ class HOPAAssignmentTest(unittest.TestCase):
 
 class MiscTests(unittest.TestCase):
 
-    def test_random_search(self):
+    def test_walk_random_priorities(self):
         system = get_palencia_system()
         count = 0
 
@@ -87,6 +87,27 @@ class MiscTests(unittest.TestCase):
 
         walk_random_priorities(system, 10, 10, inc)
         self.assertEqual(100, count)
+
+    def test_walk_random_priorities_processors(self):
+        system = get_barely_schedulable()
+        count = 0
+
+        def inc(ignored_system):
+            nonlocal count
+            count += 1
+
+        analysis = HolisticAnalyis(limit_factor=10, reset=False)
+        pd = PDAssignment()
+        system.apply(pd)
+        system.apply(analysis)
+        initial_slack = system.slack
+
+        walk_random_priorities_processors(system, 10, 10, inc)
+        self.assertEqual(100, count)
+
+        # confirm that the priorities and processor mappings are restored
+        system.apply(analysis)
+        self.assertEqual(initial_slack, system.slack)
 
 
 if __name__ == '__main__':

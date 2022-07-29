@@ -1,4 +1,5 @@
 import sys
+import warnings
 
 
 class System:
@@ -169,6 +170,8 @@ def save_attrs(elements: [], attrs: [str]) -> None:
             if hasattr(element, attr):
                 value = getattr(element, attr)
                 setattr(element, "_saved_" + attr, value)
+            else:
+                warnings.warn(f"Warning, element {element} does not have attribute {attr}")
 
 
 def restore_attrs(elements: [], attrs: [str]) -> None:

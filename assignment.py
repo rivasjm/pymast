@@ -171,7 +171,7 @@ class HOPAssignment:
                 task.wcrt = sys.float_info.max
 
 
-def walk_random_priorities(system: System, breadth, depth, callback):
+def walk_random_priorities(system: System, breadth, depth, callback, verbose=False):
     # it must have at least one processor with more than 1 task
     procs = [p for p in system.processors if len(p.tasks) > 1]
     if len(procs) < 1:
@@ -180,8 +180,12 @@ def walk_random_priorities(system: System, breadth, depth, callback):
     random = Random()
     save_assignment(system)  # back up current priorities
 
+    if verbose:
+        print(f"Starting random priority walk [breadth={breadth}, depth={depth}]")
+
     for b in range(breadth):
         restore_assignment(system)
+
         for d in range(depth):
             # pick a random processor that has more than 1 task
             p = random.choice(procs)
@@ -193,7 +197,51 @@ def walk_random_priorities(system: System, breadth, depth, callback):
             t1.priority, t2.priority = t2.priority, t1.priority
 
             # apply callback on this system
+            if verbose:
+                print(f"Random priority walk: breadth={b}, depth={d}")
+
             if callback:
                 callback(system)
 
     restore_assignment(system)  # restore initial priorities
+
+
+def walk_random_priorities_processors(system: System, breadth, depth, callback, verbose=False):
+    # it must have more than one processor with more than 1 task
+    procs = [p for p in system.processors if len(p.tasks) > 1]
+    if len(procs) <= 1:
+        return
+
+    random = Random()
+    save_attrs(system.tasks, ["processor", "priority"])
+
+    if verbose:
+        print(f"Starting random priority/processor walk [breadth={breadth}, depth={depth}]")
+
+    for b in range(breadth):
+        restore_attrs(system.tasks, ["processor", "priority"])
+
+        for d in range(depth):
+            # there is a 50% change of either swapping priorities
+            # or swapping processors
+
+            if random.random() < 0.5:
+                # swap priorities
+                p = random.choice(procs)
+                t1, t2 = random.sample(p.tasks, 2)
+                t1.priority, t2.priority = t2.priority, t1.priority
+
+            else:
+                # swap processor mapping
+                p1, p2 = random.sample(procs, 2)
+                t1, t2 = random.choice(p1.tasks), random.choice(p2.tasks)
+                t1.processor, t2.processor = t2.processor, t1.processor
+
+            # apply callback on this system
+            if verbose:
+                print(f"Random priority/processor walk: breadth={b}, depth={d}")
+
+            if callback:
+                callback(system)
+
+    restore_attrs(system.tasks, ["processor", "priority"])

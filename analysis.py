@@ -22,7 +22,7 @@ class LimitFactorReachedException(Exception):
         self.task = task
         self.response_time = response_time
         self.limit = limit
-        self.message = f"\nAnalysis stopped because provisional response time for task {task.name} (R={response_time}) " \
+        self.message = f"Analysis stopped because provisional response time for task {task.name} (R={response_time}) " \
                        f"reached the limit (limit={limit})"
         super().__init__(self.message)
 
@@ -81,6 +81,10 @@ class HolisticAnalyis:
     def _wi(self, p: int, w_prev: float, task: Task) -> float:
         hp = higher_priority(task)
         w = sum(map(lambda t: math.ceil((t.jitter + w_prev)/t.period)*t.wcet, hp)) + p*task.wcet
+
+        provisional_r = w - (p-1)*task.period + task.jitter
+        if provisional_r > task.flow.deadline * self.limit_factor:
+            raise LimitFactorReachedException(task, provisional_r, task.flow.deadline * self.limit_factor)
 
         if math.isclose(w, w_prev):
             return w

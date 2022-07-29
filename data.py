@@ -1,6 +1,8 @@
 import os.path
 
 import numpy as np
+import pandas as pd
+
 from model import System, Processor
 
 
@@ -165,3 +167,12 @@ def get_xy(df, label_name):
     x = df.drop(labels, axis=1).values
     y = df[label_name].values
     return x, y
+
+
+def read_csv(csv_path, clean=True) -> pd.DataFrame:
+    df: pd.DataFrame = pd.read_csv(csv_path)
+    df.drop_duplicates(inplace=True)
+    if clean:
+        df.replace([np.inf, -np.inf], np.nan, inplace=True)
+        df.dropna(how="any", inplace=True)
+    return df
