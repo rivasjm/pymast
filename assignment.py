@@ -15,6 +15,12 @@ def calculate_priorities(system) -> bool:
     return changed
 
 
+def normalize_priorities(system):
+    max_priority = max(map(lambda t: t.priority, system.tasks))
+    for t in system.tasks:
+        t.priority = t.priority/max_priority
+
+
 def save_assignment(system: System):
     save_attrs(system.tasks, ["priority", "local_deadline"])
 
