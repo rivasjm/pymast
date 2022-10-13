@@ -90,3 +90,50 @@ class HolisticAnalyis:
             return w
         else:
             return self._wi(p, w, task)
+
+class HolisticAnalyisProxy:
+    def __init__(self, r_iter=3, max_p=3, w_iter=3):
+        self.r_iter = r_iter
+        self.max_p = max_p
+        self.w_iter = w_iter
+
+    def apply(self, system: System) -> None:
+        init_wcrt(system)
+
+        for _ in range(self.r_iter):
+            for task in system.tasks:
+                self._task_analysis(task)
+
+
+    def _task_analysis(self, task: Task):
+        p = 1
+        rmax = 0
+        for _ in range(self.max_p):
+            wip = self._wi(p, task)
+            r = wip - (p-1)*task.period + task.jitter
+            if r > rmax:
+                rmax = r
+
+            # print(f"id={task.name}, wip={wip}, r={r}, rmax={rmax}, p*T={p*task.period}")
+            p += 1
+
+        task.wcrt = rmax
+
+    @classmethod
+    def _interference_factor(cls, task_own, task_other):
+        pdiff = task_other.priority - task_own.priority
+        factor = cls._sigmoid(pdiff, k=50)
+        return factor
+
+    @staticmethod
+    def _sigmoid(x, k=50):
+        return 1 / (1 + math.exp(-k*x))
+
+    def _wi(self, p: int, task: Task) -> float:
+        wi = p * task.wcet
+        tasks = [t for t in task.processor.tasks if t != task]
+
+        for _ in range(self.w_iter):
+            wi = sum(map(lambda t: ((t.jitter + wi)/t.period)*t.wcet*self._interference_factor(task, t), tasks)) + p*task.wcet
+
+        return wi

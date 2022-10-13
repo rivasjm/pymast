@@ -53,6 +53,10 @@ class System:
         slacks = [flow.slack for flow in self.flows]
         return min(slacks) if len(slacks) > 0 else sys.float_info.min
 
+    @property
+    def avg_flow_wcrt(self):
+        return sum(map(lambda f: f.wcrt, self.flows))/len(self.flows)
+
 
 class Processor:
     def __init__(self, name):

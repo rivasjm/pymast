@@ -171,13 +171,13 @@ class HOPAssignment:
                 task.wcrt = sys.float_info.max
 
 
-def walk_random_priorities(system: System, breadth, depth, callback, verbose=False):
+def walk_random_priorities(system: System, breadth, depth, callback, verbose=False, seed=None):
     # it must have at least one processor with more than 1 task
     procs = [p for p in system.processors if len(p.tasks) > 1]
     if len(procs) < 1:
         return
 
-    random = Random()
+    random = Random(seed)
     save_assignment(system)  # back up current priorities
 
     if verbose:
