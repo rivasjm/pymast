@@ -1,25 +1,14 @@
-import matplotlib.pyplot as plt
-import numpy as np
-
-from examples import get_palencia_system, get_barely_schedulable
-from analysis import HolisticAnalyis, reset_wcrt
-from assignment import PDAssignment, walk_random_priorities, normalize_priorities
 from random import Random
+from analysis import HolisticAnalyis
+from assignment import PDAssignment, normalize_priorities
 from generator import generate_system
 from gradient_descent import *
 
 
-def callback(system):
-    holistic = HolisticAnalyis()
-    system.apply(holistic)
-    art = system.avg_flow_wcrt
-    print(f"art={art}", end="")
-
-
 if __name__ == '__main__':
+    # create a system
     random = Random(123)
-    shape = (4, 5, 3)
-    n_flows, t_tasks, n_procs = shape
+    n_flows, t_tasks, n_procs = (4, 5, 3)
     system = generate_system(random,
                              n_flows=n_flows,
                              n_tasks=t_tasks,
@@ -30,9 +19,15 @@ if __name__ == '__main__':
                              deadline_factor_min=0.5,
                              deadline_factor_max=1)
 
+    # initial priority assignment
     pd = PDAssignment()
-    pd.apply(system)
+    system.apply(pd)
     normalize_priorities(system)
 
+    # prepare GDPA
     proxy = HolisticAnalysisProxy(r_iter=3, max_p=3, w_iter=3, sigmoid_k=50)
-    gradient_descent(system, proxy, rate=0.001, delta=0.1, callback=callback)
+    analysis = HolisticAnalyis()
+    gdpa = GDPA(proxy=proxy, rate=0.001, delta=0.01, analysis=analysis, verbose=True)
+
+    # launch GDPA
+    system.apply(gdpa)

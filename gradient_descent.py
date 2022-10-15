@@ -55,48 +55,91 @@ class HolisticAnalysisProxy:
         return factor
 
 
-def proxy_cost(system, proxy) -> float:
+def avg_wcrt(system) -> float:
+    return system.avg_flow_wcrt
+
+
+def weighted_avg_wcrt(system) -> float:
+    ws = [math.exp(-f.slack) for f in system.flows]
+    num = sum([flow.wcrt*w for flow, w in zip(system.flows, ws)])
+    return num/sum(ws)
+
+
+def calculate_cost(system, analysis, cost_fn) -> float:
     save_wcrt(system)
-    proxy.apply(system)
-    cost = system.avg_flow_wcrt
+    analysis.apply(system)
+    cost = cost_fn(system)
     restore_wcrt(system)
     return cost
 
 
-def calculate_gradients(system, proxy, delta=0.01) -> [float]:
+def calculate_gradients(system, proxy, delta=0.01, cost_fn=weighted_avg_wcrt) -> [float]:
     coeffs = []
     for task in system.tasks:
         priority = task.priority
         task.priority = priority - delta
-        a = proxy_cost(system, proxy)
+        a = calculate_cost(system, proxy, cost_fn)
         task.priority = priority + delta
-        b = proxy_cost(system, proxy)
+        b = calculate_cost(system, proxy, cost_fn)
         task.priority = priority
         diff = (b-a) / (2*delta)
         coeffs.append(diff)
     return coeffs
 
 
-def gradient_descent(system, proxy, iter=100, rate=0.0001, delta=0.01, callback=None):
-    tasks = system.tasks
-    min_cost = proxy_cost(system, proxy)
-    save_assignment(system)
-    print(f"Iteration=-1, cost={min_cost}")
+class GDPA:
+    def __init__(self, proxy, iterations=100, rate=0.0001, delta=0.01, analysis=None, verbose=False):
+        self.proxy = proxy
+        self.iterations = iterations if iterations > 0 else 1
+        self.rate = rate if rate > 0 else 0.0001
+        self.delta = delta if delta > 0 else 0.01
+        self.analysis = analysis
+        self.verbose = verbose
 
-    for i in range(iter):
-        coeffs = calculate_gradients(system, proxy, delta)
-        for task, coeff in zip(tasks, coeffs):
-            task.priority += task.priority*-coeff*rate
+    def _iteration_metrics(self, system, cost_fn):
+        system.apply(self.analysis if self.analysis else self.proxy)
+        cost = cost_fn(system)
+        schedulable = system.is_schedulable() if self.analysis else None
+        slack = system.slack if self.analysis else None
+        return cost, schedulable, slack
 
-        cost = proxy_cost(system, proxy)
-        print(f"Iteration={i}, min_cost={min_cost}, cost={cost}", end=" ")
+    @staticmethod
+    def _print_iteration_metrics(iteration, cost, min_cost, schedulable, slack):
+        msg = f"iteration={iteration}, cost={cost}, min_cost={min_cost}"
+        if slack is not None:
+            msg += f", slack={slack}"
+        if schedulable is not None:
+            msg += f", schedulable={schedulable}"
+        print(msg)
 
-        if callback:
-            callback(system)
+    def apply(self, system: System):
+        # calculate initial metrics. Uses real analysis if available, proxy otherwise
+        cost, schedulable, slack = self._iteration_metrics(system, cost_fn=weighted_avg_wcrt)
+        min_cost = cost
 
-        print("")
-        if cost < min_cost:
-            min_cost = cost
-            save_assignment(system)
+        if self.verbose:
+            self._print_iteration_metrics(-1, cost, min_cost, schedulable, slack)
 
-    restore_assignment(system)
+        tasks = system.tasks
+        for i in range(self.iterations):
+            # update priorities using gradient descent and the proxy analysis function
+            # I cannot use the real analysis here, because it is not smooth
+            coeffs = calculate_gradients(system, self.proxy, self.delta, cost_fn=weighted_avg_wcrt)
+            for task, coeff in zip(tasks, coeffs):
+                task.priority += task.priority * -coeff * self.rate
+
+            # calculate current metrics. Uses real analysis if available, proxy otherwise
+            cost, schedulable, slack = self._iteration_metrics(system, cost_fn=weighted_avg_wcrt)
+            if cost < min_cost:
+                min_cost = cost
+                save_assignment(system)
+
+            if self.verbose:
+                self._print_iteration_metrics(i, cost, min_cost, schedulable, slack)
+
+        # restore the best priority assignment found
+        restore_assignment(system)
+
+
+
+

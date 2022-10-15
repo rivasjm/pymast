@@ -23,6 +23,7 @@ class System:
 
     def apply(self, function):
         function.apply(self)
+        return self
 
     @property
     def tasks(self):

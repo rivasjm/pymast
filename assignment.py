@@ -58,7 +58,7 @@ class HOPAssignment:
         return [(2.0, 2.0), (1.8, 1.8), (3.0, 3.0), (1.5, 1.5)]
 
     def apply(self, system: System):
-        patience = self.patience if self.patience >= 0 else 1000
+        patience = self.patience if self.patience >= 0 else 100
         over_iterations = self.over_iterations
         stop = False
         optimizing = False
