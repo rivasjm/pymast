@@ -1,3 +1,4 @@
+
 from random import Random
 from model import *
 
@@ -29,10 +30,26 @@ def restore_assignment(system: System):
     restore_attrs(system.tasks, ["priority", "local_deadline"])
 
 
+class RandomAssignment:
+    def __init__(self, random):
+        self.random = random
+
+    def apply(self, system: System):
+        tasks = system.tasks
+        self.random.shuffle(tasks)
+        for task, priority in zip(tasks, range(1, len(tasks)+1)):
+            task.priority = priority
+
+
 class PDAssignment:
+    def __init__(self, normalize=False):
+        self.normalize = normalize
+
     def apply(self, system: System):
         PDAssignment.calculate_local_deadlines(system)
         calculate_priorities(system)
+        if self.normalize:
+            normalize_priorities(system)
 
     @staticmethod
     def calculate_local_deadlines(system):
@@ -44,7 +61,8 @@ class PDAssignment:
 
 
 class HOPAssignment:
-    def __init__(self, analysis, iterations=40, k_pairs=None, patience=1000, over_iterations=0, callback=None, verbose=False):
+    def __init__(self, analysis, iterations=40, k_pairs=None, patience=10, over_iterations=0,
+                 callback=None, normalize=False, verbose=False):
         self.analysis = analysis
         self.k_pairs = k_pairs if k_pairs else HOPAssignment.default_k_pairs()
         self.iterations = iterations
@@ -52,6 +70,7 @@ class HOPAssignment:
         self.over_iterations = over_iterations
         self.callback = callback
         self.verbose = verbose
+        self.normalize = normalize
 
     @staticmethod
     def default_k_pairs():
@@ -115,6 +134,8 @@ class HOPAssignment:
         if self.verbose:
             sched = "SCHEDULABLE" if system.is_schedulable() else "NOT SCHEDULABLE"
             print(f"Returning best assignment: slack={system.slack} {sched}")
+        if self.normalize:
+            normalize_priorities(system)
 
     def update_local_deadlines(self, system: System, ka, kr):
         # update excesses with last response times

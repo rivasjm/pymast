@@ -22,7 +22,7 @@ def hopa_vs_pd():
         hopa_scheds = 0
         pd_scheds = 0
 
-        for i in range(100):
+        for i in range(20):
             print(f"utilization={utilization}, i={i}", end="")
 
             system = generate_system(random,

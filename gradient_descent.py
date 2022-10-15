@@ -1,5 +1,5 @@
 from analysis import init_wcrt, save_wcrt, restore_wcrt
-from assignment import save_assignment, restore_assignment
+from assignment import save_assignment, restore_assignment, PDAssignment
 from model import *
 import math
 
@@ -69,6 +69,12 @@ def invslack(system) -> float:
     return sum([(flow.wcrt-flow.deadline)/flow.deadline for flow in system.flows])
 
 
+def weighted_invslack(system) -> float:
+    coeffs = [math.exp(-flow.slack) for flow in system.flows]
+    num = sum([(flow.wcrt-flow.deadline)/flow.deadline for flow, c in zip(system.flows, coeffs)])
+    return num/sum(coeffs)
+
+
 def calculate_proxy_cost(system, proxy, cost_fn) -> float:
     save_wcrt(system)
     proxy.apply(system)
@@ -93,12 +99,13 @@ def calculate_gradients(system, proxy, cost_fn, delta=0.01) -> [float]:
 
 class GDPA:
     def __init__(self, proxy, iterations=100, rate=0.0001, delta=0.01, analysis=None,
-                 cost_fn=invslack, verbose=False):
+                 initial=PDAssignment(normalize=True), cost_fn=invslack, verbose=False):
         self.proxy = proxy
         self.iterations = iterations if iterations > 0 else 1
         self.rate = rate if rate > 0 else 0.0001
         self.delta = delta if delta > 0 else 0.01
         self.analysis = analysis
+        self.initial = initial
         self.verbose = verbose
         self.cost_fn = cost_fn
 
@@ -122,11 +129,15 @@ class GDPA:
 
     def apply(self, system: System):
         # calculate initial metrics. Uses real analysis if available, proxy otherwise
+        system.apply(self.initial)
         cost, proxy_cost, schedulable, slack = self._iteration_metrics(system)
         min_cost = cost
 
         if self.verbose:
             self._print_iteration_metrics(0, cost, proxy_cost, min_cost, schedulable, slack)
+
+        if schedulable:
+            return
 
         tasks = system.tasks
         for i in range(1, self.iterations):
@@ -145,9 +156,8 @@ class GDPA:
             if self.verbose:
                 self._print_iteration_metrics(i, cost, proxy_cost, min_cost, schedulable, slack)
 
+            if schedulable:
+                break
+
         # restore the best priority assignment found
         restore_assignment(system)
-
-
-
-

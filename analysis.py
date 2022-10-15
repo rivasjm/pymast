@@ -36,9 +36,10 @@ class LimitFactorReachedException(Exception):
 
 
 class HolisticAnalyis:
-    def __init__(self, limit_factor = 10, reset=True):
+    def __init__(self, limit_factor=10, reset=True, verbose=False):
         self.limit_factor = limit_factor
         self.reset = reset
+        self.verbose = verbose
 
     def apply(self, system: System) -> None:
         init_wcrt(system)
@@ -52,7 +53,8 @@ class HolisticAnalyis:
                     break
 
         except LimitFactorReachedException as e:
-            print(e.message)
+            if self.verbose:
+                print(e.message)
             if self.reset:
                 reset_wcrt(system)
             else:
