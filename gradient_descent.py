@@ -66,7 +66,7 @@ def weighted_avg_wcrt(system) -> float:
 
 
 def invslack(system) -> float:
-    return sum([flow.wcrt-flow.deadline for flow in system.flows])
+    return sum([(flow.wcrt-flow.deadline)/flow.deadline for flow in system.flows])
 
 
 def calculate_proxy_cost(system, proxy, cost_fn) -> float:
@@ -93,7 +93,7 @@ def calculate_gradients(system, proxy, cost_fn, delta=0.01) -> [float]:
 
 class GDPA:
     def __init__(self, proxy, iterations=100, rate=0.0001, delta=0.01, analysis=None,
-                 cost_fn=avg_wcrt, verbose=False):
+                 cost_fn=invslack, verbose=False):
         self.proxy = proxy
         self.iterations = iterations if iterations > 0 else 1
         self.rate = rate if rate > 0 else 0.0001
@@ -111,14 +111,14 @@ class GDPA:
         return cost, proxy_cost, schedulable, slack
 
     @staticmethod
-    def _print_iteration_metrics(iteration, cost, proxy_cost, min_cost, schedulable, slack):
+    def _print_iteration_metrics(iteration, cost, proxy_cost, min_cost, schedulable, slack, end="\n"):
         msg = f"{iteration}: proxy={proxy_cost:.2f} [cost={cost:.2f}, best={min_cost:.2f}"
         if slack is not None:
             msg += f", slack={slack:.2f}"
         if schedulable is not None:
             msg += f", schedulable={schedulable}"
         msg += "]"
-        print(msg)
+        print(msg, end=end)
 
     def apply(self, system: System):
         # calculate initial metrics. Uses real analysis if available, proxy otherwise
@@ -126,10 +126,10 @@ class GDPA:
         min_cost = cost
 
         if self.verbose:
-            self._print_iteration_metrics("i", cost, proxy_cost, min_cost, schedulable, slack)
+            self._print_iteration_metrics(0, cost, proxy_cost, min_cost, schedulable, slack)
 
         tasks = system.tasks
-        for i in range(self.iterations):
+        for i in range(1, self.iterations):
             # update priorities using gradient descent and the proxy analysis function
             # I cannot use the real analysis here, because it is not smooth
             coeffs = calculate_gradients(system, self.proxy, cost_fn=self.cost_fn, delta=self.delta)

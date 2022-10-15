@@ -27,7 +27,7 @@ if __name__ == '__main__':
     # prepare GDPA
     proxy = HolisticAnalysisProxy(r_iter=3, max_p=3, w_iter=3, sigmoid_k=50)
     analysis = HolisticAnalyis()
-    gdpa = GDPA(proxy=proxy, rate=0.001, delta=0.01, analysis=analysis, verbose=True, iterations=10,
+    gdpa = GDPA(proxy=proxy, rate=0.3, delta=0.01, analysis=analysis, verbose=True, iterations=20,
                 cost_fn=invslack)
 
     # launch GDPA
