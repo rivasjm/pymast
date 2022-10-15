@@ -13,38 +13,39 @@ def max_utilization():
     analysis = HolisticAnalyis(reset=False)
     pd = PDAssignment()
     hopa = HOPAssignment(analysis=analysis)
-    gdpa = GDPA(proxy=proxy, rate=1, delta=0.001, verbose=False,
-                iterations=20, cost_fn=weighted_invslack)
-    gdpa_hopa = GDPA(proxy=proxy, rate=1, delta=0.001, verbose=False,
-                     iterations=20, cost_fn=weighted_invslack, initial=HOPAssignment(analysis=analysis, normalize=True))
+    gdpa = GDPA(proxy=analysis, rate=0.4, delta=0.2, verbose=False,
+                iterations=20, cost_fn=invslack, analysis=analysis)
+    gdpa_h = GDPA(proxy=analysis, rate=0.4, delta=0.2, verbose=False, analysis=analysis,
+                     iterations=20, cost_fn=invslack, initial=HOPAssignment(analysis=analysis, normalize=True))
 
-    random = Random(10)
-    pop = 5
-    utilizations = np.linspace(0.5, 0.8, pop)
-    pds, hopas, gdpas, gdpa_hopas = 0, 0, 0, 0
+    random = Random(123)
+    n = 20
+    utilizations = np.linspace(0.5, 0.90, n)
+    pds, hopas, gdpas, gdpahs = n*[0], n*[0], n*[0], n*[0]
+    print(utilizations)
 
-    for i in range(10):
-        print(i)
-        template = get_big_system(random)
-        systems = create_series(template, utilizations)
+    for i, u in enumerate(utilizations):
+        for r in range(100):
+            system = get_medium_system(random)
+            set_utilization(system, u)
 
-        pd_limit = max_schedulable_utilization(systems, pd, analysis)
-        pds += pd_limit
-        print(f"PD={pd_limit:.2f}")
+            print(f"u={u:0.2f} r={r}")
+            if achieves_schedulability(system, pd, analysis):
+                pds[i] += 1
+            if achieves_schedulability(system, hopa, analysis):
+                hopas[i] += 1
+            if achieves_schedulability(system, gdpa, analysis):
+                gdpas[i] += 1
+            if achieves_schedulability(system, gdpa_h, analysis):
+                gdpahs[i] += 1
 
-        hopa_limit = max_schedulable_utilization(systems, hopa, analysis)
-        hopas += hopa_limit
-        print(f"HOPA={hopa_limit:.2f}")
-
-        gdpa_limit = max_schedulable_utilization(systems, gdpa, analysis)
-        gdpas += gdpa_limit
-        print(f"GDPA={gdpa_limit:.2f}")
-
-        gdpa_h_limit = max_schedulable_utilization(systems, gdpa_hopa, analysis)
-        gdpa_hopas += gdpa_h_limit
-        print(f"GDPA-H={gdpa_h_limit:.2f}")
-
-    print(f"PD={pds/20} HOPA={hopas/20} GDPA={gdpas/20} GDPA_HOPA={gdpa_hopas/20}")
+    # chart
+    fig, ax = plt.subplots()
+    ax.plot(utilizations, pds, color="red")
+    ax.plot(utilizations, hopas, color="green")
+    ax.plot(utilizations, gdpas, color="blue")
+    ax.plot(utilizations, gdpahs, color="black")
+    fig.show()
 
 
 def max_schedulable_utilization(systems, assignment, analysis) -> float:

@@ -66,7 +66,7 @@ def weighted_avg_wcrt(system) -> float:
 
 
 def invslack(system) -> float:
-    return sum([(flow.wcrt-flow.deadline)/flow.deadline for flow in system.flows])
+    return max([(flow.wcrt-flow.deadline)/flow.deadline for flow in system.flows])
 
 
 def weighted_invslack(system) -> float:
@@ -98,7 +98,7 @@ def calculate_gradients(system, proxy, cost_fn, delta=0.01) -> [float]:
 
 
 class GDPA:
-    def __init__(self, proxy, iterations=100, rate=0.0001, delta=0.01, analysis=None,
+    def __init__(self, proxy, iterations=100, rate=0.0001, delta=0.01, analysis=None, over_iterations=0,
                  initial=PDAssignment(normalize=True), cost_fn=invslack, verbose=False):
         self.proxy = proxy
         self.iterations = iterations if iterations > 0 else 1
@@ -108,6 +108,7 @@ class GDPA:
         self.initial = initial
         self.verbose = verbose
         self.cost_fn = cost_fn
+        self.over_iterations = over_iterations
 
     def _iteration_metrics(self, system):
         system.apply(self.analysis if self.analysis else self.proxy)
@@ -128,6 +129,9 @@ class GDPA:
         print(msg, end=end)
 
     def apply(self, system: System):
+        optimizing = False
+        over_iterations = self.over_iterations
+
         # calculate initial metrics. Uses real analysis if available, proxy otherwise
         system.apply(self.initial)
         cost, proxy_cost, schedulable, slack = self._iteration_metrics(system)
@@ -137,7 +141,10 @@ class GDPA:
             self._print_iteration_metrics(0, cost, proxy_cost, min_cost, schedulable, slack)
 
         if schedulable:
-            return
+            optimizing = True
+            over_iterations -= 1
+            if over_iterations < 0:
+                return
 
         tasks = system.tasks
         for i in range(1, self.iterations):
@@ -157,6 +164,12 @@ class GDPA:
                 self._print_iteration_metrics(i, cost, proxy_cost, min_cost, schedulable, slack)
 
             if schedulable:
+                optimizing = True
+
+            if optimizing:
+                over_iterations -= 1
+
+            if optimizing and over_iterations < 0:
                 break
 
         # restore the best priority assignment found

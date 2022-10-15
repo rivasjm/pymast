@@ -1,6 +1,6 @@
 from random import Random
 from analysis import HolisticAnalyis
-from assignment import PDAssignment, RandomAssignment, normalize_priorities
+from assignment import PDAssignment, RandomAssignment, normalize_priorities, HOPAssignment, walk_random_priorities
 from generator import generate_system, set_utilization
 from gradient_descent import *
 from examples import *
@@ -24,10 +24,32 @@ def test_medium():
     proxy = HolisticAnalysisProxy(r_iter=3, max_p=3, w_iter=3, sigmoid_k=20)
     analysis = HolisticAnalyis(reset=False)
     gdpa = GDPA(proxy=proxy, rate=1, delta=0.001, analysis=analysis, verbose=True, iterations=20,
-                cost_fn=weighted_invslack)
+                cost_fn=avg_wcrt, over_iterations=10)
 
     # launch GDPA
     system.apply(gdpa)
+
+
+def test_barely():
+    system = get_barely_schedulable()
+
+    # prepare GDPA
+    proxy = HolisticAnalysisProxy(r_iter=5, max_p=5, w_iter=5, sigmoid_k=10)
+    analysis = HolisticAnalyis(reset=False)
+    hopa = HOPAssignment(analysis, verbose=True, normalize=True)
+    gdpa = GDPA(proxy=analysis, rate=0.4, delta=0.2, analysis=analysis, verbose=True, iterations=20,
+                cost_fn=invslack, over_iterations=10, initial=hopa)
+
+    # launch
+    system.apply(gdpa)
+    # walk_random_priorities(system, 20, 2, callback=analyze_cb)
+
+
+def analyze_cb(system):
+    analysis = HolisticAnalyis(reset=False)
+    analysis.apply(system)
+    sched = "SCHEDULABLE" if system.is_schedulable() else "NOT SCHEDULABLE"
+    print(f"slack={system.slack} {sched}")
 
 
 def test_big():
@@ -40,11 +62,11 @@ def test_big():
     proxy = HolisticAnalysisProxy(r_iter=3, max_p=3, w_iter=3, sigmoid_k=20)
     analysis = HolisticAnalyis(reset=False)
     gdpa = GDPA(proxy=proxy, rate=1, delta=0.001, analysis=analysis, verbose=True, iterations=20,
-                cost_fn=weighted_invslack)
+                cost_fn=weighted_invslack, over_iterations=10)
 
     # launch GDPA
     system.apply(gdpa)
 
 
 if __name__ == '__main__':
-    test_big()
+    test_barely()
