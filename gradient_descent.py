@@ -97,18 +97,52 @@ def calculate_gradients(system, proxy, cost_fn, delta=0.01) -> [float]:
     return coeffs
 
 
+def avg_parameter_separation(params):
+    seps = [abs(params[i+1]-params[i]) for i in range(len(params)-1)]
+    return sum(seps)/len(seps)
+
+
+class Adam:
+    def __init__(self, lr=0.1, beta1=0.9, beta2=0.999, epsilon=10**-8):
+        self.size = None
+        self.m = None
+        self.v = None
+        self.lr = lr
+        self.beta1 = beta1
+        self.beta2 = beta2
+        self.epsilon = epsilon
+
+    def step(self, coeffs, iteration) -> [float]:
+        if not self.size:
+            self.size = len(coeffs)
+            self.m = [0]*self.size
+            self.v = [0]*self.size
+
+        updates = [0]*self.size
+        for i in range(self.size):
+            self.m[i] = self.beta1 * self.m[i] + (1 + self.beta1) * coeffs[i]
+            self.v[i] = self.beta2 * self.v[i] + (1 + self.beta2) * coeffs[i] ** 2
+
+            me = self.m[i] / (1 - self.beta1 ** iteration)
+            ve = self.v[i] / (1 - self.beta2 ** iteration)
+
+            updates[i] = -self.lr*me/(math.sqrt(ve)+self.epsilon)
+
+        return updates
+
+
 class GDPA:
-    def __init__(self, proxy, iterations=100, rate=0.0001, delta=0.01, analysis=None, over_iterations=0,
-                 initial=PDAssignment(normalize=True), cost_fn=invslack, verbose=False):
+    def __init__(self, proxy, iterations=100, delta=0.01, analysis=None, over_iterations=0,
+                 optimizer=Adam(), initial=PDAssignment(normalize=True), cost_fn=invslack, verbose=False):
         self.proxy = proxy
         self.iterations = iterations if iterations > 0 else 1
-        self.rate = rate if rate > 0 else 0.0001
         self.delta = delta if delta > 0 else 0.01
         self.analysis = analysis
         self.initial = initial
         self.verbose = verbose
         self.cost_fn = cost_fn
         self.over_iterations = over_iterations
+        self.optimizer = optimizer
 
     def _iteration_metrics(self, system):
         system.apply(self.analysis if self.analysis else self.proxy)
@@ -133,9 +167,10 @@ class GDPA:
         over_iterations = self.over_iterations
 
         # calculate initial metrics. Uses real analysis if available, proxy otherwise
-        system.apply(self.initial)
+        self.initial.apply(system)
         cost, proxy_cost, schedulable, slack = self._iteration_metrics(system)
         min_cost = cost
+        self.delta = avg_parameter_separation([task.priority for task in system.tasks])
 
         if self.verbose:
             self._print_iteration_metrics(0, cost, proxy_cost, min_cost, schedulable, slack)
@@ -149,10 +184,10 @@ class GDPA:
         tasks = system.tasks
         for i in range(1, self.iterations):
             # update priorities using gradient descent and the proxy analysis function
-            # I cannot use the real analysis here, because it is not smooth
             coeffs = calculate_gradients(system, self.proxy, cost_fn=self.cost_fn, delta=self.delta)
-            for task, coeff in zip(tasks, coeffs):
-                task.priority += task.priority * -coeff * self.rate
+            updates = self.optimizer.step(coeffs, i)
+            for task, update in zip(tasks, updates):
+                task.priority += update
 
             # calculate current metrics. Uses real analysis if available, proxy otherwise
             cost, proxy_cost, schedulable, slack = self._iteration_metrics(system)

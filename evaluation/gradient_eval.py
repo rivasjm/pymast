@@ -37,7 +37,7 @@ def test_barely():
     proxy = HolisticAnalysisProxy(r_iter=5, max_p=5, w_iter=5, sigmoid_k=10)
     analysis = HolisticAnalyis(reset=False)
     hopa = HOPAssignment(analysis, verbose=True, normalize=True)
-    gdpa = GDPA(proxy=analysis, rate=0.4, delta=0.2, analysis=analysis, verbose=True, iterations=20,
+    gdpa = GDPA(proxy=analysis, delta=0.2, analysis=analysis, verbose=True, iterations=20,
                 cost_fn=invslack, over_iterations=10, initial=hopa)
 
     # launch
@@ -61,7 +61,7 @@ def test_big():
     # prepare GDPA
     proxy = HolisticAnalysisProxy(r_iter=3, max_p=3, w_iter=3, sigmoid_k=20)
     analysis = HolisticAnalyis(reset=False)
-    gdpa = GDPA(proxy=proxy, rate=1, delta=0.001, analysis=analysis, verbose=True, iterations=20,
+    gdpa = GDPA(proxy=proxy, delta=0.001, analysis=analysis, verbose=True, iterations=20,
                 cost_fn=weighted_invslack, over_iterations=10)
 
     # launch GDPA
