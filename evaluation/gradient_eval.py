@@ -32,13 +32,17 @@ def test_medium():
 
 def test_barely():
     system = get_barely_schedulable()
+    random = Random(2)
 
     # prepare GDPA
     proxy = HolisticAnalysisProxy(r_iter=5, max_p=5, w_iter=5, sigmoid_k=10)
     analysis = HolisticAnalyis(reset=False)
     hopa = HOPAssignment(analysis, verbose=True, normalize=True)
-    gdpa = GDPA(proxy=analysis, delta=0.2, analysis=analysis, verbose=True, iterations=20,
-                cost_fn=invslack, over_iterations=10, initial=hopa)
+    rnd = RandomAssignment(normalize=True, random=random)
+    pd = PDAssignment(normalize=True)
+    adam = Adam(lr=0.2, beta1=0.9, beta2=0.999)
+    gdpa = GDPA(proxy=analysis, analysis=analysis, verbose=True, iterations=200,
+                cost_fn=invslack, over_iterations=100, initial=rnd, optimizer=adam)
 
     # launch
     system.apply(gdpa)

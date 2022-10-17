@@ -1,5 +1,5 @@
 from analysis import init_wcrt, save_wcrt, restore_wcrt
-from assignment import save_assignment, restore_assignment, PDAssignment
+from assignment import save_assignment, restore_assignment, PDAssignment, normalize_priorities
 from model import *
 import math
 
@@ -102,8 +102,16 @@ def avg_parameter_separation(params):
     return sum(seps)/len(seps)
 
 
+def keep_max(values: []):
+    m = max(values)
+    i = values.index(m)
+    r = [0]*len(values)
+    r[i] = m
+    return r
+
+
 class Adam:
-    def __init__(self, lr=0.1, beta1=0.9, beta2=0.999, epsilon=10**-8):
+    def __init__(self, lr=0.2, beta1=0.9, beta2=0.999, epsilon=10**-8):
         self.size = None
         self.m = None
         self.v = None
@@ -119,6 +127,7 @@ class Adam:
             self.v = [0]*self.size
 
         updates = [0]*self.size
+
         for i in range(self.size):
             self.m[i] = self.beta1 * self.m[i] + (1 + self.beta1) * coeffs[i]
             self.v[i] = self.beta2 * self.v[i] + (1 + self.beta2) * coeffs[i] ** 2
@@ -132,17 +141,17 @@ class Adam:
 
 
 class GDPA:
-    def __init__(self, proxy, iterations=100, delta=0.01, analysis=None, over_iterations=0,
+    def __init__(self, proxy, iterations=100, analysis=None, over_iterations=0,
                  optimizer=Adam(), initial=PDAssignment(normalize=True), cost_fn=invslack, verbose=False):
         self.proxy = proxy
         self.iterations = iterations if iterations > 0 else 1
-        self.delta = delta if delta > 0 else 0.01
         self.analysis = analysis
         self.initial = initial
         self.verbose = verbose
         self.cost_fn = cost_fn
         self.over_iterations = over_iterations
         self.optimizer = optimizer
+        self.delta = 0
 
     def _iteration_metrics(self, system):
         system.apply(self.analysis if self.analysis else self.proxy)
@@ -170,7 +179,6 @@ class GDPA:
         self.initial.apply(system)
         cost, proxy_cost, schedulable, slack = self._iteration_metrics(system)
         min_cost = cost
-        self.delta = avg_parameter_separation([task.priority for task in system.tasks])
 
         if self.verbose:
             self._print_iteration_metrics(0, cost, proxy_cost, min_cost, schedulable, slack)
@@ -184,10 +192,12 @@ class GDPA:
         tasks = system.tasks
         for i in range(1, self.iterations):
             # update priorities using gradient descent and the proxy analysis function
+            self.delta = avg_parameter_separation([task.priority for task in system.tasks])
             coeffs = calculate_gradients(system, self.proxy, cost_fn=self.cost_fn, delta=self.delta)
             updates = self.optimizer.step(coeffs, i)
             for task, update in zip(tasks, updates):
                 task.priority += update
+            normalize_priorities(system)
 
             # calculate current metrics. Uses real analysis if available, proxy otherwise
             cost, proxy_cost, schedulable, slack = self._iteration_metrics(system)

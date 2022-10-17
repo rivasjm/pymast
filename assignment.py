@@ -31,14 +31,17 @@ def restore_assignment(system: System):
 
 
 class RandomAssignment:
-    def __init__(self, random):
+    def __init__(self, random=Random(), normalize=False):
         self.random = random
+        self.normalize = normalize
 
     def apply(self, system: System):
         tasks = system.tasks
         self.random.shuffle(tasks)
         for task, priority in zip(tasks, range(1, len(tasks)+1)):
             task.priority = priority
+        if self.normalize:
+            normalize_priorities(system)
 
 
 class PDAssignment:
