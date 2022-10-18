@@ -6,6 +6,7 @@ import numpy as np
 from examples import get_medium_system
 from random import Random
 from multiprocessing import Pool
+from datetime import datetime
 
 
 lrs = [0.01, 0.1, 0.2]
@@ -36,7 +37,7 @@ def parameters_comparison():
 
 def overview(i, names, results):
     np.savetxt(f"gdpa_eval_{i}.csv", results, delimiter=",", header=" | ".join(names))
-    print(f"Population={i}")
+    print(f"{datetime.now()} : population={i}")
     for name, res in zip(names, results):
         print(f"  {name} = {res}")
 
@@ -46,7 +47,6 @@ def step(system):
     sched_test = get_sched_test()
     results = np.zeros(len(assigs))
     for a, assig in enumerate(assigs):
-        print(f"{names[a]}")
         if achieves_schedulability(system, assig, sched_test):
             results[a] += 1
     return results
