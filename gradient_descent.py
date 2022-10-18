@@ -129,6 +129,9 @@ class Adam:
         updates = [0]*self.size
 
         for i in range(self.size):
+
+
+
             self.m[i] = self.beta1 * self.m[i] + (1 + self.beta1) * coeffs[i]
             self.v[i] = self.beta2 * self.v[i] + (1 + self.beta2) * coeffs[i] ** 2
 
@@ -141,7 +144,7 @@ class Adam:
 
 
 class GDPA:
-    def __init__(self, proxy, iterations=100, analysis=None, over_iterations=0,
+    def __init__(self, proxy, iterations=100, analysis=None, over_iterations=0, delta=1,
                  optimizer=Adam(), initial=PDAssignment(normalize=True), cost_fn=invslack, verbose=False):
         self.proxy = proxy
         self.iterations = iterations if iterations > 0 else 1
@@ -151,7 +154,7 @@ class GDPA:
         self.cost_fn = cost_fn
         self.over_iterations = over_iterations
         self.optimizer = optimizer
-        self.delta = 0
+        self.delta = delta
 
     def _iteration_metrics(self, system):
         system.apply(self.analysis if self.analysis else self.proxy)
@@ -192,8 +195,8 @@ class GDPA:
         tasks = system.tasks
         for i in range(1, self.iterations):
             # update priorities using gradient descent and the proxy analysis function
-            self.delta = avg_parameter_separation([task.priority for task in system.tasks])
-            coeffs = calculate_gradients(system, self.proxy, cost_fn=self.cost_fn, delta=self.delta)
+            delta = self.delta*avg_parameter_separation([task.priority for task in system.tasks])
+            coeffs = calculate_gradients(system, self.proxy, cost_fn=self.cost_fn, delta=delta)
             updates = self.optimizer.step(coeffs, i)
             for task, update in zip(tasks, updates):
                 task.priority += update
