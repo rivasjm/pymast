@@ -10,6 +10,9 @@ from multiprocessing import Pool
 
 lrs = [0.01, 0.1, 0.2]
 deltas = [0.75, 1, 1.25]
+beta1s = [0.8, 0.9]
+beta2s = [0.9, 0.99]
+epsilons = [10 ** -8, 0.1]
 population = 50
 utilization = 0.6
 
@@ -17,7 +20,7 @@ utilization = 0.6
 def parameters_comparison():
     random = Random(42)
     systems = [get_medium_system(random, utilization) for _ in range(population)]
-    names, _ = zip(*get_assignments(lrs, deltas))
+    names, _ = zip(*get_assignments(lrs, deltas, beta1s, beta2s, epsilons))
     results = np.zeros(len(names))
 
     i = 0
@@ -32,14 +35,14 @@ def parameters_comparison():
 
 
 def overview(i, names, results):
-    np.savetxt(f"gdpa_eval_{i}.csv", results, delimiter=",", header=" ".join(names))
+    np.savetxt(f"gdpa_eval_{i}.csv", results, delimiter=",", header=" | ".join(names))
     print(f"Population={i}")
     for name, res in zip(names, results):
         print(f"  {name} = {res}")
 
 
 def step(system):
-    names, assigs = zip(*get_assignments(lrs, deltas))
+    names, assigs = zip(*get_assignments(lrs, deltas, beta1s, beta2s, epsilons))
     sched_test = get_sched_test()
     results = np.zeros(len(assigs))
     for a, assig in enumerate(assigs):
@@ -56,16 +59,16 @@ def achieves_schedulability(system, assignment, analysis) -> bool:
     return system.is_schedulable()
 
 
-def get_assignments(lrs, deltas):
+def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
     analysis = HolisticAnalyis(reset=False, limit_factor=5)
-    params = itertools.product(lrs, deltas)
-    assigs = []
+    params = itertools.product(lrs, deltas, beta1s, beta2s, epsilons)
+    assigs = [("pd", PDAssignment(normalize=True))]
 
-    for lr, delta in params:
+    for lr, delta, beta1, beta2, epsilon in params:
         assig = GDPA(proxy=analysis, verbose=False, initial=RandomAssignment(normalize=True),
                      iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
                      optimizer=Adam(lr=lr, beta1=0.9, beta2=0.999, epsilon=10 ** -8))
-        assigs.append((f"lr={lr}_delta={delta}", assig))
+        assigs.append((f"lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}", assig))
 
     return assigs
 
