@@ -40,7 +40,7 @@ def test_barely():
     hopa = HOPAssignment(analysis, verbose=True, normalize=True)
     rnd = RandomAssignment(normalize=True, random=random)
     pd = PDAssignment(normalize=True)
-    adam = Adam(lr=0.2, beta1=0.9, beta2=0.999)
+    adam = Adam(lr=0.1, beta1=0.9, beta2=0.999)
     gdpa = GDPA(proxy=analysis, analysis=analysis, verbose=True, iterations=200,
                 cost_fn=invslack, over_iterations=100, initial=rnd, optimizer=adam)
 

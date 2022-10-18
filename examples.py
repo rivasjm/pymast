@@ -51,7 +51,7 @@ def get_barely_schedulable() -> System:
     return system
 
 
-def get_medium_system(random) -> System:
+def get_medium_system(random=Random()) -> System:
     n_flows, t_tasks, n_procs = (4, 5, 3)
     system = generate_system(random,
                              n_flows=n_flows,
