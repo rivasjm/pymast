@@ -10,12 +10,13 @@ from multiprocessing import Pool
 
 lrs = [0.01, 0.1, 0.2]
 deltas = [0.75, 1, 1.25]
-population = 1
+population = 50
+utilization = 0.6
 
 
 def parameters_comparison():
     random = Random(42)
-    systems = [get_medium_system(random, 0.6) for _ in range(population)]
+    systems = [get_medium_system(random, utilization) for _ in range(population)]
     names, _ = zip(*get_assignments(lrs, deltas))
     results = np.zeros(len(names))
 
@@ -23,17 +24,17 @@ def parameters_comparison():
     with Pool(4) as pool:
         for arr in pool.imap_unordered(step, systems):
             i += 1
-            print(f"Population={i}")
             results += arr
             if i % 5 == 0:
                 overview(i, names, results)
 
-    overview("TOTAL", names, results)
+    overview("final", names, results)
 
 
 def overview(i, names, results):
-    np.savetxt(f"{i}.csv", results, delimiter=",", header=",".join(names))
-    for res, name in zip(names, results):
+    np.savetxt(f"gdpa_eval_{i}.csv", results, delimiter=",", header=" ".join(names))
+    print(f"Population={i}")
+    for name, res in zip(names, results):
         print(f"  {name} = {res}")
 
 
@@ -64,7 +65,7 @@ def get_assignments(lrs, deltas):
         assig = GDPA(proxy=analysis, verbose=False, initial=RandomAssignment(normalize=True),
                      iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
                      optimizer=Adam(lr=lr, beta1=0.9, beta2=0.999, epsilon=10 ** -8))
-        assigs.append((f"lr={lr} delta={delta}", assig))
+        assigs.append((f"lr={lr}_delta={delta}", assig))
 
     return assigs
 
