@@ -9,11 +9,11 @@ from multiprocessing import Pool
 from datetime import datetime
 
 
-lrs = [0.01, 0.1, 0.2]
-deltas = [0.75, 1, 1.25]
+lrs = [0.1, 0.5, 1, 2]
+deltas = [0.5, 1, 1.5]
 beta1s = [0.8, 0.9]
-beta2s = [0.9, 0.99]
-epsilons = [10 ** -8, 0.1]
+beta2s = [0.9, 0.999]
+epsilons = [0.1, 0.01]
 population = 50
 utilization = 0.6
 
@@ -28,15 +28,17 @@ def parameters_comparison():
     with Pool(4) as pool:
         for arr in pool.imap_unordered(step, systems):
             i += 1
+            print(f"population={i}")
             results += arr
             if i % 5 == 0:
                 overview(i, names, results)
 
-    overview("final", names, results)
+    overview("final", names, results, save=True)
 
 
-def overview(i, names, results):
-    np.savetxt(f"gdpa_eval_{i}.csv", results, delimiter=",", header=" | ".join(names))
+def overview(i, names, results, save=False):
+    if save:
+        np.savetxt(f"gdpa_eval_2_{i}.csv", results, delimiter=",", header=" | ".join(names))
     print(f"{datetime.now()} : population={i}")
     for name, res in zip(names, results):
         print(f"  {name} = {res}")
@@ -65,9 +67,9 @@ def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
     assigs = [("pd", PDAssignment(normalize=True))]
 
     for lr, delta, beta1, beta2, epsilon in params:
-        assig = GDPA(proxy=analysis, verbose=False, initial=RandomAssignment(normalize=True),
+        assig = GDPA(proxy=analysis, verbose=False, initial=RandomAssignment(normalize=True, random=Random(123)),
                      iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
-                     optimizer=Adam(lr=lr, beta1=0.9, beta2=0.999, epsilon=10 ** -8))
+                     optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
         assigs.append((f"lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}", assig))
 
     return assigs

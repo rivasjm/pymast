@@ -129,9 +129,6 @@ class Adam:
         updates = [0]*self.size
 
         for i in range(self.size):
-
-
-
             self.m[i] = self.beta1 * self.m[i] + (1 + self.beta1) * coeffs[i]
             self.v[i] = self.beta2 * self.v[i] + (1 + self.beta2) * coeffs[i] ** 2
 
