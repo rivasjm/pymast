@@ -87,7 +87,6 @@ def step(system, index):
     sched_test = get_sched_test()
     results = np.zeros(len(assigs))
     for a, assig in enumerate(assigs):
-        # print(names[a])
         if achieves_schedulability(system, assig, sched_test):
             results[a] += 1
     return results, index
@@ -105,7 +104,7 @@ def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
     params = itertools.product(lrs, deltas, beta1s, beta2s, epsilons)
 
     pd = PDAssignment(normalize=True)
-    hopa = HOPAssignment(normalize=True, analysis=analysis)
+    hopa = HOPAssignment(analysis=analysis, normalize=True)
 
     assigs = [("pd", pd), ("hopa", hopa)]
 
@@ -128,8 +127,24 @@ def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
     return assigs
 
 
+# def special(system):
+#     set_utilization(system, 0.85)
+#
+#     analysis = HolisticAnalyis(reset=False, limit_factor=5)
+#     pd = PDAssignment()
+#     hopa = HOPAssignment(analysis=analysis, verbose=True)
+#
+#     system.apply(pd)
+#     system.apply(analysis)
+#     print(f"pd = {system.is_schedulable()}")
+#
+#     system.apply(hopa)
+#     system.apply(analysis)
+#     print(f"hopa = {system.is_schedulable()}")
+
+
 def get_sched_test():
-    return HolisticAnalyis(reset=False, limit_factor=1)
+    return HolisticAnalyis(limit_factor=1)
 
 
 if __name__ == '__main__':
