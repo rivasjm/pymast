@@ -89,6 +89,7 @@ class HolisticAnalyis:
         return self._wi(p, w_ini, task)
 
     def _wi(self, p: int, w_prev: float, task: Task) -> float:
+        print(p)
         hp = higher_priority(task)
         w = sum(map(lambda t: math.ceil((t.jitter + w_prev)/t.period)*t.wcet, hp)) + p*task.wcet
 
