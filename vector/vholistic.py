@@ -52,6 +52,13 @@ def analysis(wcets, periods, successors, mappings, priorities):
         J = jitter_matrix(S, Rmax)
 
         # initial activation index
+        # TODO: idea to batch together several p iterations
+        # define a batch size: how many p values to test at the same time
+        # add the batches as additional planes
+        # for S scenarios, B batch size: we will have B*S planes
+        # I guess I cannot use broadcasting with the STOP vector: expand STOP myself
+        # The final +p*wcets in eq (1) cannot be broadcasted either (I guess). Expand this myself too.
+        # I need to create a (B*S, tasks, 1) matrix to store the p values for each plane
         p = 1
 
         # p-limit mask. when a task reaches its p-limit, its bit is False here.
