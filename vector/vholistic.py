@@ -54,7 +54,7 @@ def analysis(wcets, periods, successors, mappings, priorities):
         # initial activation index
         p = 1
 
-        # p-limit mask
+        # p-limit mask. when a task reaches its p-limit, its bit is False here.
         pmask = np.ones_like(J)
 
         while True:
@@ -69,7 +69,7 @@ def analysis(wcets, periods, successors, mappings, priorities):
             while not np.allclose(W, Wprev):
                 Wprev = W
                 # Eq. (1) of "On the schedulability Analysis for Distributed Hard Real-Time Systems"
-                W = np.ceil((PM*W+PM*J.T)/periods.T)@wcets + p*wcets
+                W = np.ceil((PM * W + PM * J.transpose(0, 2, 1)) / periods.T) @ wcets + p * wcets
 
                 # WARNING: I probably need some mask to indicate which tasks have already reached their p-limit, and
                 # not try to find their W's and R's
