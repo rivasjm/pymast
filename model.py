@@ -153,6 +153,10 @@ class Task:
         return self.flow.period
 
     @property
+    def successors(self):
+        return self.flow.successors(self)
+
+    @property
     def all_successors(self):
         return self.flow.all_successors(self)
 

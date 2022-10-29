@@ -1,4 +1,5 @@
 import numpy as np
+from model import System
 
 
 def successor_matrix(succesors):
@@ -21,6 +22,25 @@ def priority_matrix(priorities):
     planes = priorities.ravel(order='F').reshape(s, t, 1)
     P = planes < planes.transpose((0, 2, 1))
     return P
+
+
+def get_vectors(system: System):
+    """Transform a system into vectors. The vectorized analysis is based on these vectors"""
+    tasks = system.tasks
+    t = len(tasks)
+    wcets = np.zeros((t, 1), dtype=np.float32)
+    periods = np.zeros((t, 1), dtype=np.float32)
+    successors = np.zeros((t, 1), dtype=np.int32)
+    mappings = np.zeros((t, 1), dtype=np.object)
+    priorities = np.zeros((t, 1), dtype=np.float32)
+
+    for i, task in enumerate(tasks):
+        wcets[i] = task.wcet
+        periods[i] = task.period
+        mappings[i] = task.processor.name
+        priorities[i] = task.priority
+
+    return wcets, periods, successors, mappings, priorities
 
 
 def analysis(wcets, periods, successors, mappings, priorities):
@@ -107,16 +127,15 @@ def analysis(wcets, periods, successors, mappings, priorities):
 
 
 if __name__ == '__main__':
-    wcets = np.array([5, 2, 20, 5, 10, 10], dtype=np.float32).reshape((-1, 1))
-    periods = np.array([30, 30, 30, 40, 40, 40], dtype=np.float32).reshape((-1, 1))
-    successors = np.array([2, 3, -1, 5, 6, -1], dtype=np.int32).reshape((-1, 1))
-    mappings = np.array([1, 3, 2, 2, 3, 1], dtype=np.int32).reshape((-1, 1))
-    priorities = np.array([10, 1, 1, 10, 10, 1, 10, 1, 10, 1, 10, 1], dtype=np.int32).reshape((-1, 2), order='F')
+    # wcets = np.array([5, 2, 20, 5, 10, 10], dtype=np.float32).reshape((-1, 1))
+    # periods = np.array([30, 30, 30, 40, 40, 40], dtype=np.float32).reshape((-1, 1))
+    # successors = np.array([2, 3, -1, 5, 6, -1], dtype=np.int32).reshape((-1, 1))
+    # mappings = np.array([1, 3, 2, 2, 3, 1], dtype=np.int32).reshape((-1, 1))
+    # priorities = np.array([10, 1, 1, 10, 10, 1, 10, 1, 10, 1, 10, 1], dtype=np.int32).reshape((-1, 2), order='F')
+    # R = analysis(wcets, periods, successors, mappings, priorities)
+    # print(R)
 
-    R = analysis(wcets, periods, successors, mappings, priorities)
-    print(R)
-    # r = np.array([1, 2, 3, 4, 5, 6]).reshape((-1, 1))
-    # s = np.array([2, 3, -1, 5, 6, -1]).reshape(-1, 1)
-    # S = successor_matrix(s)
-    #
-    # print(jitter_matrix(S, r))
+    from examples import get_palencia_system
+    system = get_palencia_system()
+    w, t, s, m, p = get_vectors(system)
+    print(w)
