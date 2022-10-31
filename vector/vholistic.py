@@ -35,12 +35,15 @@ def get_vectors(system: System):
     mappings = np.zeros((t, 1), dtype=np.object)
     priorities = np.zeros((t, 1), dtype=np.float32)
 
-    for i, task in enumerate(tasks):
+    taskmap = {task: i for i, task in enumerate(tasks)}
+
+    for task, i in taskmap.items():
         wcets[i] = task.wcet
         periods[i] = task.period
         deadlines[i] = task.flow.deadline
         mappings[i] = task.processor.name
         priorities[i] = task.priority
+        successors[i] = taskmap[task.successors[0]]+1 if task.successors else -1
 
     return wcets, periods, deadlines, successors, mappings, priorities
 
