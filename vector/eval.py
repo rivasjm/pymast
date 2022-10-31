@@ -48,5 +48,5 @@ if __name__ == '__main__':
     p = np.hstack((p1, p2))
 
     r = analysis(w, t, d, s, m, p2, limit=2)
-    # print(r)
+    print(r)
 

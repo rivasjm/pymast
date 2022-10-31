@@ -67,7 +67,11 @@ def analysis(wcets, periods, deadlines, successors, mappings, priorities, limit=
     # initialize response times
     # 3D column vector, each plane for each scenario
     Rmax = np.zeros((s, t, 1), dtype=np.float32)
-    Rprev = np.full_like(Rmax, -1.)  # initialized to -1 to bootstrap the main loop
+    R = np.full_like(Rmax, 0.)
+
+    # update jitter matrix with current response times
+    # 3D column vector, with jitter for each scenario (plane)
+    J = jitter_matrix(S, Rmax)
 
     # a limit on the response times for each task
     # when a task provisional response time reaches its r-limit:
@@ -83,11 +87,7 @@ def analysis(wcets, periods, deadlines, successors, mappings, priorities, limit=
 
     # stop convergence of response time if all tasks converged, or reached their r-limit
     while rmask.any():
-        Rprev = Rmax
-
-        # update jitter matrix with current response times
-        # 3D column vector, with jitter for each scenario (plane)
-        J = jitter_matrix(S, Rmax)
+        Rprev = R
 
         # initial activation index
         # TODO: idea to batch together several p iterations
@@ -133,8 +133,9 @@ def analysis(wcets, periods, deadlines, successors, mappings, priorities, limit=
             # I can use the last Rprov for this. equation: R = W-(p-1)*periods+J
             R = rmask * Rprov
 
-            # update worst-case response times
+            # update worst-case response times and jitters
             Rmax = np.maximum(R, Rmax)
+            J = jitter_matrix(S, Rmax)
 
             # stop the p iterations if all W meet the stopping criteria
             # update the pmask here, and stop when pmask is all zeroes
