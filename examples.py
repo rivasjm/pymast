@@ -17,8 +17,8 @@ def get_palencia_system() -> System:
     LOW = 1
 
     # 2 flows
-    flow1 = Flow(name="flow1", period=30, deadline=90)
-    flow2 = Flow(name="flow2", period=40, deadline=120)
+    flow1 = Flow(name="flow1", period=30, deadline=30)
+    flow2 = Flow(name="flow2", period=40, deadline=40)
 
     # tasks
     flow1.add_tasks(

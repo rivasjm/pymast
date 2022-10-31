@@ -30,6 +30,7 @@ def get_vectors(system: System):
     t = len(tasks)
     wcets = np.zeros((t, 1), dtype=np.float32)
     periods = np.zeros((t, 1), dtype=np.float32)
+    deadlines = np.zeros((t, 1), dtype=np.float32)
     successors = np.zeros((t, 1), dtype=np.int32)
     mappings = np.zeros((t, 1), dtype=np.object)
     priorities = np.zeros((t, 1), dtype=np.float32)
@@ -37,14 +38,15 @@ def get_vectors(system: System):
     for i, task in enumerate(tasks):
         wcets[i] = task.wcet
         periods[i] = task.period
+        deadlines[i] = task.flow.deadline
         mappings[i] = task.processor.name
         priorities[i] = task.priority
 
-    return wcets, periods, successors, mappings, priorities
+    return wcets, periods, deadlines, successors, mappings, priorities
 
 
-def analysis(wcets, periods, successors, mappings, priorities):
-    assert wcets.shape == periods.shape == successors.shape == mappings.shape
+def analysis(wcets, periods, deadlines, successors, mappings, priorities, limit=10):
+    assert wcets.shape == periods.shape == deadlines.shape == successors.shape == mappings.shape
     assert wcets.shape[1] == 1
 
     # there are t tasks, and s scenarios
@@ -56,7 +58,7 @@ def analysis(wcets, periods, successors, mappings, priorities):
     PM = priority_matrix(priorities) * (mappings == mappings.T)
 
     # the successors' matrix maps, for each task (row), which task is its successor (column)
-    # this is a 2D matrix
+    # this is a 2D matrix (all scenarios have the same successors mapping)
     S = successor_matrix(successors)
 
     # initialize response times
@@ -64,7 +66,20 @@ def analysis(wcets, periods, successors, mappings, priorities):
     Rmax = np.zeros((s, t, 1), dtype=np.float32)
     Rprev = np.full_like(Rmax, -1.)  # initialized to -1 to bootstrap the main loop
 
-    while not np.allclose(Rmax, Rprev):
+    # a limit on the response times for each task
+    # when a task provisional response time reaches its r-limit:
+    # - the analysis of its scenario should be stopped
+    # - the response time of the affected task and its successors should be set to the limit
+    # - the system is therefore deemed non schedulable
+    Rlimit = limit * deadlines
+
+    # r mask. 3D column vector
+    # when a task response time converges, its value here is set to 0
+    # when a task reaches its r-limit, the values for the whole scenario are set to 0
+    rmask = np.ones_like(Rmax)
+
+    # stop convergence of response time if all tasks converged, or reached their r-limit
+    while rmask.any():
         Rprev = Rmax
 
         # update jitter matrix with current response times
@@ -81,7 +96,7 @@ def analysis(wcets, periods, successors, mappings, priorities):
         # I need to create a (B*S, tasks, 1) matrix to store the p values for each plane
         p = 1
 
-        # p-limit mask. when a task reaches its p-limit, its bit is False here.
+        # p-limit mask. when a task reaches its p-limit, its bit is set to False here.
         pmask = np.ones_like(J)
 
         while True:
@@ -98,30 +113,37 @@ def analysis(wcets, periods, successors, mappings, priorities):
                 # Eq. (1) of "On the schedulability Analysis for Distributed Hard Real-Time Systems"
                 W = np.ceil((PM * W + PM * J.transpose(0, 2, 1)) / periods.T) @ wcets + p * wcets
 
-                # WARNING: I probably need some mask to indicate which tasks have already reached their p-limit, and
-                # not try to find their W's and R's
-                # set to zero all those tasks that have already reached their p-limit
-                W = W*pmask
+                # Ignore those tasks that have reached their p-limit already
+                W = W * pmask
+
+                # find the provisional response time here
+                Rprov = rmask * (W-(p-1)*periods+J)
+
+                # identify the tasks that have reached their r-limit
+                # if a task reached its r-limit, set all the r-masks of its scenario to 0
+                rmask = rmask * np.all(Rprov < Rlimit, axis=1).reshape((s, 1, 1))
+
+                # also stop the p-iterations if already reached r-limit
+                pmask = rmask * pmask
 
             # once W converges, calculate the response times for this p
-            R = W-(p-1)*periods+J
-
-            # do not calculate response times for tasks that have already reached their p-limit
-            R = R*pmask
+            # I can use the last Rprov for this. equation: R = W-(p-1)*periods+J
+            R = rmask * Rprov
 
             # update worst-case response times
             Rmax = np.maximum(R, Rmax)
 
             # stop the p iterations if all W meet the stopping criteria
-            # WARNING: not all tasks will reach the same p. I probably need to add a mask to indicate which
-            # tasks have already reached their p-limit
-            # TODO: I have to update the pmask here, and stop when pmask is all zeroes
+            # update the pmask here, and stop when pmask is all zeroes
             pmask = pmask * np.logical_not(W < STOP)
             if not pmask.any():
                 break
 
             # if no stopping criteria, try with next p
             p += 1
+
+        # if a task response time has not changed, sets its bit in the mask to zero
+        rmask = rmask * np.logical_not(np.allclose(R, Rprev))
 
     return Rmax
 
@@ -137,5 +159,5 @@ if __name__ == '__main__':
 
     from examples import get_palencia_system
     system = get_palencia_system()
-    w, t, s, m, p = get_vectors(system)
+    w, t, d, s, m, p = get_vectors(system)
     print(w)

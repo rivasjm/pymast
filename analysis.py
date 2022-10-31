@@ -58,8 +58,9 @@ class HolisticAnalyis:
             if self.reset:
                 reset_wcrt(system)
             else:
+                e.task.wcrt = e.response_time
                 for task in e.task.all_successors:
-                    task.wcrt = e.limit
+                    task.wcrt = e.response_time
 
     def _task_analysis(self, task: Task) -> bool:
         p = 1
