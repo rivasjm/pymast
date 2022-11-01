@@ -32,7 +32,7 @@ def get_vectors(system: System):
     periods = np.zeros((t, 1), dtype=np.float32)
     deadlines = np.zeros((t, 1), dtype=np.float32)
     successors = np.zeros((t, 1), dtype=np.int32)
-    mappings = np.zeros((t, 1), dtype=np.object)
+    mappings = np.zeros((t, 1), dtype=object)
     priorities = np.zeros((t, 1), dtype=np.float32)
 
     taskmap = {task: i for i, task in enumerate(tasks)}
@@ -48,7 +48,7 @@ def get_vectors(system: System):
     return wcets, periods, deadlines, successors, mappings, priorities
 
 
-def analysis(wcets, periods, deadlines, successors, mappings, priorities, limit=10):
+def analysis(wcets, periods, deadlines, successors, mappings, priorities, verbose=False, limit=10):
     assert wcets.shape == periods.shape == deadlines.shape == successors.shape == mappings.shape
     assert wcets.shape[1] == 1
 
@@ -122,8 +122,15 @@ def analysis(wcets, periods, deadlines, successors, mappings, priorities, limit=
                 # find the provisional response time here
                 Rprov = rmask * (W-(p-1)*periods+J)
 
+                # update worst-case response times and jitters
+                # there may be a task that have reached its r-limit, no problem,
+                # take the wcrt into account, and afterwards mask the task, so it's convergence stops
+                Rmax = np.maximum(Rprov, Rmax)
+                J = jitter_matrix(S, Rmax)
+
                 # identify the tasks that have reached their r-limit
                 # if a task reached its r-limit, set all the r-masks of its scenario to 0
+                # that scenario analysis is now stopped
                 rmask = rmask * np.all(Rprov < Rlimit, axis=1).reshape((s, 1, 1))
 
                 # also stop the p-iterations if already reached r-limit
@@ -132,10 +139,6 @@ def analysis(wcets, periods, deadlines, successors, mappings, priorities, limit=
             # once W converges, calculate the response times for this p
             # I can use the last Rprov for this. equation: R = W-(p-1)*periods+J
             R = rmask * Rprov
-
-            # update worst-case response times and jitters
-            Rmax = np.maximum(R, Rmax)
-            J = jitter_matrix(S, Rmax)
 
             # stop the p iterations if all W meet the stopping criteria
             # update the pmask here, and stop when pmask is all zeroes
@@ -150,6 +153,52 @@ def analysis(wcets, periods, deadlines, successors, mappings, priorities, limit=
         rmask = rmask * np.logical_not(np.allclose(R, Rprev))
 
     return Rmax
+
+
+class VectorHolisticAnalysis:
+    def __init__(self, verbose=False, limit_factor=10):
+        self.verbose = verbose
+        self.limit_factor = limit_factor
+        self.priority_scenarios = None
+        self._response_times = None
+        self._full_response_times = None
+
+    def clear(self):
+        self.priority_scenarios = None
+        self._response_times = None
+        self._full_response_times = None
+
+    @property
+    def response_times(self):
+        return self._response_times
+
+    @property
+    def full_response_times(self):
+        return self._full_response_times
+
+    def set_priority_scenarios(self, priorities):
+        self.priority_scenarios = priorities
+
+    def apply(self, system: System):
+        wcets, periods, deadlines, successors, mappings, priorities = get_vectors(system)
+
+        # pack all priority scenarios in the same matrix
+        # the first scenario is for the priorities in the input system
+        if self.priority_scenarios is not None:
+            priorities = np.hstack((priorities, self.priority_scenarios))
+
+        # get response times for all scenarios
+        r = analysis(wcets, periods, deadlines, successors, mappings, priorities,
+                     verbose = self.verbose, limit=self.limit_factor)
+
+        # set the response times of the first scenario as the wcrt if the input system
+        for task, wcrt in zip(system.tasks, r[0].ravel()):
+            task.wcrt = wcrt
+
+        # save scenarios response times
+        scenarios = priorities.shape[1]
+        self._full_response_times = r.ravel(order="F").reshape((len(system.tasks), scenarios))
+        self._response_times = r[1:,:,:] if scenarios > 1 else None
 
 
 if __name__ == '__main__':

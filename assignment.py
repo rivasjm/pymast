@@ -281,3 +281,12 @@ def walk_random_priorities_processors(system: System, breadth, depth, callback, 
                 callback(system)
 
     restore_attrs(system.tasks, ["processor", "priority"])
+
+
+def random_priority_jump(system: System, random=Random()):
+    tasks = system.tasks
+    a = random.randint(0, len(tasks)-1)
+    b = a
+    while b == a:
+        b = random.randint(0, len(tasks) - 1)
+    tasks[a].priority, tasks[b].priority = tasks[b].priority, tasks[a].priority

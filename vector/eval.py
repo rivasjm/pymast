@@ -8,7 +8,7 @@ from generator import set_utilization
 
 
 def limit_system():
-    holistic = HolisticAnalyis(verbose=True, limit_factor=2, reset=False)
+    holistic = HolisticAnalyis(verbose=True, limit_factor=10, reset=False)
 
     system = get_palencia_system()
     set_utilization(system, 0.8)
@@ -47,6 +47,6 @@ if __name__ == '__main__':
     w, t, d, s, m, p2 = get_vectors(system)
     p = np.hstack((p1, p2))
 
-    r = analysis(w, t, d, s, m, p2, limit=2)
+    r = analysis(w, t, d, s, m, p2, limit=10)
     print(r)
 
