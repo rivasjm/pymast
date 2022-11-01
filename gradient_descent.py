@@ -2,6 +2,8 @@ from analysis import init_wcrt, save_wcrt, restore_wcrt
 from assignment import save_assignment, restore_assignment, PDAssignment, normalize_priorities
 from model import *
 import math
+import numpy as np
+from vector.vholistic import VectorHolisticAnalysis
 
 
 def sigmoid(x, k=50):
@@ -95,6 +97,28 @@ def calculate_gradients(system, proxy, cost_fn, delta=0.01) -> [float]:
         diff = (b-a) / (2*delta)
         coeffs.append(diff)
     return coeffs
+
+
+def calculate_gradients_vector(system, delta):
+    tasks = system.tasks
+    n = len(tasks)
+    deadlines = np.array([task.flow.deadline for task in tasks]).reshape(n, 1)
+    priorities = np.array([task.priority for task in tasks]).reshape((n, 1))
+    priorities = np.tile(priorities, (1, n*2))
+
+    # build priority scenarios
+    for i in range(n):
+        priorities[i, i * 2] -= delta
+        priorities[i, i * 2 + 1] += delta
+
+    vholistic = VectorHolisticAnalysis(limit_factor=10)
+    vholistic.set_priority_scenarios(priorities)
+    vholistic.apply(system)
+    r = vholistic.response_times
+
+    costs = np.max((r - deadlines) / deadlines, axis=0)
+    coeffs = (costs[:, 1::2] - costs[:, ::2]) / (2*delta)
+    return coeffs.tolist()
 
 
 def avg_parameter_separation(params):
@@ -193,7 +217,9 @@ class GDPA:
         for i in range(1, self.iterations):
             # update priorities using gradient descent and the proxy analysis function
             delta = self.delta*avg_parameter_separation([task.priority for task in system.tasks])
-            coeffs = calculate_gradients(system, self.proxy, cost_fn=self.cost_fn, delta=delta)
+            # coeffs = calculate_gradients(system, self.proxy, cost_fn=self.cost_fn, delta=delta)
+            coeffs = calculate_gradients_vector(system, delta=delta)
+
             updates = self.optimizer.step(coeffs, i)
             for task, update in zip(tasks, updates):
                 task.priority += update

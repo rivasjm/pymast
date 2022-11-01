@@ -42,7 +42,7 @@ def test_barely():
     pd = PDAssignment(normalize=True)
     adam = Adam(lr=0.1, beta1=0.9, beta2=0.999)
     gdpa = GDPA(proxy=analysis, analysis=analysis, verbose=True, iterations=200,
-                cost_fn=invslack, over_iterations=100, initial=rnd, optimizer=adam)
+                cost_fn=invslack, over_iterations=100, initial=pd, optimizer=adam)
 
     # launch
     system.apply(gdpa)
