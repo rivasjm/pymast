@@ -198,7 +198,8 @@ class VectorHolisticAnalysis:
         # save scenarios response times
         scenarios = priorities.shape[1]
         self._full_response_times = r.ravel(order="F").reshape((len(system.tasks), scenarios))
-        self._response_times = r[1:,:,:] if scenarios > 1 else None
+        self._response_times = r[1:,:,:].ravel(order="F").reshape((len(system.tasks), scenarios-1)) \
+            if scenarios > 1 else None
 
 
 if __name__ == '__main__':

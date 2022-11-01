@@ -117,7 +117,7 @@ def calculate_gradients_vector(system, delta):
     r = vholistic.response_times
 
     costs = np.max((r - deadlines) / deadlines, axis=0)
-    coeffs = (costs[:, 1::2] - costs[:, ::2]) / (2*delta)
+    coeffs = (costs[1::2] - costs[::2]) / (2*delta)
     return coeffs.tolist()
 
 
