@@ -135,7 +135,7 @@ def keep_max(values: []):
 
 
 class Adam:
-    def __init__(self, lr=0.2, beta1=0.9, beta2=0.999, epsilon=10**-8):
+    def __init__(self, lr=0.2, beta1=0.9, beta2=0.999, epsilon=10**-8, gamma=0.9):
         self.size = None
         self.m = None
         self.v = None
@@ -143,6 +143,18 @@ class Adam:
         self.beta1 = beta1
         self.beta2 = beta2
         self.epsilon = epsilon
+        self.gamma = gamma
+
+    def reset(self):
+        self.size = None
+        self.m = None
+        self.v = None
+
+    def add_noise(self, coeffs, iteration):
+        std = self.lr / (1+iteration)**self.gamma
+        noise = np.random.normal(0, std, len(coeffs))
+        for j in range(len(coeffs)):
+            coeffs[j] += noise[j]
 
     def step(self, coeffs, iteration) -> [float]:
         if not self.size:
@@ -151,6 +163,7 @@ class Adam:
             self.v = [0]*self.size
 
         updates = [0]*self.size
+        self.add_noise(coeffs, iteration)
 
         for i in range(self.size):
             self.m[i] = self.beta1 * self.m[i] + (1 + self.beta1) * coeffs[i]
@@ -198,6 +211,7 @@ class GDPA:
     def apply(self, system: System):
         optimizing = False
         over_iterations = self.over_iterations
+        self.optimizer.reset()
 
         # calculate initial metrics. Uses real analysis if available, proxy otherwise
         self.initial.apply(system)

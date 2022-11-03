@@ -8,6 +8,7 @@ from examples import get_medium_system, get_big_system
 from random import Random
 from multiprocessing import Pool
 from datetime import datetime
+import time
 import pandas as pd
 from functools import partial
 import matplotlib.pyplot as plt
@@ -23,6 +24,8 @@ utilization_min = 0.5
 utilization_max = 0.9
 utilization_steps = 20
 
+start = time.time()  # starting time (seconds since epoch)
+
 
 def parameters_comparison(label):
     random = Random(42)
@@ -33,21 +36,18 @@ def parameters_comparison(label):
 
     job = 0
     for u, utilization in enumerate(utilizations):
-        if utilization < 0.8:
-            continue
-
         # set utilization to the generated systems
         for system in systems:
             set_utilization(system, utilization)
-
         #
         with Pool(4) as pool:
             func = partial(step, index=u)
             for arr, index in pool.imap_unordered(func, systems):
                 job += 1
                 results[:, index] += arr
+                print(".", end="")
                 if job % 25 == 0:
-                    print(f"{datetime.now()} : job={job}")
+                    print(f"\n{datetime.now()} : job={job}")
                 if job % population == 0:
                     excel(label, names, utilizations, results)
                     chart(label, names, utilizations, results, save=True)
@@ -72,6 +72,11 @@ def chart(label, names, utilizations, results, save=False):
     df.plot(ax=ax)
     ax.set_ylabel("Schedulable systems")
     ax.set_xlabel("Average utilization")
+
+    # register execution time
+    time_label = f"{time.time()- start:.2f} seconds"
+    ax.annotate(time_label, xy=(1, -0.1), xycoords='axes fraction', ha='right', va="center", fontsize=8)
+    fig.tight_layout()
     if save:
         fig.savefig(f"gdpa_{label}.png")
     plt.show()
@@ -112,16 +117,19 @@ def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
     assigs = [("pd", pd), ("hopa", hopa)]
 
     for lr, delta, beta1, beta2, epsilon in params:
+        # GDPA Random
         # assig = GDPA(proxy=analysis, verbose=False, initial=RandomAssignment(normalize=True),
         #              iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
         #              optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
         # assigs.append((f"gdpa-r [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
         #
-        # assig = GDPA(proxy=analysis, verbose=False, initial=pd,
-        #              iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
-        #              optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
-        # assigs.append((f"gdpa-pd [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
+        # GDPA PD
+        assig = GDPA(proxy=analysis, verbose=False, initial=pd,
+                     iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
+                     optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
+        assigs.append((f"gdpa-pd [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
 
+        # GDPA HOPA
         assig = GDPA(proxy=analysis, verbose=False, initial=hopa,
                      iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
                      optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
@@ -151,4 +159,4 @@ def get_sched_test():
 
 
 if __name__ == '__main__':
-    parameters_comparison("big2")
+    parameters_comparison("big-vector-adamrandom")
