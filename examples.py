@@ -37,8 +37,7 @@ def get_palencia_system() -> System:
 
 def get_barely_schedulable() -> System:
     random = Random(123)
-    shape = (4, 5, 3)
-    n_flows, t_tasks, n_procs = shape
+    n_flows, t_tasks, n_procs = (4, 5, 3)
     system = generate_system(random,
                              n_flows=n_flows,
                              n_tasks=t_tasks,

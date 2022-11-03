@@ -179,7 +179,8 @@ class Adam:
 
 class GDPA:
     def __init__(self, proxy, iterations=100, analysis=None, over_iterations=0, delta=1,
-                 optimizer=Adam(), initial=PDAssignment(normalize=True), cost_fn=invslack, verbose=False):
+                 optimizer=Adam(), initial=PDAssignment(normalize=True), cost_fn=invslack, verbose=False,
+                 callback=None):
         self.proxy = proxy
         self.iterations = iterations if iterations > 0 else 1
         self.analysis = analysis
@@ -189,6 +190,7 @@ class GDPA:
         self.over_iterations = over_iterations
         self.optimizer = optimizer
         self.delta = delta
+        self.callback=callback
 
     def _iteration_metrics(self, system):
         system.apply(self.analysis if self.analysis else self.proxy)
@@ -218,6 +220,9 @@ class GDPA:
         cost, proxy_cost, schedulable, slack = self._iteration_metrics(system)
         min_cost = cost
 
+        if self.callback:
+            self.callback.apply(system)
+
         if self.verbose:
             self._print_iteration_metrics(0, cost, proxy_cost, min_cost, schedulable, slack)
 
@@ -244,6 +249,9 @@ class GDPA:
             if cost < min_cost:
                 min_cost = cost
                 save_assignment(system)
+
+            if self.callback:
+                self.callback.apply(system)
 
             if self.verbose:
                 self._print_iteration_metrics(i, cost, proxy_cost, min_cost, schedulable, slack)

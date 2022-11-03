@@ -70,7 +70,7 @@ class PDAssignment:
 
 
 class HOPAssignment:
-    def __init__(self, analysis, iterations=40, k_pairs=None, patience=10, over_iterations=0,
+    def __init__(self, analysis, iterations=40, k_pairs=None, patience=40, over_iterations=0,
                  callback=None, normalize=False, verbose=False):
         self.analysis = analysis
         self.k_pairs = k_pairs if k_pairs else HOPAssignment.default_k_pairs()
@@ -103,12 +103,12 @@ class HOPAssignment:
                     print(f"Iteration={i}, ka={ka}, kr={kr} ", end="")
 
                 changed = calculate_priorities(system)  # update priorities
-                patience = patience-1 if not changed else patience
+                patience = patience-1 if not changed else self.patience
 
                 system.apply(self.analysis)  # update response times
                 self.clean_response_times(system)
                 if self.callback:
-                    self.callback(system)
+                    self.callback.apply(system)
 
                 slack = system.slack
                 if slack > best_slack:
