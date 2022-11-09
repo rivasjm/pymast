@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mast_res:REAL_TIME_SITUATION 
+   xmlns:mast_res="http://mast.unican.es/xmlmast/xmlmast_1_4/Mast_Result" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation="http://mast.unican.es/xmlmast/xmlmast_1_4/Mast_Result http://mast.unican.es/xmlmast/xmlmast_1_4/Mast_Result.xsd" 
+   Model_Name="system" 
+   Model_Date="2000-01-01T00:00:00" 
+   Generation_Tool="MAST Schedulability Analysis, version 1.5.1.0" 
+   Generation_Profile="E:\dev\pymast\mast\mast-1-5-1-0-bin\mast_analysis.exe holistic test.txt test-out2.xml" 
+   Generation_Date="2022-11-09T19:53:46">
+      <mast_res:Transaction Name="flow1" >
+         <mast_res:Timing_Result Event_Name="o_a1" Num_Of_Suspensions="0" Worst_Blocking_Time="0.000" >
+            <mast_res:Worst_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow1" Time_Value="5.000"/>
+            </mast_res:Worst_Global_Response_Times>
+            <mast_res:Best_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow1" Time_Value="0.000"/>
+            </mast_res:Best_Global_Response_Times>
+            <mast_res:Jitters>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow1" Time_Value="5.000"/>
+            </mast_res:Jitters>
+         </mast_res:Timing_Result> 
+         <mast_res:Timing_Result Event_Name="o_a2" Num_Of_Suspensions="0" Worst_Blocking_Time="0.000" >
+            <mast_res:Worst_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow1" Time_Value="17.000"/>
+            </mast_res:Worst_Global_Response_Times>
+            <mast_res:Best_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow1" Time_Value="0.000"/>
+            </mast_res:Best_Global_Response_Times>
+            <mast_res:Jitters>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow1" Time_Value="17.000"/>
+            </mast_res:Jitters>
+         </mast_res:Timing_Result> 
+         <mast_res:Timing_Result Event_Name="o_a3" Num_Of_Suspensions="0" Worst_Blocking_Time="0.000" >
+            <mast_res:Worst_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow1" Time_Value="42.000"/>
+            </mast_res:Worst_Global_Response_Times>
+            <mast_res:Best_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow1" Time_Value="0.000"/>
+            </mast_res:Best_Global_Response_Times>
+            <mast_res:Jitters>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow1" Time_Value="42.000"/>
+            </mast_res:Jitters>
+         </mast_res:Timing_Result> 
+      </mast_res:Transaction> 
+
+      <mast_res:Transaction Name="flow2" >
+         <mast_res:Timing_Result Event_Name="o_a4" Num_Of_Suspensions="0" Worst_Blocking_Time="0.000" >
+            <mast_res:Worst_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow2" Time_Value="5.000"/>
+            </mast_res:Worst_Global_Response_Times>
+            <mast_res:Best_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow2" Time_Value="0.000"/>
+            </mast_res:Best_Global_Response_Times>
+            <mast_res:Jitters>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow2" Time_Value="5.000"/>
+            </mast_res:Jitters>
+         </mast_res:Timing_Result> 
+         <mast_res:Timing_Result Event_Name="o_a5" Num_Of_Suspensions="0" Worst_Blocking_Time="0.000" >
+            <mast_res:Worst_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow2" Time_Value="15.000"/>
+            </mast_res:Worst_Global_Response_Times>
+            <mast_res:Best_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow2" Time_Value="0.000"/>
+            </mast_res:Best_Global_Response_Times>
+            <mast_res:Jitters>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow2" Time_Value="15.000"/>
+            </mast_res:Jitters>
+         </mast_res:Timing_Result> 
+         <mast_res:Timing_Result Event_Name="o_a6" Num_Of_Suspensions="0" Worst_Blocking_Time="0.000" >
+            <mast_res:Worst_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow2" Time_Value="30.000"/>
+            </mast_res:Worst_Global_Response_Times>
+            <mast_res:Best_Global_Response_Times>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow2" Time_Value="0.000"/>
+            </mast_res:Best_Global_Response_Times>
+            <mast_res:Jitters>
+               <mast_res:Global_Response_Time  Referenced_Event="e_flow2" Time_Value="30.000"/>
+            </mast_res:Jitters>
+         </mast_res:Timing_Result> 
+      </mast_res:Transaction> 
+
+      <mast_res:Processing_Resource Name="cpu2">
+         <mast_res:Utilization Total="79.17"/>
+      </mast_res:Processing_Resource>
+      <mast_res:Processing_Resource Name="network">
+         <mast_res:Utilization Total="31.67"/>
+      </mast_res:Processing_Resource>
+      <mast_res:Processing_Resource Name="cpu1">
+         <mast_res:Utilization Total="41.67"/>
+      </mast_res:Processing_Resource>
+   </mast_res:REAL_TIME_SITUATION>

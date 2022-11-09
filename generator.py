@@ -45,7 +45,7 @@ def generate_system(random: Random, n_flows, n_tasks, n_procs, utilization,
         flow = Flow(name=f"flow{f}", period=period, deadline=deadline)
 
         # for now leave the WCET empty
-        tasks = [Task(name=f"task{f},{t}", wcet=0, processor=random.choice(procs)) for t in range(n_tasks)]
+        tasks = [Task(name=f"task{f}_{t}", wcet=0, processor=random.choice(procs)) for t in range(n_tasks)]
         flow.add_tasks(*tasks)
         system.add_flows(flow)
 

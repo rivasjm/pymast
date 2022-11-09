@@ -131,7 +131,7 @@ class Flow:
 
 class Task:
     def __init__(self, name: str, wcet: float,
-                 processor: Processor = None, priority: int = 0):
+                 processor: Processor = None, priority: int = 1):
         self.flow = None
         self.name = name
         self.wcet = wcet

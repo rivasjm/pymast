@@ -1,8 +1,10 @@
 from model import System, Flow, Task, Processor
 from examples import get_palencia_system
+import generator
 
 
 def export(system, file):
+    sanitize_priorities(system)
     txt = write_system(system)
     with open(file, "w") as f:
         f.write(txt)
@@ -100,6 +102,11 @@ def input_event_name(task: Task) -> str:
 
 def external_event_name(flow: Flow) -> str:
     return f"e_{flow.name}"
+
+
+def sanitize_priorities(system: System):
+    tasks = system.tasks.sort(key=lambda t: t.priority)
+    print(tasks)
 
 
 if __name__ == '__main__':
