@@ -31,7 +31,7 @@ class System:
 
     @property
     def processors(self):
-        return {task.processor for flow in self.flows for task in flow}
+        return list({task.processor for flow in self.flows for task in flow})
 
     def processor(self, name):
         return next((p for p in self.processors if p.name == name), None)
@@ -155,6 +155,14 @@ class Task:
     @property
     def successors(self):
         return self.flow.successors(self)
+
+    @property
+    def predecessors(self):
+        return self.flow.predecessors(self)
+
+    @property
+    def is_last(self):
+        return len(self.successors) == 0
 
     @property
     def all_successors(self):

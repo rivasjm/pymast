@@ -1,0 +1,181 @@
+Model (
+        Model_Name  => System,
+        Model_Date  => 2000-01-01);
+
+Processing_Resource (
+      Type 			            => Fixed_Priority_Processor,
+      Name 			            => cpu2,
+      Max_Priority		        => 500,
+      Min_Priority		        =>  1,
+      Max_Interrupt_Priority	    => 512,
+      Min_Interrupt_Priority	    => 501);
+
+Processing_Resource (
+      Type 			            => Fixed_Priority_Processor,
+      Name 			            => network,
+      Max_Priority		        => 500,
+      Min_Priority		        =>  1,
+      Max_Interrupt_Priority	    => 512,
+      Min_Interrupt_Priority	    => 501);
+
+Processing_Resource (
+      Type 			            => Fixed_Priority_Processor,
+      Name 			            => cpu1,
+      Max_Priority		        => 500,
+      Min_Priority		        =>  1,
+      Max_Interrupt_Priority	    => 512,
+      Min_Interrupt_Priority	    => 501);
+
+Scheduling_Server (
+        Type				=> Fixed_Priority,
+        Name 				=> a1,
+        Server_Sched_Parameters		=> (
+                Type		=> Fixed_Priority_policy,
+                The_Priority	=> 10,
+                Preassigned		=> no),
+        Server_Processing_Resource	=> cpu1);
+
+Scheduling_Server (
+        Type				=> Fixed_Priority,
+        Name 				=> a2,
+        Server_Sched_Parameters		=> (
+                Type		=> Fixed_Priority_policy,
+                The_Priority	=> 1,
+                Preassigned		=> no),
+        Server_Processing_Resource	=> network);
+
+Scheduling_Server (
+        Type				=> Fixed_Priority,
+        Name 				=> a3,
+        Server_Sched_Parameters		=> (
+                Type		=> Fixed_Priority_policy,
+                The_Priority	=> 1,
+                Preassigned		=> no),
+        Server_Processing_Resource	=> cpu2);
+
+Scheduling_Server (
+        Type				=> Fixed_Priority,
+        Name 				=> a4,
+        Server_Sched_Parameters		=> (
+                Type		=> Fixed_Priority_policy,
+                The_Priority	=> 10,
+                Preassigned		=> no),
+        Server_Processing_Resource	=> cpu2);
+
+Scheduling_Server (
+        Type				=> Fixed_Priority,
+        Name 				=> a5,
+        Server_Sched_Parameters		=> (
+                Type		=> Fixed_Priority_policy,
+                The_Priority	=> 10,
+                Preassigned		=> no),
+        Server_Processing_Resource	=> network);
+
+Scheduling_Server (
+        Type				=> Fixed_Priority,
+        Name 				=> a6,
+        Server_Sched_Parameters		=> (
+                Type		=> Fixed_Priority_policy,
+                The_Priority	=> 1,
+                Preassigned		=> no),
+        Server_Processing_Resource	=> cpu1);
+
+Operation (
+        Type        => Simple,
+        Name        => a1,
+        Worst_Case_Execution_Time   => 5);
+
+Operation (
+        Type        => Simple,
+        Name        => a2,
+        Worst_Case_Execution_Time   => 2);
+
+Operation (
+        Type        => Simple,
+        Name        => a3,
+        Worst_Case_Execution_Time   => 20);
+
+Operation (
+        Type        => Simple,
+        Name        => a4,
+        Worst_Case_Execution_Time   => 5);
+
+Operation (
+        Type        => Simple,
+        Name        => a5,
+        Worst_Case_Execution_Time   => 10);
+
+Operation (
+        Type        => Simple,
+        Name        => a6,
+        Worst_Case_Execution_Time   => 10);
+
+Transaction (
+        Type	=> Regular, 
+        Name	=> flow1,
+        External_Events => (
+            (Type 		=> Periodic,
+            Name 		=> e_flow1,
+            Period 	    => 30)),
+        Internal_Events => (
+            (Type 	=> regular,
+            name 	=> o_a1),
+            (Type 	=> regular,
+            name 	=> o_a2),
+            (Type 	=> regular,
+            name 	=> o_a3,
+            Timing_Requirements => (
+                Type 		  => Hard_Global_Deadline,
+                Deadline 	  => 30,
+                referenced_event => e_flow1))),
+        Event_Handlers => (
+            (Type         => Activity,
+            Input_Event         => e_flow1,
+            Output_Event        => o_a1,
+            Activity_Operation  => a1,
+            Activity_Server     => a1),
+            (Type         => Activity,
+            Input_Event         => o_a1,
+            Output_Event        => o_a2,
+            Activity_Operation  => a2,
+            Activity_Server     => a2),
+            (Type         => Activity,
+            Input_Event         => o_a2,
+            Output_Event        => o_a3,
+            Activity_Operation  => a3,
+            Activity_Server     => a3)));
+
+Transaction (
+        Type	=> Regular, 
+        Name	=> flow2,
+        External_Events => (
+            (Type 		=> Periodic,
+            Name 		=> e_flow2,
+            Period 	    => 40)),
+        Internal_Events => (
+            (Type 	=> regular,
+            name 	=> o_a4),
+            (Type 	=> regular,
+            name 	=> o_a5),
+            (Type 	=> regular,
+            name 	=> o_a6,
+            Timing_Requirements => (
+                Type 		  => Hard_Global_Deadline,
+                Deadline 	  => 40,
+                referenced_event => e_flow2))),
+        Event_Handlers => (
+            (Type         => Activity,
+            Input_Event         => e_flow2,
+            Output_Event        => o_a4,
+            Activity_Operation  => a4,
+            Activity_Server     => a4),
+            (Type         => Activity,
+            Input_Event         => o_a4,
+            Output_Event        => o_a5,
+            Activity_Operation  => a5,
+            Activity_Server     => a5),
+            (Type         => Activity,
+            Input_Event         => o_a5,
+            Output_Event        => o_a6,
+            Activity_Operation  => a6,
+            Activity_Server     => a6)));

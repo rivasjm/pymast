@@ -1,0 +1,165 @@
+Initializing error report...
+ 1   Model (
+ 2           Model_Name  => System,
+ 3           Model_Date  => 2000-01-01);
+ 5   Processing_Resource (
+ 6         Type 			            => Fixed_Priority_Processor,
+ 7         Name 			            => cpu2,
+ 8         Max_Priority		        => 500,
+ 9         Min_Priority		        =>  1,
+ 10        Max_Interrupt_Priority	    => 512,
+ 11        Min_Interrupt_Priority	    => 501);
+ 13  Processing_Resource (
+ 14        Type 			            => Fixed_Priority_Processor,
+ 15        Name 			            => network,
+ 16        Max_Priority		        => 500,
+ 17        Min_Priority		        =>  1,
+ 18        Max_Interrupt_Priority	    => 512,
+ 19        Min_Interrupt_Priority	    => 501);
+ 21  Processing_Resource (
+ 22        Type 			            => Fixed_Priority_Processor,
+ 23        Name 			            => cpu1,
+ 24        Max_Priority		        => 500,
+ 25        Min_Priority		        =>  1,
+ 26        Max_Interrupt_Priority	    => 512,
+ 27        Min_Interrupt_Priority	    => 501);
+ 29  Scheduling_Server (
+ 30          Type				=> Fixed_Priority,
+ 31          Name 				=> a1,
+ 32          Server_Sched_Parameters		=> (
+ 33                  Type		=> Fixed_Priority_policy,
+ 34                  The_Priority	=> 10,
+ 35                  Preassigned		=> no),
+ 36          Server_Processing_Resource	=> cpu1);
+ 38  Scheduling_Server (
+ 39          Type				=> Fixed_Priority,
+ 40          Name 				=> a2,
+ 41          Server_Sched_Parameters		=> (
+ 42                  Type		=> Fixed_Priority_policy,
+ 43                  The_Priority	=> 1,
+ 44                  Preassigned		=> no),
+ 45          Server_Processing_Resource	=> network);
+ 47  Scheduling_Server (
+ 48          Type				=> Fixed_Priority,
+ 49          Name 				=> a3,
+ 50          Server_Sched_Parameters		=> (
+ 51                  Type		=> Fixed_Priority_policy,
+ 52                  The_Priority	=> 1,
+ 53                  Preassigned		=> no),
+ 54          Server_Processing_Resource	=> cpu2);
+ 56  Scheduling_Server (
+ 57          Type				=> Fixed_Priority,
+ 58          Name 				=> a4,
+ 59          Server_Sched_Parameters		=> (
+ 60                  Type		=> Fixed_Priority_policy,
+ 61                  The_Priority	=> 10,
+ 62                  Preassigned		=> no),
+ 63          Server_Processing_Resource	=> cpu2);
+ 65  Scheduling_Server (
+ 66          Type				=> Fixed_Priority,
+ 67          Name 				=> a5,
+ 68          Server_Sched_Parameters		=> (
+ 69                  Type		=> Fixed_Priority_policy,
+ 70                  The_Priority	=> 10,
+ 71                  Preassigned		=> no),
+ 72          Server_Processing_Resource	=> network);
+ 74  Scheduling_Server (
+ 75          Type				=> Fixed_Priority,
+ 76          Name 				=> a6,
+ 77          Server_Sched_Parameters		=> (
+ 78                  Type		=> Fixed_Priority_policy,
+ 79                  The_Priority	=> 1,
+ 80                  Preassigned		=> no),
+ 81          Server_Processing_Resource	=> cpu1);
+ 83  Operation (
+ 84          Type        => Simple,
+ 85          Name        => a1,
+ 86          Worst_Case_Execution_Time   => 5);
+ 88  Operation (
+ 89          Type        => Simple,
+ 90          Name        => a2,
+ 91          Worst_Case_Execution_Time   => 2);
+ 93  Operation (
+ 94          Type        => Simple,
+ 95          Name        => a3,
+ 96          Worst_Case_Execution_Time   => 20);
+ 98  Operation (
+ 99          Type        => Simple,
+ 100         Name        => a4,
+ 101         Worst_Case_Execution_Time   => 5);
+ 103 Operation (
+ 104         Type        => Simple,
+ 105         Name        => a5,
+ 106         Worst_Case_Execution_Time   => 10);
+ 108 Operation (
+ 109         Type        => Simple,
+ 110         Name        => a6,
+ 111         Worst_Case_Execution_Time   => 10);
+ 113 Transaction (
+ 114         Type	=> Regular, 
+ 115         Name	=> flow1,
+ 116         External_Events => (
+ 117             (Type 		=> Periodic,
+ 118             Name 		=> e_flow1,
+ 119             Period 	    => 30)),
+ 120         Internal_Events => (
+ 121             (Type 	=> regular,
+ 122             name 	=> o_a1),
+ 123             (Type 	=> regular,
+ 124             name 	=> o_a2),
+ 125             (Type 	=> regular,
+ 126             name 	=> o_a3,
+ 127             Timing_Requirements => (
+ 128                 Type 		  => Hard_Global_Deadline,
+ 129                 Deadline 	  => 30,
+ 130                 referenced_event => e_flow1))),
+ 131         Event_Handlers => (
+ 132             (Type         => Activity,
+ 133             Input_Event         => e_flow1,
+ 134             Output_Event        => o_a1,
+ 135             Activity_Operation  => a1,
+ 136             Activity_Server     => a1),
+ 137             (Type         => Activity,
+ 138             Input_Event         => o_a1,
+ 139             Output_Event        => o_a2,
+ 140             Activity_Operation  => a2,
+ 141             Activity_Server     => a2),
+ 142             (Type         => Activity,
+ 143             Input_Event         => o_a2,
+ 144             Output_Event        => o_a3,
+ 145             Activity_Operation  => a3,
+ 146             Activity_Server     => a3)));
+ 148 Transaction (
+ 149         Type	=> Regular, 
+ 150         Name	=> flow2,
+ 151         External_Events => (
+ 152             (Type 		=> Periodic,
+ 153             Name 		=> e_flow2,
+ 154             Period 	    => 40)),
+ 155         Internal_Events => (
+ 156             (Type 	=> regular,
+ 157             name 	=> o_a4),
+ 158             (Type 	=> regular,
+ 159             name 	=> o_a5),
+ 160             (Type 	=> regular,
+ 161             name 	=> o_a6,
+ 162             Timing_Requirements => (
+ 163                 Type 		  => Hard_Global_Deadline,
+ 164                 Deadline 	  => 40,
+ 165                 referenced_event => e_flow2))),
+ 166         Event_Handlers => (
+ 167             (Type         => Activity,
+ 168             Input_Event         => e_flow2,
+ 169             Output_Event        => o_a4,
+ 170             Activity_Operation  => a4,
+ 171             Activity_Server     => a4),
+ 172             (Type         => Activity,
+ 173             Input_Event         => o_a4,
+ 174             Output_Event        => o_a5,
+ 175             Activity_Operation  => a5,
+ 176             Activity_Server     => a5),
+ 177             (Type         => Activity,
+ 178             Input_Event         => o_a5,
+ 179             Output_Event        => o_a6,
+ 180             Activity_Operation  => a6,
+ 181             Activity_Server     => a6)));
