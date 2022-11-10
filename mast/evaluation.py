@@ -3,7 +3,7 @@ from random import Random
 import examples
 from analysis import reset_wcrt
 from gradient_descent import invslack
-from mast_wrapper import MastHolisticAnalysis, MastOffsetPrecedenceAnalysis
+from mast_wrapper import MastHolisticAnalysis, MastOffsetPrecedenceAnalysis, MastOffsetAnalysis
 from assignment import walk_random_priorities, PDAssignment
 from examples import get_medium_system
 import matplotlib.pyplot as plt
@@ -45,8 +45,8 @@ class CorrRegister:
 def holistic_offsetpr_corr():
     """MAST Holistic vs MAST Offset PR correlation"""
     a1 = MastHolisticAnalysis(limit_factor=10)
-    a2 = MastOffsetPrecedenceAnalysis(limit_factor=10)
-    register = CorrRegister(a1, a2, "holistic", "offset pr")
+    a2 = MastOffsetAnalysis(limit_factor=10)
+    register = CorrRegister(a1, a2, "holistic", "offsets")
 
     system = get_medium_system(random=Random(1), utilization=0.8)
     pd = PDAssignment()

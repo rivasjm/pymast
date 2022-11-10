@@ -52,7 +52,7 @@ Initializing error report...
  58          Name 				=> task0_3,
  59          Server_Sched_Parameters		=> (
  60                  Type		=> Fixed_Priority_policy,
- 61                  The_Priority	=> 17,
+ 61                  The_Priority	=> 11,
  62                  Preassigned		=> no),
  63          Server_Processing_Resource	=> proc1);
  65  Scheduling_Server (
@@ -60,7 +60,7 @@ Initializing error report...
  67          Name 				=> task0_4,
  68          Server_Sched_Parameters		=> (
  69                  Type		=> Fixed_Priority_policy,
- 70                  The_Priority	=> 16,
+ 70                  The_Priority	=> 17,
  71                  Preassigned		=> no),
  72          Server_Processing_Resource	=> proc1);
  74  Scheduling_Server (
@@ -100,7 +100,7 @@ Initializing error report...
  112         Name 				=> task1_4,
  113         Server_Sched_Parameters		=> (
  114                 Type		=> Fixed_Priority_policy,
- 115                 The_Priority	=> 8,
+ 115                 The_Priority	=> 9,
  116                 Preassigned		=> no),
  117         Server_Processing_Resource	=> proc1);
  119 Scheduling_Server (
@@ -116,7 +116,7 @@ Initializing error report...
  130         Name 				=> task2_1,
  131         Server_Sched_Parameters		=> (
  132                 Type		=> Fixed_Priority_policy,
- 133                 The_Priority	=> 6,
+ 133                 The_Priority	=> 1,
  134                 Preassigned		=> no),
  135         Server_Processing_Resource	=> proc2);
  137 Scheduling_Server (
@@ -124,7 +124,7 @@ Initializing error report...
  139         Name 				=> task2_2,
  140         Server_Sched_Parameters		=> (
  141                 Type		=> Fixed_Priority_policy,
- 142                 The_Priority	=> 9,
+ 142                 The_Priority	=> 16,
  143                 Preassigned		=> no),
  144         Server_Processing_Resource	=> proc1);
  146 Scheduling_Server (
@@ -132,7 +132,7 @@ Initializing error report...
  148         Name 				=> task2_3,
  149         Server_Sched_Parameters		=> (
  150                 Type		=> Fixed_Priority_policy,
- 151                 The_Priority	=> 11,
+ 151                 The_Priority	=> 8,
  152                 Preassigned		=> no),
  153         Server_Processing_Resource	=> proc1);
  155 Scheduling_Server (
@@ -140,7 +140,7 @@ Initializing error report...
  157         Name 				=> task2_4,
  158         Server_Sched_Parameters		=> (
  159                 Type		=> Fixed_Priority_policy,
- 160                 The_Priority	=> 1,
+ 160                 The_Priority	=> 6,
  161                 Preassigned		=> no),
  162         Server_Processing_Resource	=> proc2);
  164 Scheduling_Server (
@@ -172,7 +172,7 @@ Initializing error report...
  193         Name 				=> task3_3,
  194         Server_Sched_Parameters		=> (
  195                 Type		=> Fixed_Priority_policy,
- 196                 The_Priority	=> 3,
+ 196                 The_Priority	=> 18,
  197                 Preassigned		=> no),
  198         Server_Processing_Resource	=> proc0);
  200 Scheduling_Server (
@@ -180,7 +180,7 @@ Initializing error report...
  202         Name 				=> task3_4,
  203         Server_Sched_Parameters		=> (
  204                 Type		=> Fixed_Priority_policy,
- 205                 The_Priority	=> 18,
+ 205                 The_Priority	=> 3,
  206                 Preassigned		=> no),
  207         Server_Processing_Resource	=> proc0);
  209 Operation (
