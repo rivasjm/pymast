@@ -7,16 +7,17 @@ import uuid
 import examples
 
 TEMP = "./temp/"
-MAST_PATH = "./mast-1-5-1-0-bin/"
+MAST_PATH = "D:/dev/pymast/mast/mast-1-5-1-0-bin/"
 MAST_EXECUTABLE = "mast_analysis.exe"
 MAST_NON_SCHEDULABLE = "Final analysis status: NOT-SCHEDULABLE"
 MAST_SCHEDULABLE = "The system is schedulable"
+LIMIT = 1e100
 
 
 class MastAnalysis(Enum):
     HOLISTIC = "holistic"
     OFFSET = "offset_based_approx"
-    OFFSET_OPT = "offset_based_approx_w_pr"
+    OFFSET_PR = "offset_based_approx_w_pr"
 
 
 class MastAssignment(Enum):
@@ -25,13 +26,12 @@ class MastAssignment(Enum):
     HOSPA = "hospa"
 
 
-def analyze(system, analysis: MastAnalysis, assignment: MastAssignment):
+def analyze(system, analysis: MastAnalysis, assignment: MastAssignment = MastAssignment.NONE, limit=None):
     # create random temporary file names for this analysis, will be removed afterwards
     name = str(uuid.uuid1())
     input = os.path.abspath(os.path.join(TEMP, name + ".txt"))
     output = os.path.abspath(os.path.join(TEMP, name + "-out.xml"))
 
-    schedulable, results = False, {}
     try:
         # make sure priorities are correct for mast (integers higher than 0)
         mast_writer.sanitize_priorities(system)
@@ -40,11 +40,11 @@ def analyze(system, analysis: MastAnalysis, assignment: MastAssignment):
         mast_writer.export(system, input)
 
         # analyze with mast, capture results
-        schedulable, results = run(analysis, assignment, input, output)
+        schedulable, results = run(analysis, assignment, input, output, limit)
 
         # save wcrts into the system
         for task in system.tasks:
-            task.wcrt = results[task.name]
+            task.wcrt = results[task.name] if task.name in results else LIMIT
 
         # sanity check: system schedulability must match
         assert system.is_schedulable() == schedulable
@@ -52,27 +52,33 @@ def analyze(system, analysis: MastAnalysis, assignment: MastAssignment):
     finally:
         # clean-up process: restore original unsanitized priorities, remove temporary files
         mast_writer.desanitize_priorities(system)
-        # if os.path.isfile(input):
-        #     os.remove(input)
-        # if os.path.isfile(output):
-        #     os.remove(output)
-
-    return schedulable, results
+        if os.path.isfile(input):
+            os.remove(input)
+        if os.path.isfile(output):
+            os.remove(output)
 
 
-def run(analysis, assignment, input, output=None):
-    cmd = [MAST_EXECUTABLE, analysis.value]
+def run(analysis, assignment, input, output=None, limit=None, timeout=None):
+    cmd = [os.path.join(MAST_PATH, MAST_EXECUTABLE), analysis.value]
     if assignment is not MastAssignment.NONE:
         cmd.append("-p")
         cmd.append("-t")
         cmd.append(assignment.value)
+    if limit:
+        cmd.append("-f")
+        cmd.append(str(limit))
     cmd.append(input)
     if output:
         cmd.append(output)
 
-    run = subprocess.run(cmd, capture_output=True, cwd=MAST_PATH, shell=True)
-    out = run.stdout.decode() if run.stdout else ""
+    try:
+        proc = subprocess.Popen(cmd, stdout=subprocess.PIPE)
+        proc.wait(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        proc.terminate()
+        print("Timeout!")
 
+    out = proc.stdout.read().decode() if proc and proc.stdout else ""
     schedulable = MAST_SCHEDULABLE in out if out else False
     results = parse_results(output) if output and os.path.isfile(output) else {}
     return schedulable, results
@@ -82,4 +88,5 @@ if __name__ == '__main__':
     system = examples.get_medium_system()
     # sched = run(MastAnalysis.HOLISTIC, MastAssignment.NONE, "test.txt", "test-out2.xml")
     # print(sched)
-    print(analyze(system, MastAnalysis.HOLISTIC, MastAssignment.HOSPA))
+    analyze(system, MastAnalysis.HOLISTIC, MastAssignment.HOSPA)
+    print(system.is_schedulable())

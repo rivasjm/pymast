@@ -237,7 +237,7 @@ def walk_random_priorities(system: System, breadth, depth, callback, verbose=Fal
                 print(f"Random priority walk: breadth={b}, depth={d}")
 
             if callback:
-                callback(system)
+                callback.apply(system)
 
     restore_assignment(system)  # restore initial priorities
 

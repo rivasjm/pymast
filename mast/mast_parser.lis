@@ -4,21 +4,21 @@ Initializing error report...
  3           Model_Date  => 2000-01-01);
  5   Processing_Resource (
  6         Type 			            => Fixed_Priority_Processor,
- 7         Name 			            => proc0,
+ 7         Name 			            => proc2,
  8         Max_Priority		        => 500,
  9         Min_Priority		        =>  1,
  10        Max_Interrupt_Priority	    => 512,
  11        Min_Interrupt_Priority	    => 501);
  13  Processing_Resource (
  14        Type 			            => Fixed_Priority_Processor,
- 15        Name 			            => proc2,
+ 15        Name 			            => proc1,
  16        Max_Priority		        => 500,
  17        Min_Priority		        =>  1,
  18        Max_Interrupt_Priority	    => 512,
  19        Min_Interrupt_Priority	    => 501);
  21  Processing_Resource (
  22        Type 			            => Fixed_Priority_Processor,
- 23        Name 			            => proc1,
+ 23        Name 			            => proc0,
  24        Max_Priority		        => 500,
  25        Min_Priority		        =>  1,
  26        Max_Interrupt_Priority	    => 512,
@@ -44,7 +44,7 @@ Initializing error report...
  49          Name 				=> task0_2,
  50          Server_Sched_Parameters		=> (
  51                  Type		=> Fixed_Priority_policy,
- 52                  The_Priority	=> 19,
+ 52                  The_Priority	=> 4,
  53                  Preassigned		=> no),
  54          Server_Processing_Resource	=> proc0);
  56  Scheduling_Server (
@@ -52,7 +52,7 @@ Initializing error report...
  58          Name 				=> task0_3,
  59          Server_Sched_Parameters		=> (
  60                  Type		=> Fixed_Priority_policy,
- 61                  The_Priority	=> 9,
+ 61                  The_Priority	=> 17,
  62                  Preassigned		=> no),
  63          Server_Processing_Resource	=> proc1);
  65  Scheduling_Server (
@@ -84,7 +84,7 @@ Initializing error report...
  94          Name 				=> task1_2,
  95          Server_Sched_Parameters		=> (
  96                  Type		=> Fixed_Priority_policy,
- 97                  The_Priority	=> 4,
+ 97                  The_Priority	=> 5,
  98                  Preassigned		=> no),
  99          Server_Processing_Resource	=> proc1);
  101 Scheduling_Server (
@@ -100,7 +100,7 @@ Initializing error report...
  112         Name 				=> task1_4,
  113         Server_Sched_Parameters		=> (
  114                 Type		=> Fixed_Priority_policy,
- 115                 The_Priority	=> 11,
+ 115                 The_Priority	=> 8,
  116                 Preassigned		=> no),
  117         Server_Processing_Resource	=> proc1);
  119 Scheduling_Server (
@@ -108,7 +108,7 @@ Initializing error report...
  121         Name 				=> task2_0,
  122         Server_Sched_Parameters		=> (
  123                 Type		=> Fixed_Priority_policy,
- 124                 The_Priority	=> 5,
+ 124                 The_Priority	=> 19,
  125                 Preassigned		=> no),
  126         Server_Processing_Resource	=> proc0);
  128 Scheduling_Server (
@@ -116,7 +116,7 @@ Initializing error report...
  130         Name 				=> task2_1,
  131         Server_Sched_Parameters		=> (
  132                 Type		=> Fixed_Priority_policy,
- 133                 The_Priority	=> 1,
+ 133                 The_Priority	=> 6,
  134                 Preassigned		=> no),
  135         Server_Processing_Resource	=> proc2);
  137 Scheduling_Server (
@@ -124,7 +124,7 @@ Initializing error report...
  139         Name 				=> task2_2,
  140         Server_Sched_Parameters		=> (
  141                 Type		=> Fixed_Priority_policy,
- 142                 The_Priority	=> 17,
+ 142                 The_Priority	=> 9,
  143                 Preassigned		=> no),
  144         Server_Processing_Resource	=> proc1);
  146 Scheduling_Server (
@@ -132,7 +132,7 @@ Initializing error report...
  148         Name 				=> task2_3,
  149         Server_Sched_Parameters		=> (
  150                 Type		=> Fixed_Priority_policy,
- 151                 The_Priority	=> 8,
+ 151                 The_Priority	=> 11,
  152                 Preassigned		=> no),
  153         Server_Processing_Resource	=> proc1);
  155 Scheduling_Server (
@@ -140,7 +140,7 @@ Initializing error report...
  157         Name 				=> task2_4,
  158         Server_Sched_Parameters		=> (
  159                 Type		=> Fixed_Priority_policy,
- 160                 The_Priority	=> 6,
+ 160                 The_Priority	=> 1,
  161                 Preassigned		=> no),
  162         Server_Processing_Resource	=> proc2);
  164 Scheduling_Server (
@@ -172,7 +172,7 @@ Initializing error report...
  193         Name 				=> task3_3,
  194         Server_Sched_Parameters		=> (
  195                 Type		=> Fixed_Priority_policy,
- 196                 The_Priority	=> 18,
+ 196                 The_Priority	=> 3,
  197                 Preassigned		=> no),
  198         Server_Processing_Resource	=> proc0);
  200 Scheduling_Server (
@@ -180,89 +180,89 @@ Initializing error report...
  202         Name 				=> task3_4,
  203         Server_Sched_Parameters		=> (
  204                 Type		=> Fixed_Priority_policy,
- 205                 The_Priority	=> 3,
+ 205                 The_Priority	=> 18,
  206                 Preassigned		=> no),
  207         Server_Processing_Resource	=> proc0);
  209 Operation (
  210         Type        => Simple,
  211         Name        => task0_0,
- 212         Worst_Case_Execution_Time   => 2.1702943859353088);
+ 212         Worst_Case_Execution_Time   => 4.3405887718706175);
  214 Operation (
  215         Type        => Simple,
  216         Name        => task0_1,
- 217         Worst_Case_Execution_Time   => 3.763693370799997);
+ 217         Worst_Case_Execution_Time   => 7.527386741599994);
  219 Operation (
  220         Type        => Simple,
  221         Name        => task0_2,
- 222         Worst_Case_Execution_Time   => 19.597178739353485);
+ 222         Worst_Case_Execution_Time   => 39.19435747870697);
  224 Operation (
  225         Type        => Simple,
  226         Name        => task0_3,
- 227         Worst_Case_Execution_Time   => 6.911494947179901);
+ 227         Worst_Case_Execution_Time   => 13.822989894359802);
  229 Operation (
  230         Type        => Simple,
  231         Name        => task0_4,
- 232         Worst_Case_Execution_Time   => 2.6798590661707338);
+ 232         Worst_Case_Execution_Time   => 5.3597181323414675);
  234 Operation (
  235         Type        => Simple,
  236         Name        => task1_0,
- 237         Worst_Case_Execution_Time   => 0.6381214981095317);
+ 237         Worst_Case_Execution_Time   => 1.2762429962190633);
  239 Operation (
  240         Type        => Simple,
  241         Name        => task1_1,
- 242         Worst_Case_Execution_Time   => 2.1276906347751177);
+ 242         Worst_Case_Execution_Time   => 4.255381269550235);
  244 Operation (
  245         Type        => Simple,
  246         Name        => task1_2,
- 247         Worst_Case_Execution_Time   => 3.1585182697102403);
+ 247         Worst_Case_Execution_Time   => 6.317036539420481);
  249 Operation (
  250         Type        => Simple,
  251         Name        => task1_3,
- 252         Worst_Case_Execution_Time   => 0.20618410655559338);
+ 252         Worst_Case_Execution_Time   => 0.41236821311118677);
  254 Operation (
  255         Type        => Simple,
  256         Name        => task1_4,
- 257         Worst_Case_Execution_Time   => 0.7229536677963508);
+ 257         Worst_Case_Execution_Time   => 1.4459073355927017);
  259 Operation (
  260         Type        => Simple,
  261         Name        => task2_0,
- 262         Worst_Case_Execution_Time   => 2.408717131627531);
+ 262         Worst_Case_Execution_Time   => 4.817434263255062);
  264 Operation (
  265         Type        => Simple,
  266         Name        => task2_1,
- 267         Worst_Case_Execution_Time   => 5.387959247016624);
+ 267         Worst_Case_Execution_Time   => 10.775918494033249);
  269 Operation (
  270         Type        => Simple,
  271         Name        => task2_2,
- 272         Worst_Case_Execution_Time   => 1.5764124332182725);
+ 272         Worst_Case_Execution_Time   => 3.152824866436545);
  274 Operation (
  275         Type        => Simple,
  276         Name        => task2_3,
- 277         Worst_Case_Execution_Time   => 23.656262722950167);
+ 277         Worst_Case_Execution_Time   => 47.312525445900334);
  279 Operation (
  280         Type        => Simple,
  281         Name        => task2_4,
- 282         Worst_Case_Execution_Time   => 58.961123064380246);
+ 282         Worst_Case_Execution_Time   => 117.92224612876049);
  284 Operation (
  285         Type        => Simple,
  286         Name        => task3_0,
- 287         Worst_Case_Execution_Time   => 8.315455876712141);
+ 287         Worst_Case_Execution_Time   => 16.630911753424282);
  289 Operation (
  290         Type        => Simple,
  291         Name        => task3_1,
- 292         Worst_Case_Execution_Time   => 25.29497757099447);
+ 292         Worst_Case_Execution_Time   => 50.58995514198894);
  294 Operation (
  295         Type        => Simple,
  296         Name        => task3_2,
- 297         Worst_Case_Execution_Time   => 4.414449124829628);
+ 297         Worst_Case_Execution_Time   => 8.828898249659256);
  299 Operation (
  300         Type        => Simple,
  301         Name        => task3_3,
- 302         Worst_Case_Execution_Time   => 1.861066036089449);
+ 302         Worst_Case_Execution_Time   => 3.722132072178898);
  304 Operation (
  305         Type        => Simple,
  306         Name        => task3_4,
- 307         Worst_Case_Execution_Time   => 28.731977472933345);
+ 307         Worst_Case_Execution_Time   => 57.46395494586669);
  309 Transaction (
  310         Type	=> Regular, 
  311         Name	=> flow0,
