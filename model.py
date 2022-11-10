@@ -181,21 +181,21 @@ class Task:
         return new_task
 
 
-def save_attrs(elements: [], attrs: [str]) -> None:
+def save_attrs(elements: [], attrs: [str], key="_saved_") -> None:
     for element in elements:
         for attr in attrs:
             if hasattr(element, attr):
                 value = getattr(element, attr)
-                setattr(element, "_saved_" + attr, value)
+                setattr(element, key + attr, value)
             else:
                 warnings.warn(f"Warning, element {element} does not have attribute {attr}")
 
 
-def restore_attrs(elements: [], attrs: [str]) -> None:
+def restore_attrs(elements: [], attrs: [str], key="_saved_") -> None:
     for element in elements:
         for attr in attrs:
-            if hasattr(element, "_saved_" + attr):
-                value = getattr(element, "_saved_" + attr)
+            if hasattr(element, key + attr):
+                value = getattr(element, key + attr)
                 setattr(element, attr, value)
 
 

@@ -18,7 +18,7 @@ def calculate_priorities(system) -> bool:
 
 def clear_assignment(system):
     for t in system.tasks:
-        t.priority = 0
+        t.priority = 1
         t.local_deadline = None
 
 

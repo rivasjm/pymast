@@ -1,10 +1,10 @@
 from model import System, Flow, Task, Processor
 from examples import get_palencia_system
 import generator
+import model
 
 
-def export(system, file):
-    sanitize_priorities(system)
+def export(system: System, file):
     txt = write_system(system)
     with open(file, "w") as f:
         f.write(txt)
@@ -96,6 +96,10 @@ def output_event_name(task: Task) -> str:
     return f"o_{task.name}"
 
 
+def reverse_output_event_name(event_name) -> str:
+    return event_name.lstrip("o_")
+
+
 def input_event_name(task: Task) -> str:
     return external_event_name(task.flow) if len(task.predecessors) == 0 else output_event_name(task.predecessors[0])
 
@@ -105,8 +109,28 @@ def external_event_name(flow: Flow) -> str:
 
 
 def sanitize_priorities(system: System):
-    tasks = system.tasks.sort(key=lambda t: t.priority)
-    print(tasks)
+    """
+    In-place sanitization of the priorities
+    In MAST priorities must be integers higher than 0
+    :param system:
+    """
+    # first save current priorities
+    tasks = system.tasks
+    model.save_attrs(tasks, ["priority"], "_sanitize_")
+
+    # assign integer priorities in the same ordering
+    prio = 1
+    for task in sorted(tasks, key=lambda t: t.priority):
+        task.priority = prio
+        prio += 1
+
+
+def desanitize_priorities(system: System):
+    """
+    Restore the un-sanitized priorities of the system
+    :param system:
+    """
+    model.restore_attrs(system.tasks, ["priority"], "_sanitize_")
 
 
 if __name__ == '__main__':
