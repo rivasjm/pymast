@@ -6,7 +6,8 @@ import mast.mast_writer as mast_writer
 import uuid
 import examples
 
-ROOT = "E:/dev/pymast/"
+# ROOT = "E:/dev/pymast/"
+ROOT = "D:/dev/pymast/"
 TEMP = "mast/temp/"
 MAST_PATH = "mast/mast-1-5-1-0-bin/"
 # MAST_PATH = "D:/dev/pymast/mast/mast-1-5-1-0-bin/"
@@ -57,10 +58,19 @@ def analyze(system, analysis: MastAnalysis, assignment: MastAssignment = MastAss
     finally:
         # clean-up process: restore original unsanitized priorities, remove temporary files
         mast_writer.desanitize_priorities(system)
-        if not preserve and os.path.isfile(input):
-            os.remove(input)
-        if not preserve and os.path.isfile(output):
-            os.remove(output)
+        if not preserve:
+            clear_files(input, output)
+
+
+def clear_files(*files):
+    for file in files:
+        if os.path.isfile(file):
+            while True:
+                try:
+                    os.remove(file)
+                    break
+                except PermissionError:
+                    pass
 
 
 def run(analysis, assignment, input, output=None, limit=None, timeout=None):
