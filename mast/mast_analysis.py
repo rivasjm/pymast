@@ -1,13 +1,15 @@
 import subprocess
 from enum import Enum
 import os.path
-from mast_results import parse_results
-import mast_writer
+from mast.mast_results import parse_results
+import mast.mast_writer as mast_writer
 import uuid
 import examples
 
-TEMP = "./temp/"
-MAST_PATH = "D:/dev/pymast/mast/mast-1-5-1-0-bin/"
+ROOT = "E:/dev/pymast/"
+TEMP = "mast/temp/"
+MAST_PATH = "mast/mast-1-5-1-0-bin/"
+# MAST_PATH = "D:/dev/pymast/mast/mast-1-5-1-0-bin/"
 MAST_EXECUTABLE = "mast_analysis.exe"
 MAST_NON_SCHEDULABLE = "Final analysis status: NOT-SCHEDULABLE"
 MAST_SCHEDULABLE = "The system is schedulable"
@@ -29,8 +31,9 @@ class MastAssignment(Enum):
 def analyze(system, analysis: MastAnalysis, assignment: MastAssignment = MastAssignment.NONE, limit=None):
     # create random temporary file names for this analysis, will be removed afterwards
     name = str(uuid.uuid1())
-    input = os.path.abspath(os.path.join(TEMP, name + ".txt"))
-    output = os.path.abspath(os.path.join(TEMP, name + "-out.xml"))
+    input = os.path.abspath(os.path.join(ROOT, TEMP, name + ".txt"))
+    output = os.path.abspath(os.path.join(ROOT, TEMP, name + "-out.xml"))
+    preserve = False
 
     try:
         # make sure priorities are correct for mast (integers higher than 0)
@@ -47,19 +50,21 @@ def analyze(system, analysis: MastAnalysis, assignment: MastAssignment = MastAss
             task.wcrt = results[task.name] if task.name in results else LIMIT
 
         # sanity check: system schedulability must match
-        assert system.is_schedulable() == schedulable
+        if system.is_schedulable() != schedulable:
+            print("assertion error: " + input)
+            preserve = True
 
     finally:
         # clean-up process: restore original unsanitized priorities, remove temporary files
         mast_writer.desanitize_priorities(system)
-        if os.path.isfile(input):
+        if not preserve and os.path.isfile(input):
             os.remove(input)
-        if os.path.isfile(output):
+        if not preserve and os.path.isfile(output):
             os.remove(output)
 
 
 def run(analysis, assignment, input, output=None, limit=None, timeout=None):
-    cmd = [os.path.join(MAST_PATH, MAST_EXECUTABLE), analysis.value]
+    cmd = [os.path.join(ROOT, MAST_PATH, MAST_EXECUTABLE), analysis.value]
     if assignment is not MastAssignment.NONE:
         cmd.append("-p")
         cmd.append("-t")

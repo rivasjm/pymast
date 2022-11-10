@@ -1,5 +1,4 @@
-import mast_analysis
-from mast_analysis import MastAnalysis, MastAssignment
+from mast.mast_analysis import MastAnalysis, MastAssignment, analyze
 from model import System
 
 
@@ -10,7 +9,7 @@ class MastWrapper:
         self.limit_factor = limit_factor
 
     def apply(self, system: System) -> None:
-        mast_analysis.analyze(system, self.analysis, self.assignment, limit=self.limit_factor)
+        analyze(system, self.analysis, self.assignment, limit=self.limit_factor)
 
 
 class MastHolisticAnalysis(MastWrapper):

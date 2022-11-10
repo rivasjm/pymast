@@ -12,6 +12,7 @@ import time
 import pandas as pd
 from functools import partial
 import matplotlib.pyplot as plt
+from mast.mast_wrapper import MastOffsetAnalysis, MastHolisticAnalysis
 
 
 lrs = [3]
@@ -30,7 +31,7 @@ start = time.time()  # starting time (seconds since epoch)
 def parameters_comparison(label):
     random = Random(42)
     utilizations = np.linspace(utilization_min, utilization_max, utilization_steps)
-    systems = [get_big_system(random) for _ in range(population)]
+    systems = [get_medium_system(random) for _ in range(population)]
     names, _ = zip(*get_assignments(lrs, deltas, beta1s, beta2s, epsilons))
     results = np.zeros((len(names), len(utilizations)))
 
@@ -108,7 +109,8 @@ def achieves_schedulability(system, assignment, analysis) -> bool:
 
 
 def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
-    analysis = HolisticAnalyis(reset=False, limit_factor=5)
+    # analysis = HolisticAnalyis(reset=False, limit_factor=5)
+    analysis = MastOffsetAnalysis(limit_factor=5)
     params = itertools.product(lrs, deltas, beta1s, beta2s, epsilons)
 
     pd = PDAssignment(normalize=True)
@@ -159,4 +161,4 @@ def get_sched_test():
 
 
 if __name__ == '__main__':
-    parameters_comparison("big-vector-adamrandom")
+    parameters_comparison("medium-mast-offsets")

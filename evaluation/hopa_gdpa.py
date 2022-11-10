@@ -13,6 +13,7 @@ from datetime import datetime
 import itertools
 from functools import partial
 import time
+import mast.mast_wrapper as mast
 
 
 def init(l):
@@ -90,17 +91,18 @@ def get_analysis():
 
 
 def get_assignments():
-    analysis = HolisticAnalyis(reset=False, limit_factor=5)
+    # analysis = HolisticAnalyis(reset=False, limit_factor=5)
+    analysis = mast.MastOffsetAnalysis(limit_factor=100)
     pd = PDAssignment()
     hopa = HOPAssignment(analysis=analysis)
     adam = Adam(lr=0.1, beta1=0.9, beta2=0.999, epsilon=10 ** -8)
-    gdpa_r = GDPA(proxy=analysis, verbose=False, initial=RandomAssignment(normalize=True),
-                  iterations=200, cost_fn=invslack, analysis=analysis, optimizer=adam)
+    # gdpa_r = GDPA(proxy=analysis, verbose=False, initial=RandomAssignment(normalize=True),
+    #               iterations=200, cost_fn=invslack, analysis=analysis, optimizer=adam)
     gdpa_p = GDPA(proxy=analysis, verbose=False, initial=PDAssignment(normalize=True),
                   iterations=200, cost_fn=invslack, analysis=analysis, optimizer=adam)
-    gdpa_h = GDPA(proxy=analysis, verbose=False, initial=HOPAssignment(analysis=analysis, normalize=True),
-                  iterations=200, cost_fn=invslack, analysis=analysis, optimizer=adam)
-    return [("pd", pd), ("hopa", hopa), ("gdpa_r", gdpa_r), ("gdpa_p", gdpa_p), ("gdpa_h", gdpa_h)]
+    # gdpa_h = GDPA(proxy=analysis, verbose=False, initial=HOPAssignment(analysis=analysis, normalize=True),
+    #               iterations=200, cost_fn=invslack, analysis=analysis, optimizer=adam)
+    return [("pd", pd), ("hopa", hopa), ("gdpa_p", gdpa_p)]
 
 
 def achieves_schedulability(system, assignment, analysis) -> bool:

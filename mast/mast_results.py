@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from mast_writer import reverse_output_event_name
+from mast.mast_writer import reverse_output_event_name
 
 
 def parse_results(file):
