@@ -77,22 +77,22 @@ def weighted_invslack(system) -> float:
     return num/sum(coeffs)
 
 
-def calculate_proxy_cost(system, proxy, cost_fn) -> float:
+def calculate_cost(system, analysis, cost_fn) -> float:
     save_wcrt(system)
-    proxy.apply(system)
+    analysis.apply(system)
     cost = cost_fn(system)
     restore_wcrt(system)
     return cost
 
 
-def calculate_gradients(system, proxy, cost_fn, delta=0.01) -> [float]:
+def calculate_gradients(system, analysis, cost_fn, delta=0.01) -> [float]:
     coeffs = []
     for task in system.tasks:
         priority = task.priority
         task.priority = priority - delta
-        a = calculate_proxy_cost(system, proxy, cost_fn)
+        a = calculate_cost(system, analysis, cost_fn)
         task.priority = priority + delta
-        b = calculate_proxy_cost(system, proxy, cost_fn)
+        b = calculate_cost(system, analysis, cost_fn)
         task.priority = priority
         diff = (b-a) / (2*delta)
         coeffs.append(diff)
@@ -178,10 +178,9 @@ class Adam:
 
 
 class GDPA:
-    def __init__(self, proxy, iterations=100, analysis=None, over_iterations=0, delta=1,
-                 optimizer=Adam(), initial=PDAssignment(normalize=True), cost_fn=invslack, verbose=False,
-                 callback=None):
-        self.proxy = proxy
+    def __init__(self, iterations=100, analysis=None, over_iterations=0, delta=1,
+                 optimizer=Adam(), initial=PDAssignment(normalize=True), cost_fn=invslack,
+                 verbose=False, callback=None, vectorized=True):
         self.iterations = iterations if iterations > 0 else 1
         self.analysis = analysis
         self.initial = initial
@@ -190,19 +189,19 @@ class GDPA:
         self.over_iterations = over_iterations
         self.optimizer = optimizer
         self.delta = delta
-        self.callback=callback
+        self.callback = callback
+        self.vectorized = vectorized
 
     def _iteration_metrics(self, system):
         system.apply(self.analysis if self.analysis else self.proxy)
         cost = self.cost_fn(system)
-        proxy_cost = calculate_proxy_cost(system, proxy=self.proxy, cost_fn=self.cost_fn) if self.analysis else cost
         schedulable = system.is_schedulable() if self.analysis else None
         slack = system.slack if self.analysis else None
-        return cost, proxy_cost, schedulable, slack
+        return cost, schedulable, slack
 
     @staticmethod
-    def _print_iteration_metrics(iteration, cost, proxy_cost, min_cost, schedulable, slack, end="\n"):
-        msg = f"{iteration}: proxy={proxy_cost:.2f} [cost={cost:.2f}, best={min_cost:.2f}"
+    def _print_iteration_metrics(iteration, cost, min_cost, schedulable, slack, end="\n"):
+        msg = f"{iteration}: [cost={cost:.2f}, best={min_cost:.2f}"
         if slack is not None:
             msg += f", slack={slack:.2f}"
         if schedulable is not None:
@@ -217,14 +216,14 @@ class GDPA:
 
         # calculate initial metrics. Uses real analysis if available, proxy otherwise
         self.initial.apply(system)
-        cost, proxy_cost, schedulable, slack = self._iteration_metrics(system)
+        cost, schedulable, slack = self._iteration_metrics(system)
         min_cost = cost
 
         if self.callback:
             self.callback.apply(system)
 
         if self.verbose:
-            self._print_iteration_metrics(0, cost, proxy_cost, min_cost, schedulable, slack)
+            self._print_iteration_metrics(0, cost, min_cost, schedulable, slack)
 
         if schedulable:
             optimizing = True
@@ -237,7 +236,8 @@ class GDPA:
             # update priorities using gradient descent and the proxy analysis function
             delta = self.delta*avg_parameter_separation([task.priority for task in system.tasks])
             # coeffs = calculate_gradients(system, self.proxy, cost_fn=self.cost_fn, delta=delta)
-            coeffs = calculate_gradients_vector(system, delta=delta)
+            coeffs = calculate_gradients_vector(system, delta=delta) if self.vectorized else \
+                calculate_gradients(system, self.analysis, cost_fn=self.cost_fn, delta=delta)
 
             updates = self.optimizer.step(coeffs, i)
             for task, update in zip(tasks, updates):
@@ -245,7 +245,7 @@ class GDPA:
             normalize_priorities(system)
 
             # calculate current metrics. Uses real analysis if available, proxy otherwise
-            cost, proxy_cost, schedulable, slack = self._iteration_metrics(system)
+            cost, schedulable, slack = self._iteration_metrics(system)
             if cost < min_cost:
                 min_cost = cost
                 save_assignment(system)
@@ -254,7 +254,7 @@ class GDPA:
                 self.callback.apply(system)
 
             if self.verbose:
-                self._print_iteration_metrics(i, cost, proxy_cost, min_cost, schedulable, slack)
+                self._print_iteration_metrics(i, cost, min_cost, schedulable, slack)
 
             if schedulable:
                 optimizing = True

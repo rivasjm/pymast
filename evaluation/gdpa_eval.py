@@ -12,7 +12,7 @@ import time
 import pandas as pd
 from functools import partial
 import matplotlib.pyplot as plt
-from mast.mast_wrapper import MastOffsetAnalysis, MastHolisticAnalysis
+from mast.mast_wrapper import MastOffsetAnalysis, MastHolisticAnalysis, MastOffsetPrecedenceAnalysis
 
 
 lrs = [3]
@@ -110,7 +110,7 @@ def achieves_schedulability(system, assignment, analysis) -> bool:
 
 def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
     # analysis = HolisticAnalyis(reset=False, limit_factor=5)
-    analysis = MastOffsetAnalysis(limit_factor=5)
+    analysis = MastOffsetPrecedenceAnalysis(limit_factor=1)
     params = itertools.product(lrs, deltas, beta1s, beta2s, epsilons)
 
     pd = PDAssignment(normalize=True)
@@ -126,13 +126,13 @@ def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
         # assigs.append((f"gdpa-r [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
         #
         # GDPA PD
-        assig = GDPA(proxy=analysis, verbose=False, initial=pd,
+        assig = GDPA(verbose=False, initial=pd,
                      iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
                      optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
         assigs.append((f"gdpa-pd [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
 
         # GDPA HOPA
-        assig = GDPA(proxy=analysis, verbose=False, initial=hopa,
+        assig = GDPA(verbose=False, initial=hopa,
                      iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
                      optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
         assigs.append((f"gdpa-hopa [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
@@ -157,8 +157,8 @@ def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
 
 
 def get_sched_test():
-    return HolisticAnalyis(limit_factor=1)
+    return MastOffsetPrecedenceAnalysis(limit_factor=1)
 
 
 if __name__ == '__main__':
-    parameters_comparison("medium-mast-offsets")
+    parameters_comparison("medium-mast-offsets_pr1")
