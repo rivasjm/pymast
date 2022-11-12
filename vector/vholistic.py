@@ -161,22 +161,32 @@ class VectorHolisticAnalysis:
         self.limit_factor = limit_factor
         self.priority_scenarios = None
         self._response_times = None
+        self._full_priorities = None
         self._full_response_times = None
 
     def clear(self):
         self.priority_scenarios = None
         self._response_times = None
+        self._full_priorities = None
         self._full_response_times = None
 
     @property
     def response_times(self):
+        """Response time matrix of the priority scenarios"""
         return self._response_times
 
     @property
     def full_response_times(self):
+        """Response time matrix of the system + the priority scenarios"""
         return self._full_response_times
 
+    @property
+    def full_priorities(self):
+        """Matrix with the system priorities + the priority scenarios"""
+        return self._full_priorities
+
     def set_priority_scenarios(self, priorities):
+        """Set the priority scenarios to analysis, in addition to the priorities currently set in the system"""
         self.priority_scenarios = priorities
 
     def apply(self, system: System):
@@ -186,10 +196,11 @@ class VectorHolisticAnalysis:
         # the first scenario is for the priorities in the input system
         if self.priority_scenarios is not None:
             priorities = np.hstack((priorities, self.priority_scenarios))
+        self._full_priorities = priorities
 
         # get response times for all scenarios
         r = analysis(wcets, periods, deadlines, successors, mappings, priorities,
-                     verbose = self.verbose, limit=self.limit_factor)
+                     verbose=self.verbose, limit=self.limit_factor)
 
         # set the response times of the first scenario as the wcrt if the input system
         for task, wcrt in zip(system.tasks, r[0].ravel()):
@@ -198,7 +209,7 @@ class VectorHolisticAnalysis:
         # save scenarios response times
         scenarios = priorities.shape[1]
         self._full_response_times = r.ravel(order="F").reshape((len(system.tasks), scenarios))
-        self._response_times = r[1:,:,:].ravel(order="F").reshape((len(system.tasks), scenarios-1)) \
+        self._response_times = r[1:, :, :].ravel(order="F").reshape((len(system.tasks), scenarios-1)) \
             if scenarios > 1 else None
 
 

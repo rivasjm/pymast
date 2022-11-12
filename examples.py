@@ -50,6 +50,20 @@ def get_barely_schedulable() -> System:
     return system
 
 
+def get_small_system(random=Random(), utilization=0.5) -> System:
+    n_flows, t_tasks, n_procs = (3, 4, 3)
+    system = generate_system(random,
+                             n_flows=n_flows,
+                             n_tasks=t_tasks,
+                             n_procs=n_procs,
+                             utilization=utilization,
+                             period_min=100,
+                             period_max=100*3,
+                             deadline_factor_min=0.5,
+                             deadline_factor_max=1)
+    return system
+
+
 def get_medium_system(random=Random(), utilization=0.84) -> System:
     n_flows, t_tasks, n_procs = (4, 5, 3)
     system = generate_system(random,
