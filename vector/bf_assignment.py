@@ -38,7 +38,21 @@ class BruteForceAssignment:
         # now I need to determine if any scenario was schedulable.
         # if a scenario was schedulable, set the priority assignment to the system, and return True
         # otherwise, just return False
-        return False
+
+        n = len(system.tasks)
+        prios = self.analysis.full_priorities
+        wcrts = self.analysis.full_response_times
+        deadlines = np.array([task.flow.deadline for task in system.tasks]).reshape((n, 1))
+        slacks = deadlines-wcrts
+        schedulables = np.all(slacks >= 0, axis=0)
+        if np.any(schedulables):
+            index = np.argmax(schedulables)
+            solution = prios[:, index]
+            for p, task in zip(solution, system.tasks):
+                task.priority = p
+            return True
+        else:
+            return False
 
     def apply(self, system: System):
         # [[tasks in proc 0], [tasks in proc 1], etc.]
@@ -48,7 +62,7 @@ class BruteForceAssignment:
         space = itertools.product(*prios)
         batch = []
         for solution in space:
-            batch.append(assignment)
+            batch.append(solution)
             if len(batch) == self.size:
                 self.process(system, batch)
                 batch.clear()
@@ -56,7 +70,9 @@ class BruteForceAssignment:
 
 if __name__ == '__main__':
     system = examples.get_small_system()
-    bf = BruteForceAssignment()
+    pd = assignment.PDAssignment()
+    system.apply(pd)
+    bf = BruteForceAssignment(size=3)
     system.apply(bf)
 
 
