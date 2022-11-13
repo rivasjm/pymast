@@ -69,20 +69,24 @@ class BruteForceAssignment:
 
         # flat list of tasks grouped by processor
         proc_tasks = flatten([proc.tasks for proc in system.processors])
-        # mapping from proc_tasks to a flat list of tasks according to their flow position
+        # mapping from proc_tasks to a flat list of tasks according to their flow position (task-in-flow ordering)
         task_mapping = np.array([proc_tasks.index(task) for task in system.tasks])
 
-        # [[tasks in proc 0], [tasks in proc 1], etc.]
+        # all priority assignments possible in each processor
         prios = [range(1, len(p.tasks)+1) for p in system.processors]
         prios = [list(itertools.permutations(p)) for p in prios]
 
+        # search space: all system-wide assignments possible
         space = itertools.product(*prios)
-        batch = []
-        processed = 0
         space_size = brute_force_space_size(system)
 
+        # prepare the space search. space will be analyzed in batches of size self.size
+        batch = []
+        processed = 0
+
+        # iterate the space
         for solution in space:
-            # transform solution to a flat list, in flow ordering
+            # transform solution to a flat list, task-in-flow ordering
             trans = np.array(flatten(solution))[task_mapping].tolist()
             batch.append(trans)
 
@@ -91,7 +95,7 @@ class BruteForceAssignment:
                 schedulable = self.process(system, batch)
                 processed += len(batch)
                 if self.verbose:
-                    print(f"Processed {processed}/{space_size} possible solutions")
+                    print(f"Processed {processed}/{space_size} ({processed/space_size*100:.3f}%) possible solutions")
                 batch.clear()
                 if schedulable:
                     if self.verbose:
@@ -111,12 +115,13 @@ def flatten(list):
 
 
 if __name__ == '__main__':
-    system = examples.get_small_system(utilization=0.85, balanced=True)
+    system = examples.get_medium_system(utilization=0.8, balanced=True)
     size = brute_force_space_size(system)
+    print(size)
 
     pd = assignment.PDAssignment()
     system.apply(pd)
-    bf = BruteForceAssignment(size=20000)
+    bf = BruteForceAssignment(verbose=True, size=10000)
     system.apply(bf)
 
 
