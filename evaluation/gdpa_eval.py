@@ -4,7 +4,7 @@ from gradient_descent import *
 from generator import set_utilization
 import itertools
 import numpy as np
-from examples import get_medium_system, get_big_system
+from examples import get_medium_system, get_big_system, get_small_system
 from random import Random
 from multiprocessing import Pool
 from datetime import datetime
@@ -13,6 +13,7 @@ import pandas as pd
 from functools import partial
 import matplotlib.pyplot as plt
 from mast.mast_wrapper import MastOffsetAnalysis, MastHolisticAnalysis, MastOffsetPrecedenceAnalysis
+import vector.bf_assignment
 
 
 lrs = [3]
@@ -31,7 +32,7 @@ start = time.time()  # starting time (seconds since epoch)
 def parameters_comparison(label):
     random = Random(42)
     utilizations = np.linspace(utilization_min, utilization_max, utilization_steps)
-    systems = [get_medium_system(random) for _ in range(population)]
+    systems = [get_small_system(random, balanced=True) for _ in range(population)]
     names, _ = zip(*get_assignments(lrs, deltas, beta1s, beta2s, epsilons))
     results = np.zeros((len(names), len(utilizations)))
 
@@ -109,22 +110,27 @@ def achieves_schedulability(system, assignment, analysis) -> bool:
 
 
 def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
-    # analysis = HolisticAnalyis(reset=False, limit_factor=5)
-    analysis = MastOffsetPrecedenceAnalysis(limit_factor=1)
-    params = itertools.product(lrs, deltas, beta1s, beta2s, epsilons)
+    analysis = HolisticAnalyis(reset=False, limit_factor=10)
+    # analysis = MastOffsetPrecedenceAnalysis(limit_factor=1)
 
+    # legacy assignments
     pd = PDAssignment(normalize=True)
     hopa = HOPAssignment(analysis=analysis, normalize=True)
-
     assigs = [("pd", pd), ("hopa", hopa)]
 
+    # brute force assignments
+    brute = vector.bf_assignment.BruteForceAssignment(size=10000)
+    assigs.append(("bf", brute))
+
+    # GDPA assignments
+    params = itertools.product(lrs, deltas, beta1s, beta2s, epsilons)
     for lr, delta, beta1, beta2, epsilon in params:
         # GDPA Random
-        # assig = GDPA(proxy=analysis, verbose=False, initial=RandomAssignment(normalize=True),
+        # assig = GDPA(verbose=False, initial=RandomAssignment(normalize=True),
         #              iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
         #              optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
         # assigs.append((f"gdpa-r [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
-        #
+
         # GDPA PD
         assig = GDPA(verbose=False, initial=pd,
                      iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
@@ -132,10 +138,10 @@ def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
         assigs.append((f"gdpa-pd [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
 
         # GDPA HOPA
-        assig = GDPA(verbose=False, initial=hopa,
-                     iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
-                     optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
-        assigs.append((f"gdpa-hopa [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
+        # assig = GDPA(verbose=False, initial=hopa,
+        #              iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
+        #              optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
+        # assigs.append((f"gdpa-hopa [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
 
     return assigs
 
@@ -157,8 +163,9 @@ def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
 
 
 def get_sched_test():
-    return MastOffsetPrecedenceAnalysis(limit_factor=1)
+    return HolisticAnalyis(limit_factor=1)
+    # return MastOffsetPrecedenceAnalysis(limit_factor=1)
 
 
 if __name__ == '__main__':
-    parameters_comparison("medium-mast-offsets_pr1")
+    parameters_comparison("small-bruteforce-holistic")

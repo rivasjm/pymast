@@ -1,3 +1,4 @@
+import math
 from random import Random
 from math import pow, log, exp
 from model import *
@@ -33,7 +34,8 @@ def set_utilization(system: System, utilization: float):
 
 
 def generate_system(random: Random, n_flows, n_tasks, n_procs, utilization,
-                    period_min, period_max, deadline_factor_min, deadline_factor_max) -> System:
+                    period_min, period_max, deadline_factor_min, deadline_factor_max,
+                    balanced=False) -> System:
 
     procs = [Processor(name=f"proc{i}") for i in range(n_procs)]
     system = System()
@@ -48,6 +50,15 @@ def generate_system(random: Random, n_flows, n_tasks, n_procs, utilization,
         tasks = [Task(name=f"task{f}_{t}", wcet=0, processor=random.choice(procs)) for t in range(n_tasks)]
         flow.add_tasks(*tasks)
         system.add_flows(flow)
+
+    # if balanced=True, balance the number of tasks per processor (ignore current mapping)
+    if balanced:
+        # I create a new Random object, to not interfere with the Random object used below for WCET's
+        r = Random(len(system.tasks))
+        tasks = system.tasks
+        r.shuffle(tasks)
+        for i, task in enumerate(tasks):
+            task.processor = procs[i % len(procs)]
 
     # set the WCET's
     for proc in procs:
