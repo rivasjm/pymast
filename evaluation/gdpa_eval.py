@@ -4,7 +4,7 @@ from gradient_descent import *
 from generator import set_utilization
 import itertools
 import numpy as np
-from examples import get_medium_system, get_big_system, get_small_system
+from examples import get_medium_system, get_big_system, get_small_system, get_system
 from random import Random
 from multiprocessing import Pool
 from datetime import datetime
@@ -16,6 +16,7 @@ from mast.mast_wrapper import MastOffsetAnalysis, MastHolisticAnalysis, MastOffs
 import vector.bf_assignment
 
 
+size = (4, 4, 4)  # flows, tasks/flow, processors
 lrs = [3]
 deltas = [1.5]
 beta1s = [0.9]
@@ -32,7 +33,7 @@ start = time.time()  # starting time (seconds since epoch)
 def parameters_comparison(label):
     random = Random(42)
     utilizations = np.linspace(utilization_min, utilization_max, utilization_steps)
-    systems = [get_small_system(random, balanced=True) for _ in range(population)]
+    systems = [get_system(size, random, balanced=True) for _ in range(population)]
     names, _ = zip(*get_assignments(lrs, deltas, beta1s, beta2s, epsilons))
     results = np.zeros((len(names), len(utilizations)))
 
@@ -168,4 +169,6 @@ def get_sched_test():
 
 
 if __name__ == '__main__':
-    parameters_comparison("small-bruteforce-holistic")
+    autoname = "".join(map(str, size))
+    suffix = "bruteforce-holistic"
+    parameters_comparison(f"{autoname}-{suffix}")
