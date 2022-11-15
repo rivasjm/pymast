@@ -37,8 +37,9 @@ def generate_system(random: Random, n_flows, n_tasks, n_procs, utilization,
                     period_min, period_max, deadline_factor_min, deadline_factor_max,
                     balanced=False) -> System:
 
-    procs = [Processor(name=f"proc{i}") for i in range(n_procs)]
     system = System()
+    procs = [Processor(name=f"proc{i}") for i in range(n_procs)]
+    system.add_procs(*procs)
 
     # set the general structure
     for f in range(n_flows):

@@ -10,8 +10,10 @@ class System:
         self.flows += flows
         for flow in flows:
             flow.system = self
-            for task in flow:
-                task.processor.system = self
+
+    def add_procs(self, *procs):
+        for proc in procs:
+            proc.system = self
 
     def __getitem__(self, item):
         if isinstance(item, int):

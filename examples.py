@@ -11,6 +11,7 @@ def get_palencia_system() -> System:
     cpu1 = Processor(name="cpu1")
     cpu2 = Processor(name="cpu2")
     network = Processor(name="network")
+    system.add_procs(cpu1, cpu2, network)
 
     # priority levels
     HIGH = 10
