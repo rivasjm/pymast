@@ -16,7 +16,7 @@ from mast.mast_wrapper import MastOffsetAnalysis, MastHolisticAnalysis, MastOffs
 import vector.bf_assignment
 
 
-size = (4, 4, 4)  # flows, tasks/flow, processors
+size = (2, 10, 5)  # flows, tasks/flow, processors
 lrs = [3]
 deltas = [1.5]
 beta1s = [0.9]
@@ -76,6 +76,10 @@ def chart(label, names, utilizations, results, save=False):
     ax.set_ylabel("Schedulable systems")
     ax.set_xlabel("Average utilization")
 
+    # print system size
+    system_size = "size=" + "x".join(map(str, size))
+    ax.annotate(system_size, xy=(0, -0.1), xycoords='axes fraction', ha='left', va="center", fontsize=8)
+
     # register execution time
     time_label = f"{time.time()- start:.2f} seconds"
     ax.annotate(time_label, xy=(1, -0.1), xycoords='axes fraction', ha='right', va="center", fontsize=8)
@@ -127,10 +131,10 @@ def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
     params = itertools.product(lrs, deltas, beta1s, beta2s, epsilons)
     for lr, delta, beta1, beta2, epsilon in params:
         # GDPA Random
-        # assig = GDPA(verbose=False, initial=RandomAssignment(normalize=True),
-        #              iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
-        #              optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
-        # assigs.append((f"gdpa-r [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
+        assig = GDPA(verbose=False, initial=RandomAssignment(normalize=True),
+                     iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
+                     optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
+        assigs.append((f"gdpa-r [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
 
         # GDPA PD
         assig = GDPA(verbose=False, initial=pd,
