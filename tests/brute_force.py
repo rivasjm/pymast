@@ -10,8 +10,8 @@ from evaluation.gdpa_eval import achieves_schedulability
 def find_system_problem():
     random = Random(42)
     analysis = HolisticAnalyis(limit_factor=1)
-    brute = bf.BruteForceAssignment(size=10000, verbose=True)
-    hopa = HOPAssignment(analysis=HolisticAnalyis(reset=False, limit_factor=10), normalize=True, verbose=True)
+    brute = bf.BruteForceAssignment(size=10000, verbose=False)
+    hopa = HOPAssignment(analysis=HolisticAnalyis(reset=False, limit_factor=10), normalize=False, verbose=False)
 
     size = (2, 10, 5)  # flows, tasks/flow, processors
     systems = [get_system(size, random, balanced=True) for _ in range(50)]
@@ -22,19 +22,22 @@ def find_system_problem():
     #     print(" ".join(map(lambda t: str(t.wcet), system.tasks)))
 
     for n, system in enumerate(systems):
-        # if n < 44:
-        #     continue
-
-        print(f"ITERATION {n} : {system.flows[0].period}, {system.flows[1].period}")
-        print("###### BRUTE FORCE ######")
+        # brute.apply(system)
+        # print(f"{n}:\tbrute={brute.schedulable} ", end="")
+        # analysis.apply(system)
+        # print(f"analysis={system.is_schedulable()} -> ", end="")
+        # print(priorities_repr(system), end="")
+        # if brute.schedulable != system.is_schedulable():
+        #     print("############# ERROR ##############")
+        # print("")
+        #
+        # hopa.apply(system)
+        # analysis.apply(system)
+        # print(f"\thopa={system.is_schedulable()} -> {priorities_repr(system)}")
         brute_sched = achieves_schedulability(system, brute, analysis)
-
-        # print("###### HOPA ######")
-        # hopa_sched = achieves_schedulability(system, hopa, analysis)
-
-        # if brute_sched != hopa_sched:
-        #     print(f"PROBLEMA EN SISTEMA {n} : {system.flows[0].period}, {system.flows[1].period}")
-        #     break
+        prios = priorities_repr(system)
+        hopa_sched = achieves_schedulability(system, hopa, analysis)
+        print(f"{n}: brute={brute_sched} hopa={hopa_sched} -> {prios}")
 
 
 def brute_force_problem():
@@ -57,5 +60,10 @@ def get_problem_system():
     return system
 
 
+def priorities_repr(system):
+    return " ".join(map(lambda t: str(int(t.priority)), system.tasks))
+
+
 if __name__ == '__main__':
+    # print(get_problem_system())
     find_system_problem()

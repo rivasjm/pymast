@@ -37,6 +37,7 @@ class BruteForceAssignment:
         self.size = size if size > 0 else 1
         self.verbose = verbose
         self.analysis = vholistic.VectorHolisticAnalysis(limit_factor=1)
+        self.schedulable = False
 
     def process(self, system, batch) -> bool:
         scenarios = np.array(batch).T
@@ -63,6 +64,7 @@ class BruteForceAssignment:
             return False
 
     def apply(self, system: System):
+        self.schedulable = False
         # first apply PD as initial assignment
         pd = PDAssignment()
         pd.apply(system)
@@ -98,6 +100,7 @@ class BruteForceAssignment:
                     print(f"Processed {processed}/{space_size} ({processed/space_size*100:.3f}%) possible solutions")
                 batch.clear()
                 if schedulable:
+                    self.schedulable = True
                     if self.verbose:
                         print("Schedulable solution found")
                     break
@@ -107,6 +110,7 @@ class BruteForceAssignment:
             schedulable = self.process(system, batch)
             batch.clear()
             if schedulable and self.verbose:
+                self.schedulable = True
                 print("Schedulable Solution found")
 
 

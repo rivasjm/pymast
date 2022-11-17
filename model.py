@@ -5,6 +5,7 @@ import warnings
 class System:
     def __init__(self):
         self.flows = list()
+        self.processors = list()
 
     def add_flows(self, *flows):
         self.flows += flows
@@ -13,6 +14,7 @@ class System:
 
     def add_procs(self, *procs):
         for proc in procs:
+            self.processors.append(proc)
             proc.system = self
 
     def __getitem__(self, item):
@@ -30,10 +32,6 @@ class System:
     @property
     def tasks(self):
         return [task for flow in self.flows for task in flow]
-
-    @property
-    def processors(self):
-        return list({task.processor for flow in self.flows for task in flow})
 
     def processor(self, name):
         return next((p for p in self.processors if p.name == name), None)
@@ -60,6 +58,9 @@ class System:
     def avg_flow_wcrt(self):
         return sum(map(lambda f: f.wcrt, self.flows))/len(self.flows)
 
+    def __repr__(self):
+        return "\n".join(map(lambda f: str(f), self.flows))
+
 
 class Processor:
     def __init__(self, name):
@@ -67,7 +68,7 @@ class Processor:
         self.name = name
 
     def __repr__(self):
-        return f"{self.name} ({id(self)})"
+        return f"{self.name}"
 
     @property
     def tasks(self):
@@ -94,7 +95,8 @@ class Flow:
             task.flow = self
 
     def __repr__(self):
-        return f"{self.name} ({id(self)})"
+        ts = " ".join(map(lambda t: str(t), self.tasks))
+        return f"{self.period} : {ts} : {self.deadline})"
 
     @property
     def wcrt(self):
@@ -144,7 +146,7 @@ class Task:
         self.wcrt = None
 
     def __repr__(self):
-        return f"{self.name} ({id(self)})"
+        return f"{self.processor.name}({self.wcet:.2f})"
 
     @property
     def utilization(self):

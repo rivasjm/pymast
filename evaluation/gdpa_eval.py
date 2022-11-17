@@ -174,5 +174,5 @@ def get_sched_test():
 
 if __name__ == '__main__':
     autoname = "".join(map(str, size))
-    suffix = "bruteforce-holistic"
+    suffix = "bruteforce-holistic2"
     parameters_comparison(f"{autoname}-{suffix}")

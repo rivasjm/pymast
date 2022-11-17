@@ -202,7 +202,7 @@ class VectorHolisticAnalysis:
         r = analysis(wcets, periods, deadlines, successors, mappings, priorities,
                      verbose=self.verbose, limit=self.limit_factor)
 
-        # set the response times of the first scenario as the wcrt if the input system
+        # set the response times of the first scenario as the wcrt of the input system
         for task, wcrt in zip(system.tasks, r[0].ravel()):
             task.wcrt = wcrt
 
