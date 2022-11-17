@@ -22,6 +22,10 @@ def find_system_problem():
     #     print(" ".join(map(lambda t: str(t.wcet), system.tasks)))
 
     for n, system in enumerate(systems):
+        m = f"{system.flows[0]} {system.flows[1]}"
+        print(m)
+        p = " ".join(map(lambda p: str(len(p.tasks)), system.processors))
+        print(system.utilization)
         # brute.apply(system)
         # print(f"{n}:\tbrute={brute.schedulable} ", end="")
         # analysis.apply(system)
@@ -34,10 +38,11 @@ def find_system_problem():
         # hopa.apply(system)
         # analysis.apply(system)
         # print(f"\thopa={system.is_schedulable()} -> {priorities_repr(system)}")
-        brute_sched = achieves_schedulability(system, brute, analysis)
-        prios = priorities_repr(system)
-        hopa_sched = achieves_schedulability(system, hopa, analysis)
-        print(f"{n}: brute={brute_sched} hopa={hopa_sched} -> {prios}")
+
+        # brute_sched = achieves_schedulability(system, brute, analysis)
+        # prios = priorities_repr(system)
+        # hopa_sched = achieves_schedulability(system, hopa, analysis)
+        # print(f"{n}: brute={brute_sched} hopa={hopa_sched} -> {prios}")
 
 
 def brute_force_problem():

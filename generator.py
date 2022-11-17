@@ -54,10 +54,9 @@ def generate_system(random: Random, n_flows, n_tasks, n_procs, utilization,
 
     # if balanced=True, balance the number of tasks per processor (ignore current mapping)
     if balanced:
-        # I create a new Random object, to not interfere with the Random object used below for WCET's
-        r = Random(len(system.tasks))
+        # r = Random(len(system.tasks))
         tasks = system.tasks
-        r.shuffle(tasks)
+        random.shuffle(tasks)
         for i, task in enumerate(tasks):
             task.processor = procs[i % len(procs)]
 
