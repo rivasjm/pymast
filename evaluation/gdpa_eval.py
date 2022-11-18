@@ -36,6 +36,7 @@ def parameters_comparison(label):
     systems = [get_system(size, random, balanced=True) for _ in range(population)]
     names, _ = zip(*get_assignments(lrs, deltas, beta1s, beta2s, epsilons))
     results = np.zeros((len(names), len(utilizations)))
+    nonscheds = np.zeros((len(names), len(utilizations)))
 
     job = 0
     for u, utilization in enumerate(utilizations):
@@ -45,18 +46,28 @@ def parameters_comparison(label):
         #
         with Pool(4) as pool:
             func = partial(step, index=u)
-            for arr, index in pool.imap_unordered(func, systems):
+            for arr, ns, index in pool.imap_unordered(func, systems):
                 job += 1
                 results[:, index] += arr
+                nonscheds[:, index] += ns
                 print(".", end="")
                 if job % 25 == 0:
                     print(f"\n{datetime.now()} : job={job}")
                 if job % population == 0:
-                    excel(label, names, utilizations, results)
-                    chart(label, names, utilizations, results, save=True)
+                    save_files(results, f"{label}_scheds", names, utilizations)
+                    save_files(nonscheds, f"{label}_nonscheds", names, utilizations, show=False)
+                    # excel(label, names, utilizations, results)
+                    # chart(label, names, utilizations, results, save=True)
 
-    excel(label, names, utilizations, results)
-    chart(label, names, utilizations, results, save=True)
+    # excel(label, names, utilizations, results)
+    # chart(label, names, utilizations, results, save=True)
+    save_files(results, f"{label}_scheds", names, utilizations)
+    save_files(nonscheds, f"{label}_scheds", names, utilizations, show=False)
+
+
+def save_files(values, label, names, utilizations, show=True):
+    excel(label, names, utilizations, values)
+    chart(label, names, utilizations, values, save=True, show=show)
 
 
 def print_overview(label, names, utilizations, results):
@@ -66,7 +77,7 @@ def print_overview(label, names, utilizations, results):
     print(df)
 
 
-def chart(label, names, utilizations, results, save=False):
+def chart(label, names, utilizations, results, save=False, show=True):
     # the export version should be transposed, it is the convention to have the continuous data in the columns
     df = pd.DataFrame(data=np.transpose(results),
                       index=utilizations,
@@ -85,8 +96,9 @@ def chart(label, names, utilizations, results, save=False):
     ax.annotate(time_label, xy=(1, -0.1), xycoords='axes fraction', ha='right', va="center", fontsize=8)
     fig.tight_layout()
     if save:
-        fig.savefig(f"gdpa_{label}.png")
-    plt.show()
+        fig.savefig(f"{label}.png")
+    if show:
+        plt.show()
 
 
 def excel(label, names, utilizations, results):
@@ -94,17 +106,21 @@ def excel(label, names, utilizations, results):
     df = pd.DataFrame(data=np.transpose(results),
                       index=utilizations,
                       columns=names)
-    df.to_excel(f"gdpa_{label}.xlsx")
+    df.to_excel(f"{label}.xlsx")
 
 
 def step(system, index):
     names, assigs = zip(*get_assignments(lrs, deltas, beta1s, beta2s, epsilons))
     sched_test = get_sched_test()
     results = np.zeros(len(assigs))
+    ns = np.zeros(len(assigs))
     for a, assig in enumerate(assigs):
-        if achieves_schedulability(system, assig, sched_test):
+        sched = achieves_schedulability(system, assig, sched_test)
+        if sched:
             results[a] += 1
-    return results, index
+        else:
+            ns[a] += 1
+    return results, ns, index
 
 
 def achieves_schedulability(system, assignment, analysis) -> bool:
@@ -174,5 +190,5 @@ def get_sched_test():
 
 if __name__ == '__main__':
     autoname = "".join(map(str, size))
-    suffix = "bruteforce-holistic2"
+    suffix = "bf-hol-2"
     parameters_comparison(f"{autoname}-{suffix}")

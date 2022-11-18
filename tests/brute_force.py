@@ -16,19 +16,14 @@ def find_system_problem():
 
     size = (2, 10, 5)  # flows, tasks/flow, processors
     systems = [get_system(size, random, balanced=True) for _ in range(50)]
-    for s in systems:
-
-    # for system in systems:
-    #     print(" ".join(map(lambda t: str(t.wcet), system.tasks)))
 
     for u in utilizations:
         for n, system in enumerate(systems):
             set_utilization(system, u)
 
-            # m = f"{system.flows[0]} {system.flows[1]}"
-            # print(m)
-            # p = " ".join(map(lambda p: str(len(p.tasks)), system.processors))
-            # print(system.utilization)
+            m = f"{system.flows[0]} {system.flows[1]}"
+            print(m)
+            p = " ".join(map(lambda p: str(len(p.tasks)), system.processors))
 
             # brute.apply(system)
             # print(f"{n}:\tbrute={brute.schedulable} ", end="")
@@ -42,11 +37,11 @@ def find_system_problem():
             # analysis.apply(system)
             # print(f"\thopa={system.is_schedulable()} -> {priorities_repr(system)}")
 
-            brute_sched = achieves_schedulability(system, brute, analysis)
-            prios = priorities_repr(system)
-            hopa_sched = achieves_schedulability(system, hopa, analysis)
-            msg = "ERROR" if hopa_sched and not brute_sched else ""
-            print(f"{u}:{n}: brute={brute_sched} hopa={hopa_sched} {msg} -> {prios}")
+            # brute_sched = achieves_schedulability(system, brute, analysis)
+            # prios = priorities_repr(system)
+            # hopa_sched = achieves_schedulability(system, hopa, analysis)
+            # msg = "ERROR" if hopa_sched and not brute_sched else ""
+            # print(f"{u}:{n}: brute={brute_sched} hopa={hopa_sched} {msg} -> {prios}")
 
 
 def brute_force_problem():
