@@ -4,6 +4,7 @@ import warnings
 
 class System:
     def __init__(self):
+        self.name = None
         self.flows = list()
         self.processors = list()
 

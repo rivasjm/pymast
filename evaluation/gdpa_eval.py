@@ -33,7 +33,7 @@ start = time.time()  # starting time (seconds since epoch)
 def parameters_comparison(label):
     random = Random(42)
     utilizations = np.linspace(utilization_min, utilization_max, utilization_steps)
-    systems = [get_system(size, random, balanced=True) for _ in range(population)]
+    systems = [get_system(size, random, balanced=True, name=str(i)) for i in range(population)]
     names, _ = zip(*get_assignments(lrs, deltas, beta1s, beta2s, epsilons))
     results = np.zeros((len(names), len(utilizations)))
     nonscheds = np.zeros((len(names), len(utilizations)))
@@ -46,11 +46,12 @@ def parameters_comparison(label):
         #
         with Pool(4) as pool:
             func = partial(step, index=u)
-            for arr, ns, index in pool.imap_unordered(func, systems):
+            for arr, ns, index, system_name in pool.imap_unordered(func, systems):
                 job += 1
                 results[:, index] += arr
                 nonscheds[:, index] += ns
                 print(".", end="")
+                save_log(label, u, utilization, system_name, names, arr)
                 if job % 25 == 0:
                     print(f"\n{datetime.now()} : job={job}")
                 if job % population == 0:
@@ -68,6 +69,12 @@ def parameters_comparison(label):
 def save_files(values, label, names, utilizations, show=True):
     excel(label, names, utilizations, values)
     chart(label, names, utilizations, values, save=True, show=show)
+
+
+def save_log(label, u, utilization, system_name, tools, results):
+    res_str = " ".join([t for t, r in zip(tools, results) if r > 0])
+    with open(f"{label}_log.txt", "a") as f:
+        f.write(f"{datetime.now()} : {label} {utilization:.2f}({u}) {system_name} \t-> {res_str}\n")
 
 
 def print_overview(label, names, utilizations, results):
@@ -112,7 +119,7 @@ def excel(label, names, utilizations, results):
 def step(system, index):
     names, assigs = zip(*get_assignments(lrs, deltas, beta1s, beta2s, epsilons))
     sched_test = get_sched_test()
-    results = np.zeros(len(assigs))
+    results = np.zeros(len(assigs), dtype=np.int)
     ns = np.zeros(len(assigs))
     for a, assig in enumerate(assigs):
         sched = achieves_schedulability(system, assig, sched_test)
@@ -120,7 +127,7 @@ def step(system, index):
             results[a] += 1
         else:
             ns[a] += 1
-    return results, ns, index
+    return results, ns, index, system.name
 
 
 def achieves_schedulability(system, assignment, analysis) -> bool:
@@ -150,13 +157,13 @@ def get_assignments(lrs, deltas, beta1s, beta2s, epsilons):
         assig = GDPA(verbose=False, initial=RandomAssignment(normalize=True),
                      iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
                      optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
-        assigs.append((f"gdpa-r [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
+        assigs.append((f"gdpa-r", assig))
 
         # GDPA PD
         assig = GDPA(verbose=False, initial=pd,
                      iterations=200, cost_fn=invslack, analysis=analysis, delta=delta,
                      optimizer=Adam(lr=lr, beta1=beta1, beta2=beta2, epsilon=epsilon))
-        assigs.append((f"gdpa-pd [lr={lr} d={delta} b1={beta1} b2={beta2} e={epsilon}]", assig))
+        assigs.append((f"gdpa-pd", assig))
 
         # GDPA HOPA
         # assig = GDPA(verbose=False, initial=hopa,

@@ -51,7 +51,7 @@ def get_barely_schedulable() -> System:
     return system
 
 
-def get_system(size, random=Random(), utilization=0.5, balanced=False) -> System:
+def get_system(size, random=Random(), utilization=0.5, balanced=False, name=None) -> System:
     n_flows, t_tasks, n_procs = size
     system = generate_system(random,
                              n_flows=n_flows,
@@ -63,6 +63,7 @@ def get_system(size, random=Random(), utilization=0.5, balanced=False) -> System
                              deadline_factor_min=0.5,
                              deadline_factor_max=1,
                              balanced=balanced)
+    system.name = name
     return system
 
 

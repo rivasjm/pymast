@@ -1,0 +1,1460 @@
+2022-11-19 11:01:25.130672 : 232-bf-hol-2 0.50(0) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.133673 : 232-bf-hol-2 0.50(0) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.138700 : 232-bf-hol-2 0.50(0) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.144701 : 232-bf-hol-2 0.50(0) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.148702 : 232-bf-hol-2 0.50(0) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.153790 : 232-bf-hol-2 0.50(0) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.159790 : 232-bf-hol-2 0.50(0) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.165792 : 232-bf-hol-2 0.50(0) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.212004 : 232-bf-hol-2 0.50(0) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.218046 : 232-bf-hol-2 0.50(0) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.241051 : 232-bf-hol-2 0.50(0) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.250053 : 232-bf-hol-2 0.50(0) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.255054 : 232-bf-hol-2 0.50(0) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.259089 : 232-bf-hol-2 0.50(0) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.267130 : 232-bf-hol-2 0.50(0) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.272131 : 232-bf-hol-2 0.50(0) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.279133 : 232-bf-hol-2 0.50(0) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.285134 : 232-bf-hol-2 0.50(0) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.289135 : 232-bf-hol-2 0.50(0) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.295136 : 232-bf-hol-2 0.50(0) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.299172 : 232-bf-hol-2 0.50(0) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.305173 : 232-bf-hol-2 0.50(0) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.310175 : 232-bf-hol-2 0.50(0) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.322204 : 232-bf-hol-2 0.50(0) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.327233 : 232-bf-hol-2 0.50(0) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.332233 : 232-bf-hol-2 0.50(0) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.336234 : 232-bf-hol-2 0.50(0) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.341236 : 232-bf-hol-2 0.50(0) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.528381 : 232-bf-hol-2 0.50(0) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.534426 : 232-bf-hol-2 0.50(0) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.543426 : 232-bf-hol-2 0.50(0) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.548428 : 232-bf-hol-2 0.50(0) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.553429 : 232-bf-hol-2 0.50(0) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.562432 : 232-bf-hol-2 0.50(0) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.566432 : 232-bf-hol-2 0.50(0) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.571461 : 232-bf-hol-2 0.50(0) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.576500 : 232-bf-hol-2 0.50(0) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.581503 : 232-bf-hol-2 0.50(0) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.588527 : 232-bf-hol-2 0.50(0) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.593561 : 232-bf-hol-2 0.50(0) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.598563 : 232-bf-hol-2 0.50(0) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.603564 : 232-bf-hol-2 0.50(0) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.615567 : 232-bf-hol-2 0.50(0) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.622569 : 232-bf-hol-2 0.50(0) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.627602 : 232-bf-hol-2 0.50(0) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.632602 : 232-bf-hol-2 0.50(0) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.637603 : 232-bf-hol-2 0.50(0) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.641627 : 232-bf-hol-2 0.50(0) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.646693 : 232-bf-hol-2 0.50(0) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:25.651692 : 232-bf-hol-2 0.50(0) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.214441 : 232-bf-hol-2 0.52(1) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.218441 : 232-bf-hol-2 0.52(1) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.230472 : 232-bf-hol-2 0.52(1) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.235494 : 232-bf-hol-2 0.52(1) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.242527 : 232-bf-hol-2 0.52(1) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.247528 : 232-bf-hol-2 0.52(1) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.260530 : 232-bf-hol-2 0.52(1) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.266531 : 232-bf-hol-2 0.52(1) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.270574 : 232-bf-hol-2 0.52(1) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.277623 : 232-bf-hol-2 0.52(1) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.284623 : 232-bf-hol-2 0.52(1) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.289625 : 232-bf-hol-2 0.52(1) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.294626 : 232-bf-hol-2 0.52(1) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.299662 : 232-bf-hol-2 0.52(1) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.358675 : 232-bf-hol-2 0.52(1) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.363706 : 232-bf-hol-2 0.52(1) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.369733 : 232-bf-hol-2 0.52(1) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.374733 : 232-bf-hol-2 0.52(1) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.380735 : 232-bf-hol-2 0.52(1) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.404167 : 232-bf-hol-2 0.52(1) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.410199 : 232-bf-hol-2 0.52(1) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.415200 : 232-bf-hol-2 0.52(1) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.421202 : 232-bf-hol-2 0.52(1) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.426203 : 232-bf-hol-2 0.52(1) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.432271 : 232-bf-hol-2 0.52(1) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.459276 : 232-bf-hol-2 0.52(1) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.464277 : 232-bf-hol-2 0.52(1) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.469332 : 232-bf-hol-2 0.52(1) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.472332 : 232-bf-hol-2 0.52(1) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.481363 : 232-bf-hol-2 0.52(1) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.489365 : 232-bf-hol-2 0.52(1) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.498428 : 232-bf-hol-2 0.52(1) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.504464 : 232-bf-hol-2 0.52(1) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.508465 : 232-bf-hol-2 0.52(1) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.536471 : 232-bf-hol-2 0.52(1) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.541473 : 232-bf-hol-2 0.52(1) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.547510 : 232-bf-hol-2 0.52(1) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.552512 : 232-bf-hol-2 0.52(1) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.558513 : 232-bf-hol-2 0.52(1) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.564557 : 232-bf-hol-2 0.52(1) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.569590 : 232-bf-hol-2 0.52(1) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.586595 : 232-bf-hol-2 0.52(1) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.590595 : 232-bf-hol-2 0.52(1) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.602597 : 232-bf-hol-2 0.52(1) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.612599 : 232-bf-hol-2 0.52(1) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.618654 : 232-bf-hol-2 0.52(1) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.622655 : 232-bf-hol-2 0.52(1) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.628657 : 232-bf-hol-2 0.52(1) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.633657 : 232-bf-hol-2 0.52(1) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:27.637658 : 232-bf-hol-2 0.52(1) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.039497 : 232-bf-hol-2 0.54(2) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.053538 : 232-bf-hol-2 0.54(2) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.058539 : 232-bf-hol-2 0.54(2) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.065541 : 232-bf-hol-2 0.54(2) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.071542 : 232-bf-hol-2 0.54(2) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.075575 : 232-bf-hol-2 0.54(2) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.081614 : 232-bf-hol-2 0.54(2) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.089616 : 232-bf-hol-2 0.54(2) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.093617 : 232-bf-hol-2 0.54(2) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.106620 : 232-bf-hol-2 0.54(2) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.126709 : 232-bf-hol-2 0.54(2) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.130737 : 232-bf-hol-2 0.54(2) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.136739 : 232-bf-hol-2 0.54(2) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.142740 : 232-bf-hol-2 0.54(2) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.146741 : 232-bf-hol-2 0.54(2) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.152742 : 232-bf-hol-2 0.54(2) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.158821 : 232-bf-hol-2 0.54(2) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.163822 : 232-bf-hol-2 0.54(2) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.169823 : 232-bf-hol-2 0.54(2) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.193950 : 232-bf-hol-2 0.54(2) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.199979 : 232-bf-hol-2 0.54(2) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.204980 : 232-bf-hol-2 0.54(2) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.211982 : 232-bf-hol-2 0.54(2) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.216985 : 232-bf-hol-2 0.54(2) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.223984 : 232-bf-hol-2 0.54(2) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.227986 : 232-bf-hol-2 0.54(2) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.237987 : 232-bf-hol-2 0.54(2) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.245990 : 232-bf-hol-2 0.54(2) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.251044 : 232-bf-hol-2 0.54(2) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.257074 : 232-bf-hol-2 0.54(2) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.279079 : 232-bf-hol-2 0.54(2) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.284081 : 232-bf-hol-2 0.54(2) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.290113 : 232-bf-hol-2 0.54(2) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.302147 : 232-bf-hol-2 0.54(2) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.315150 : 232-bf-hol-2 0.54(2) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.320151 : 232-bf-hol-2 0.54(2) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.326153 : 232-bf-hol-2 0.54(2) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.331153 : 232-bf-hol-2 0.54(2) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.350212 : 232-bf-hol-2 0.54(2) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.355213 : 232-bf-hol-2 0.54(2) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.382219 : 232-bf-hol-2 0.54(2) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.386220 : 232-bf-hol-2 0.54(2) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.391221 : 232-bf-hol-2 0.54(2) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.396257 : 232-bf-hol-2 0.54(2) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.401259 : 232-bf-hol-2 0.54(2) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.411261 : 232-bf-hol-2 0.54(2) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.460493 : 232-bf-hol-2 0.54(2) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.465526 : 232-bf-hol-2 0.54(2) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.471529 : 232-bf-hol-2 0.54(2) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:29.483531 : 232-bf-hol-2 0.54(2) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.903893 : 232-bf-hol-2 0.56(3) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.907923 : 232-bf-hol-2 0.56(3) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.913958 : 232-bf-hol-2 0.56(3) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.917959 : 232-bf-hol-2 0.56(3) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.925961 : 232-bf-hol-2 0.56(3) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.929989 : 232-bf-hol-2 0.56(3) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.936018 : 232-bf-hol-2 0.56(3) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.943021 : 232-bf-hol-2 0.56(3) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.948021 : 232-bf-hol-2 0.56(3) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.954022 : 232-bf-hol-2 0.56(3) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.971138 : 232-bf-hol-2 0.56(3) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.983140 : 232-bf-hol-2 0.56(3) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.987141 : 232-bf-hol-2 0.56(3) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:30.996221 : 232-bf-hol-2 0.56(3) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.000250 : 232-bf-hol-2 0.56(3) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.005251 : 232-bf-hol-2 0.56(3) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.011253 : 232-bf-hol-2 0.56(3) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.073555 : 232-bf-hol-2 0.56(3) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.079594 : 232-bf-hol-2 0.56(3) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.242661 : 232-bf-hol-2 0.56(3) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.247663 : 232-bf-hol-2 0.56(3) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.252663 : 232-bf-hol-2 0.56(3) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.258665 : 232-bf-hol-2 0.56(3) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.263693 : 232-bf-hol-2 0.56(3) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.269726 : 232-bf-hol-2 0.56(3) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.276727 : 232-bf-hol-2 0.56(3) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.282728 : 232-bf-hol-2 0.56(3) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.292729 : 232-bf-hol-2 0.56(3) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.303776 : 232-bf-hol-2 0.56(3) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.311808 : 232-bf-hol-2 0.56(3) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.336813 : 232-bf-hol-2 0.56(3) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.342815 : 232-bf-hol-2 0.56(3) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.347816 : 232-bf-hol-2 0.56(3) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.359876 : 232-bf-hol-2 0.56(3) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.364877 : 232-bf-hol-2 0.56(3) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.370878 : 232-bf-hol-2 0.56(3) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.375880 : 232-bf-hol-2 0.56(3) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.381881 : 232-bf-hol-2 0.56(3) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.402885 : 232-bf-hol-2 0.56(3) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.409887 : 232-bf-hol-2 0.56(3) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.415888 : 232-bf-hol-2 0.56(3) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.419889 : 232-bf-hol-2 0.56(3) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.424917 : 232-bf-hol-2 0.56(3) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.429958 : 232-bf-hol-2 0.56(3) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.437960 : 232-bf-hol-2 0.56(3) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.449005 : 232-bf-hol-2 0.56(3) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.453050 : 232-bf-hol-2 0.56(3) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.458051 : 232-bf-hol-2 0.56(3) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.563075 : 232-bf-hol-2 0.56(3) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:31.597082 : 232-bf-hol-2 0.56(3) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:32.962061 : 232-bf-hol-2 0.58(4) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:32.967105 : 232-bf-hol-2 0.58(4) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:32.973106 : 232-bf-hol-2 0.58(4) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:32.979107 : 232-bf-hol-2 0.58(4) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:32.986109 : 232-bf-hol-2 0.58(4) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:32.996158 : 232-bf-hol-2 0.58(4) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.002194 : 232-bf-hol-2 0.58(4) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.008196 : 232-bf-hol-2 0.58(4) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.017198 : 232-bf-hol-2 0.58(4) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.041203 : 232-bf-hol-2 0.58(4) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.074211 : 232-bf-hol-2 0.58(4) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.079213 : 232-bf-hol-2 0.58(4) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.084213 : 232-bf-hol-2 0.58(4) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.090268 : 232-bf-hol-2 0.58(4) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.135280 : 232-bf-hol-2 0.58(4) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.140280 : 232-bf-hol-2 0.58(4) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.146308 : 232-bf-hol-2 0.58(4) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.196349 : 232-bf-hol-2 0.58(4) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.204352 : 232-bf-hol-2 0.58(4) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.208354 : 232-bf-hol-2 0.58(4) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.213354 : 232-bf-hol-2 0.58(4) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.219401 : 232-bf-hol-2 0.58(4) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.266411 : 232-bf-hol-2 0.58(4) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.272413 : 232-bf-hol-2 0.58(4) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:33.278414 : 232-bf-hol-2 0.58(4) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.118976 : 232-bf-hol-2 0.58(4) 25 	: pd hopa bf gdpa-pd
+2022-11-19 11:01:34.123975 : 232-bf-hol-2 0.58(4) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.128977 : 232-bf-hol-2 0.58(4) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.160984 : 232-bf-hol-2 0.58(4) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.171986 : 232-bf-hol-2 0.58(4) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.179987 : 232-bf-hol-2 0.58(4) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.201992 : 232-bf-hol-2 0.58(4) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.214039 : 232-bf-hol-2 0.58(4) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.240115 : 232-bf-hol-2 0.58(4) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.261119 : 232-bf-hol-2 0.58(4) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.267121 : 232-bf-hol-2 0.58(4) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.273123 : 232-bf-hol-2 0.58(4) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.281162 : 232-bf-hol-2 0.58(4) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.300199 : 232-bf-hol-2 0.58(4) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.307201 : 232-bf-hol-2 0.58(4) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.312202 : 232-bf-hol-2 0.58(4) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.327205 : 232-bf-hol-2 0.58(4) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.336237 : 232-bf-hol-2 0.58(4) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.357273 : 232-bf-hol-2 0.58(4) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.390280 : 232-bf-hol-2 0.58(4) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.412285 : 232-bf-hol-2 0.58(4) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.433354 : 232-bf-hol-2 0.58(4) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.438382 : 232-bf-hol-2 0.58(4) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.443383 : 232-bf-hol-2 0.58(4) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:34.448384 : 232-bf-hol-2 0.58(4) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.798198 : 232-bf-hol-2 0.61(5) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.803242 : 232-bf-hol-2 0.61(5) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.809245 : 232-bf-hol-2 0.61(5) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.836249 : 232-bf-hol-2 0.61(5) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.845303 : 232-bf-hol-2 0.61(5) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.851331 : 232-bf-hol-2 0.61(5) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.857333 : 232-bf-hol-2 0.61(5) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.869336 : 232-bf-hol-2 0.61(5) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.880384 : 232-bf-hol-2 0.61(5) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.887412 : 232-bf-hol-2 0.61(5) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.892413 : 232-bf-hol-2 0.61(5) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.896414 : 232-bf-hol-2 0.61(5) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.902415 : 232-bf-hol-2 0.61(5) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.909475 : 232-bf-hol-2 0.61(5) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.921479 : 232-bf-hol-2 0.61(5) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.929479 : 232-bf-hol-2 0.61(5) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.948486 : 232-bf-hol-2 0.61(5) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:35.993494 : 232-bf-hol-2 0.61(5) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.002520 : 232-bf-hol-2 0.61(5) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.032557 : 232-bf-hol-2 0.61(5) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.039560 : 232-bf-hol-2 0.61(5) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.046561 : 232-bf-hol-2 0.61(5) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.072566 : 232-bf-hol-2 0.61(5) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.092570 : 232-bf-hol-2 0.61(5) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.099572 : 232-bf-hol-2 0.61(5) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.105384 : 232-bf-hol-2 0.61(5) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.110701 : 232-bf-hol-2 0.61(5) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.120744 : 232-bf-hol-2 0.61(5) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.203763 : 232-bf-hol-2 0.61(5) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.246772 : 232-bf-hol-2 0.61(5) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.314987 : 232-bf-hol-2 0.61(5) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.321018 : 232-bf-hol-2 0.61(5) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.327020 : 232-bf-hol-2 0.61(5) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.334022 : 232-bf-hol-2 0.61(5) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.403299 : 232-bf-hol-2 0.61(5) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.411331 : 232-bf-hol-2 0.61(5) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.417333 : 232-bf-hol-2 0.61(5) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.423333 : 232-bf-hol-2 0.61(5) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.500351 : 232-bf-hol-2 0.61(5) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.564654 : 232-bf-hol-2 0.61(5) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.569690 : 232-bf-hol-2 0.61(5) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.586694 : 232-bf-hol-2 0.61(5) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.601697 : 232-bf-hol-2 0.61(5) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.688146 : 232-bf-hol-2 0.61(5) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.693173 : 232-bf-hol-2 0.61(5) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.699174 : 232-bf-hol-2 0.61(5) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.725180 : 232-bf-hol-2 0.61(5) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.731207 : 232-bf-hol-2 0.61(5) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.737245 : 232-bf-hol-2 0.61(5) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:36.741246 : 232-bf-hol-2 0.61(5) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.156472 : 232-bf-hol-2 0.63(6) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.162512 : 232-bf-hol-2 0.63(6) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.170514 : 232-bf-hol-2 0.63(6) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.200520 : 232-bf-hol-2 0.63(6) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.209522 : 232-bf-hol-2 0.63(6) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.214524 : 232-bf-hol-2 0.63(6) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.220583 : 232-bf-hol-2 0.63(6) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.226585 : 232-bf-hol-2 0.63(6) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.232586 : 232-bf-hol-2 0.63(6) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.239587 : 232-bf-hol-2 0.63(6) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.243589 : 232-bf-hol-2 0.63(6) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.291630 : 232-bf-hol-2 0.63(6) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.297631 : 232-bf-hol-2 0.63(6) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.303633 : 232-bf-hol-2 0.63(6) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.307633 : 232-bf-hol-2 0.63(6) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.312661 : 232-bf-hol-2 0.63(6) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.327703 : 232-bf-hol-2 0.63(6) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.357709 : 232-bf-hol-2 0.63(6) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.367712 : 232-bf-hol-2 0.63(6) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.382715 : 232-bf-hol-2 0.63(6) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.408721 : 232-bf-hol-2 0.63(6) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.414722 : 232-bf-hol-2 0.63(6) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.421724 : 232-bf-hol-2 0.63(6) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.441728 : 232-bf-hol-2 0.63(6) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.448730 : 232-bf-hol-2 0.63(6) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.455765 : 232-bf-hol-2 0.63(6) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.512777 : 232-bf-hol-2 0.63(6) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.527833 : 232-bf-hol-2 0.63(6) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.883953 : 232-bf-hol-2 0.63(6) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.916988 : 232-bf-hol-2 0.63(6) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.923990 : 232-bf-hol-2 0.63(6) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.988004 : 232-bf-hol-2 0.63(6) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:38.993005 : 232-bf-hol-2 0.63(6) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.003065 : 232-bf-hol-2 0.63(6) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.009113 : 232-bf-hol-2 0.63(6) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.016115 : 232-bf-hol-2 0.63(6) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.025117 : 232-bf-hol-2 0.63(6) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.034120 : 232-bf-hol-2 0.63(6) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.101134 : 232-bf-hol-2 0.63(6) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.181623 : 232-bf-hol-2 0.63(6) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.201665 : 232-bf-hol-2 0.63(6) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.218669 : 232-bf-hol-2 0.63(6) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.229671 : 232-bf-hol-2 0.63(6) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.260678 : 232-bf-hol-2 0.63(6) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.275682 : 232-bf-hol-2 0.63(6) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.281683 : 232-bf-hol-2 0.63(6) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.287684 : 232-bf-hol-2 0.63(6) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.295736 : 232-bf-hol-2 0.63(6) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.302767 : 232-bf-hol-2 0.63(6) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:39.313770 : 232-bf-hol-2 0.63(6) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:40.844056 : 232-bf-hol-2 0.65(7) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:40.853087 : 232-bf-hol-2 0.65(7) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:40.873092 : 232-bf-hol-2 0.65(7) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.373519 : 232-bf-hol-2 0.65(7) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.380559 : 232-bf-hol-2 0.65(7) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.386560 : 232-bf-hol-2 0.65(7) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.394562 : 232-bf-hol-2 0.65(7) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.407656 : 232-bf-hol-2 0.65(7) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.411687 : 232-bf-hol-2 0.65(7) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.418688 : 232-bf-hol-2 0.65(7) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.422689 : 232-bf-hol-2 0.65(7) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.427691 : 232-bf-hol-2 0.65(7) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.432715 : 232-bf-hol-2 0.65(7) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.442754 : 232-bf-hol-2 0.65(7) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.446755 : 232-bf-hol-2 0.65(7) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.456757 : 232-bf-hol-2 0.65(7) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.475852 : 232-bf-hol-2 0.65(7) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.480853 : 232-bf-hol-2 0.65(7) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.490856 : 232-bf-hol-2 0.65(7) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.522863 : 232-bf-hol-2 0.65(7) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.528890 : 232-bf-hol-2 0.65(7) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.535925 : 232-bf-hol-2 0.65(7) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.551928 : 232-bf-hol-2 0.65(7) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.607228 : 232-bf-hol-2 0.65(7) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.614262 : 232-bf-hol-2 0.65(7) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.702281 : 232-bf-hol-2 0.65(7) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.718285 : 232-bf-hol-2 0.65(7) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.736289 : 232-bf-hol-2 0.65(7) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.775298 : 232-bf-hol-2 0.65(7) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.827310 : 232-bf-hol-2 0.65(7) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.957992 : 232-bf-hol-2 0.65(7) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.982110 : 232-bf-hol-2 0.65(7) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.989142 : 232-bf-hol-2 0.65(7) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:41.999145 : 232-bf-hol-2 0.65(7) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.004146 : 232-bf-hol-2 0.65(7) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.018149 : 232-bf-hol-2 0.65(7) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.027151 : 232-bf-hol-2 0.65(7) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.034152 : 232-bf-hol-2 0.65(7) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.049157 : 232-bf-hol-2 0.65(7) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.083350 : 232-bf-hol-2 0.65(7) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.133734 : 232-bf-hol-2 0.65(7) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.149737 : 232-bf-hol-2 0.65(7) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.191961 : 232-bf-hol-2 0.65(7) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.196993 : 232-bf-hol-2 0.65(7) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.210997 : 232-bf-hol-2 0.65(7) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.218998 : 232-bf-hol-2 0.65(7) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.230001 : 232-bf-hol-2 0.65(7) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.238034 : 232-bf-hol-2 0.65(7) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.337121 : 232-bf-hol-2 0.65(7) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:42.348124 : 232-bf-hol-2 0.65(7) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:43.917203 : 232-bf-hol-2 0.67(8) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:43.936258 : 232-bf-hol-2 0.67(8) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:43.959263 : 232-bf-hol-2 0.67(8) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:43.968290 : 232-bf-hol-2 0.67(8) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:43.975339 : 232-bf-hol-2 0.67(8) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:43.985343 : 232-bf-hol-2 0.67(8) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.006346 : 232-bf-hol-2 0.67(8) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.012381 : 232-bf-hol-2 0.67(8) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.016412 : 232-bf-hol-2 0.67(8) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.024415 : 232-bf-hol-2 0.67(8) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.059422 : 232-bf-hol-2 0.67(8) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.063422 : 232-bf-hol-2 0.67(8) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.069425 : 232-bf-hol-2 0.67(8) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.185451 : 232-bf-hol-2 0.67(8) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.188450 : 232-bf-hol-2 0.67(8) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.199483 : 232-bf-hol-2 0.67(8) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.236519 : 232-bf-hol-2 0.67(8) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.242521 : 232-bf-hol-2 0.67(8) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.253523 : 232-bf-hol-2 0.67(8) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.340543 : 232-bf-hol-2 0.67(8) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.367550 : 232-bf-hol-2 0.67(8) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.378551 : 232-bf-hol-2 0.67(8) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.389480 : 232-bf-hol-2 0.67(8) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.408711 : 232-bf-hol-2 0.67(8) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.414713 : 232-bf-hol-2 0.67(8) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.434718 : 232-bf-hol-2 0.67(8) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.451721 : 232-bf-hol-2 0.67(8) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.458723 : 232-bf-hol-2 0.67(8) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.486729 : 232-bf-hol-2 0.67(8) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.500734 : 232-bf-hol-2 0.67(8) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.518736 : 232-bf-hol-2 0.67(8) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.536740 : 232-bf-hol-2 0.67(8) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.571852 : 232-bf-hol-2 0.67(8) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.577853 : 232-bf-hol-2 0.67(8) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.583854 : 232-bf-hol-2 0.67(8) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.589855 : 232-bf-hol-2 0.67(8) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.599913 : 232-bf-hol-2 0.67(8) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.606977 : 232-bf-hol-2 0.67(8) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.651987 : 232-bf-hol-2 0.67(8) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.670990 : 232-bf-hol-2 0.67(8) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.678993 : 232-bf-hol-2 0.67(8) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.694996 : 232-bf-hol-2 0.67(8) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.714000 : 232-bf-hol-2 0.67(8) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.722002 : 232-bf-hol-2 0.67(8) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.742007 : 232-bf-hol-2 0.67(8) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.749008 : 232-bf-hol-2 0.67(8) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.766012 : 232-bf-hol-2 0.67(8) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.779058 : 232-bf-hol-2 0.67(8) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.792091 : 232-bf-hol-2 0.67(8) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:44.807095 : 232-bf-hol-2 0.67(8) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.196984 : 232-bf-hol-2 0.69(9) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.210057 : 232-bf-hol-2 0.69(9) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.216057 : 232-bf-hol-2 0.69(9) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.337153 : 232-bf-hol-2 0.69(9) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.345154 : 232-bf-hol-2 0.69(9) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.354206 : 232-bf-hol-2 0.69(9) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.362231 : 232-bf-hol-2 0.69(9) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.407241 : 232-bf-hol-2 0.69(9) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.593283 : 232-bf-hol-2 0.69(9) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.638293 : 232-bf-hol-2 0.69(9) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.646294 : 232-bf-hol-2 0.69(9) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.664397 : 232-bf-hol-2 0.69(9) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.679400 : 232-bf-hol-2 0.69(9) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.693404 : 232-bf-hol-2 0.69(9) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.708407 : 232-bf-hol-2 0.69(9) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.722411 : 232-bf-hol-2 0.69(9) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.746535 : 232-bf-hol-2 0.69(9) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.751576 : 232-bf-hol-2 0.69(9) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.763578 : 232-bf-hol-2 0.69(9) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.768579 : 232-bf-hol-2 0.69(9) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.828593 : 232-bf-hol-2 0.69(9) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.834594 : 232-bf-hol-2 0.69(9) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.889607 : 232-bf-hol-2 0.69(9) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.908612 : 232-bf-hol-2 0.69(9) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.926615 : 232-bf-hol-2 0.69(9) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.943619 : 232-bf-hol-2 0.69(9) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.986628 : 232-bf-hol-2 0.69(9) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:46.993630 : 232-bf-hol-2 0.69(9) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.054924 : 232-bf-hol-2 0.69(9) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.073996 : 232-bf-hol-2 0.69(9) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.180620 : 232-bf-hol-2 0.69(9) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.185649 : 232-bf-hol-2 0.69(9) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.238696 : 232-bf-hol-2 0.69(9) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.357723 : 232-bf-hol-2 0.69(9) 33 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.374728 : 232-bf-hol-2 0.69(9) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.380728 : 232-bf-hol-2 0.69(9) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.391730 : 232-bf-hol-2 0.69(9) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.418737 : 232-bf-hol-2 0.69(9) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.423737 : 232-bf-hol-2 0.69(9) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.430739 : 232-bf-hol-2 0.69(9) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.448744 : 232-bf-hol-2 0.69(9) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.473200 : 232-bf-hol-2 0.69(9) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.492248 : 232-bf-hol-2 0.69(9) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.511251 : 232-bf-hol-2 0.69(9) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.556261 : 232-bf-hol-2 0.69(9) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.588268 : 232-bf-hol-2 0.69(9) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.597270 : 232-bf-hol-2 0.69(9) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.610274 : 232-bf-hol-2 0.69(9) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.630277 : 232-bf-hol-2 0.69(9) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:47.641312 : 232-bf-hol-2 0.69(9) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.123409 : 232-bf-hol-2 0.71(10) 0 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.150446 : 232-bf-hol-2 0.71(10) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.180453 : 232-bf-hol-2 0.71(10) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.258024 : 232-bf-hol-2 0.71(10) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.274028 : 232-bf-hol-2 0.71(10) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.291157 : 232-bf-hol-2 0.71(10) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.303187 : 232-bf-hol-2 0.71(10) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.462224 : 232-bf-hol-2 0.71(10) 7 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.476227 : 232-bf-hol-2 0.71(10) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.513235 : 232-bf-hol-2 0.71(10) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.517237 : 232-bf-hol-2 0.71(10) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.530239 : 232-bf-hol-2 0.71(10) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.536242 : 232-bf-hol-2 0.71(10) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.675257 : 232-bf-hol-2 0.71(10) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.684305 : 232-bf-hol-2 0.71(10) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.711311 : 232-bf-hol-2 0.71(10) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.873348 : 232-bf-hol-2 0.71(10) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.902354 : 232-bf-hol-2 0.71(10) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.919358 : 232-bf-hol-2 0.71(10) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.924359 : 232-bf-hol-2 0.71(10) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.941397 : 232-bf-hol-2 0.71(10) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.950446 : 232-bf-hol-2 0.71(10) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.956447 : 232-bf-hol-2 0.71(10) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.987454 : 232-bf-hol-2 0.71(10) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:49.994456 : 232-bf-hol-2 0.71(10) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.157333 : 232-bf-hol-2 0.71(10) 25 	: bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.167370 : 232-bf-hol-2 0.71(10) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.194377 : 232-bf-hol-2 0.71(10) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.232384 : 232-bf-hol-2 0.71(10) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.296399 : 232-bf-hol-2 0.71(10) 29 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.337409 : 232-bf-hol-2 0.71(10) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.362452 : 232-bf-hol-2 0.71(10) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.377455 : 232-bf-hol-2 0.71(10) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.709900 : 232-bf-hol-2 0.71(10) 33 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.724959 : 232-bf-hol-2 0.71(10) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.731960 : 232-bf-hol-2 0.71(10) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.742963 : 232-bf-hol-2 0.71(10) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.749010 : 232-bf-hol-2 0.71(10) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.753041 : 232-bf-hol-2 0.71(10) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.774046 : 232-bf-hol-2 0.71(10) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.789049 : 232-bf-hol-2 0.71(10) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.803144 : 232-bf-hol-2 0.71(10) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.823176 : 232-bf-hol-2 0.71(10) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.832178 : 232-bf-hol-2 0.71(10) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.848182 : 232-bf-hol-2 0.71(10) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.865266 : 232-bf-hol-2 0.71(10) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.878299 : 232-bf-hol-2 0.71(10) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.894304 : 232-bf-hol-2 0.71(10) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.905306 : 232-bf-hol-2 0.71(10) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:50.916308 : 232-bf-hol-2 0.71(10) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:52.539303 : 232-bf-hol-2 0.73(11) 0 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:52.574340 : 232-bf-hol-2 0.73(11) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:52.588343 : 232-bf-hol-2 0.73(11) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:55.904653 : 232-bf-hol-2 0.73(11) 3 	: 
+2022-11-19 11:01:55.920685 : 232-bf-hol-2 0.73(11) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.039713 : 232-bf-hol-2 0.73(11) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.122731 : 232-bf-hol-2 0.73(11) 6 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.143736 : 232-bf-hol-2 0.73(11) 7 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.148737 : 232-bf-hol-2 0.73(11) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.154738 : 232-bf-hol-2 0.73(11) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.169742 : 232-bf-hol-2 0.73(11) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.177771 : 232-bf-hol-2 0.73(11) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.183772 : 232-bf-hol-2 0.73(11) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.247787 : 232-bf-hol-2 0.73(11) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.263790 : 232-bf-hol-2 0.73(11) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.281794 : 232-bf-hol-2 0.73(11) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.291822 : 232-bf-hol-2 0.73(11) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.340873 : 232-bf-hol-2 0.73(11) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.438897 : 232-bf-hol-2 0.73(11) 18 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.490907 : 232-bf-hol-2 0.73(11) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.535917 : 232-bf-hol-2 0.73(11) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.543919 : 232-bf-hol-2 0.73(11) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.565925 : 232-bf-hol-2 0.73(11) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.583928 : 232-bf-hol-2 0.73(11) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.617102 : 232-bf-hol-2 0.73(11) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.820174 : 232-bf-hol-2 0.73(11) 25 	: bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.869442 : 232-bf-hol-2 0.73(11) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.874466 : 232-bf-hol-2 0.73(11) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.928504 : 232-bf-hol-2 0.73(11) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:56.981516 : 232-bf-hol-2 0.73(11) 29 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.099421 : 232-bf-hol-2 0.73(11) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.119455 : 232-bf-hol-2 0.73(11) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.162067 : 232-bf-hol-2 0.73(11) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.409122 : 232-bf-hol-2 0.73(11) 33 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.417154 : 232-bf-hol-2 0.73(11) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.437185 : 232-bf-hol-2 0.73(11) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.488196 : 232-bf-hol-2 0.73(11) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.500199 : 232-bf-hol-2 0.73(11) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.525205 : 232-bf-hol-2 0.73(11) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.532206 : 232-bf-hol-2 0.73(11) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.542276 : 232-bf-hol-2 0.73(11) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.564281 : 232-bf-hol-2 0.73(11) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.673305 : 232-bf-hol-2 0.73(11) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.698310 : 232-bf-hol-2 0.73(11) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.737512 : 232-bf-hol-2 0.73(11) 44 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.813556 : 232-bf-hol-2 0.73(11) 45 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.852565 : 232-bf-hol-2 0.73(11) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.921581 : 232-bf-hol-2 0.73(11) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.926581 : 232-bf-hol-2 0.73(11) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:57.934615 : 232-bf-hol-2 0.73(11) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:59.379153 : 232-bf-hol-2 0.75(12) 0 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:01:59.584230 : 232-bf-hol-2 0.75(12) 1 	: bf gdpa-r gdpa-pd
+2022-11-19 11:01:59.620238 : 232-bf-hol-2 0.75(12) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:04.825044 : 232-bf-hol-2 0.75(12) 3 	: 
+2022-11-19 11:02:04.841085 : 232-bf-hol-2 0.75(12) 4 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:05.649267 : 232-bf-hol-2 0.75(12) 5 	: pd hopa bf gdpa-pd
+2022-11-19 11:02:05.830274 : 232-bf-hol-2 0.75(12) 6 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:05.879336 : 232-bf-hol-2 0.75(12) 7 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:05.903341 : 232-bf-hol-2 0.75(12) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:05.954354 : 232-bf-hol-2 0.75(12) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:05.973477 : 232-bf-hol-2 0.75(12) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:05.987561 : 232-bf-hol-2 0.75(12) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:05.999564 : 232-bf-hol-2 0.75(12) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.017568 : 232-bf-hol-2 0.75(12) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.026571 : 232-bf-hol-2 0.75(12) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.064770 : 232-bf-hol-2 0.75(12) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.139815 : 232-bf-hol-2 0.75(12) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.144817 : 232-bf-hol-2 0.75(12) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.170937 : 232-bf-hol-2 0.75(12) 18 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.193971 : 232-bf-hol-2 0.75(12) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.281990 : 232-bf-hol-2 0.75(12) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.293993 : 232-bf-hol-2 0.75(12) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.348005 : 232-bf-hol-2 0.75(12) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.393253 : 232-bf-hol-2 0.75(12) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.459370 : 232-bf-hol-2 0.75(12) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.613404 : 232-bf-hol-2 0.75(12) 25 	: bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.683419 : 232-bf-hol-2 0.75(12) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.693422 : 232-bf-hol-2 0.75(12) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:06.723617 : 232-bf-hol-2 0.75(12) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.012732 : 232-bf-hol-2 0.75(12) 29 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.089051 : 232-bf-hol-2 0.75(12) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.108091 : 232-bf-hol-2 0.75(12) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.182107 : 232-bf-hol-2 0.75(12) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.251123 : 232-bf-hol-2 0.75(12) 33 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.268188 : 232-bf-hol-2 0.75(12) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.278237 : 232-bf-hol-2 0.75(12) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.303242 : 232-bf-hol-2 0.75(12) 36 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.342252 : 232-bf-hol-2 0.75(12) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.356384 : 232-bf-hol-2 0.75(12) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.364419 : 232-bf-hol-2 0.75(12) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.501450 : 232-bf-hol-2 0.75(12) 40 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.515453 : 232-bf-hol-2 0.75(12) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.531524 : 232-bf-hol-2 0.75(12) 42 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.549557 : 232-bf-hol-2 0.75(12) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.600569 : 232-bf-hol-2 0.75(12) 44 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.845623 : 232-bf-hol-2 0.75(12) 45 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.853626 : 232-bf-hol-2 0.75(12) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.862629 : 232-bf-hol-2 0.75(12) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.879740 : 232-bf-hol-2 0.75(12) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:07.885771 : 232-bf-hol-2 0.75(12) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:09.323179 : 232-bf-hol-2 0.77(13) 0 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:09.407733 : 232-bf-hol-2 0.77(13) 1 	: bf gdpa-r gdpa-pd
+2022-11-19 11:02:09.431739 : 232-bf-hol-2 0.77(13) 2 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:16.809233 : 232-bf-hol-2 0.77(13) 3 	: 
+2022-11-19 11:02:16.948844 : 232-bf-hol-2 0.77(13) 4 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:16.965877 : 232-bf-hol-2 0.77(13) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:17.173924 : 232-bf-hol-2 0.77(13) 6 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:17.210117 : 232-bf-hol-2 0.77(13) 7 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:17.223145 : 232-bf-hol-2 0.77(13) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:17.254152 : 232-bf-hol-2 0.77(13) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:17.260153 : 232-bf-hol-2 0.77(13) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:17.278157 : 232-bf-hol-2 0.77(13) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:17.293214 : 232-bf-hol-2 0.77(13) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:19.428261 : 232-bf-hol-2 0.77(13) 13 	: 
+2022-11-19 11:02:19.433302 : 232-bf-hol-2 0.77(13) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:19.441304 : 232-bf-hol-2 0.77(13) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:19.635347 : 232-bf-hol-2 0.77(13) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:19.640349 : 232-bf-hol-2 0.77(13) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:19.676514 : 232-bf-hol-2 0.77(13) 18 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:19.690566 : 232-bf-hol-2 0.77(13) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:19.787587 : 232-bf-hol-2 0.77(13) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:19.805591 : 232-bf-hol-2 0.77(13) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:19.822677 : 232-bf-hol-2 0.77(13) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:19.862715 : 232-bf-hol-2 0.77(13) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:19.898723 : 232-bf-hol-2 0.77(13) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:21.490970 : 232-bf-hol-2 0.77(13) 25 	: 
+2022-11-19 11:02:21.608055 : 232-bf-hol-2 0.77(13) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:21.632060 : 232-bf-hol-2 0.77(13) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:21.669711 : 232-bf-hol-2 0.77(13) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:21.950801 : 232-bf-hol-2 0.77(13) 29 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:22.041822 : 232-bf-hol-2 0.77(13) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:22.057825 : 232-bf-hol-2 0.77(13) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:22.071860 : 232-bf-hol-2 0.77(13) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:24.307592 : 232-bf-hol-2 0.77(13) 33 	: 
+2022-11-19 11:02:24.324626 : 232-bf-hol-2 0.77(13) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:24.344630 : 232-bf-hol-2 0.77(13) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:24.450194 : 232-bf-hol-2 0.77(13) 36 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:24.474236 : 232-bf-hol-2 0.77(13) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:24.479237 : 232-bf-hol-2 0.77(13) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:24.508243 : 232-bf-hol-2 0.77(13) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:24.606266 : 232-bf-hol-2 0.77(13) 40 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:24.834683 : 232-bf-hol-2 0.77(13) 41 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:24.883721 : 232-bf-hol-2 0.77(13) 42 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:24.942733 : 232-bf-hol-2 0.77(13) 43 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:25.011750 : 232-bf-hol-2 0.77(13) 44 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:25.065761 : 232-bf-hol-2 0.77(13) 45 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:25.116010 : 232-bf-hol-2 0.77(13) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:25.170070 : 232-bf-hol-2 0.77(13) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:25.194076 : 232-bf-hol-2 0.77(13) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:02:25.205078 : 232-bf-hol-2 0.77(13) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.536100 : 232-bf-hol-2 0.50(0) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.542193 : 232-bf-hol-2 0.50(0) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.546194 : 232-bf-hol-2 0.50(0) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.549194 : 232-bf-hol-2 0.50(0) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.549194 : 232-bf-hol-2 0.50(0) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.552195 : 232-bf-hol-2 0.50(0) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.555197 : 232-bf-hol-2 0.50(0) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.556197 : 232-bf-hol-2 0.50(0) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.561198 : 232-bf-hol-2 0.50(0) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.561198 : 232-bf-hol-2 0.50(0) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.564198 : 232-bf-hol-2 0.50(0) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.565199 : 232-bf-hol-2 0.50(0) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.566199 : 232-bf-hol-2 0.50(0) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.566199 : 232-bf-hol-2 0.50(0) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.570246 : 232-bf-hol-2 0.50(0) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.574289 : 232-bf-hol-2 0.50(0) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.574289 : 232-bf-hol-2 0.50(0) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.575288 : 232-bf-hol-2 0.50(0) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.575288 : 232-bf-hol-2 0.50(0) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.579289 : 232-bf-hol-2 0.50(0) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.581290 : 232-bf-hol-2 0.50(0) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.581290 : 232-bf-hol-2 0.50(0) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.584324 : 232-bf-hol-2 0.50(0) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.584324 : 232-bf-hol-2 0.50(0) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.587325 : 232-bf-hol-2 0.50(0) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.589369 : 232-bf-hol-2 0.50(0) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.589369 : 232-bf-hol-2 0.50(0) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.590369 : 232-bf-hol-2 0.50(0) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.591369 : 232-bf-hol-2 0.50(0) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.596370 : 232-bf-hol-2 0.50(0) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.596370 : 232-bf-hol-2 0.50(0) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.597371 : 232-bf-hol-2 0.50(0) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.599371 : 232-bf-hol-2 0.50(0) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.601371 : 232-bf-hol-2 0.50(0) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.604372 : 232-bf-hol-2 0.50(0) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.604372 : 232-bf-hol-2 0.50(0) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.607373 : 232-bf-hol-2 0.50(0) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.608373 : 232-bf-hol-2 0.50(0) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.609413 : 232-bf-hol-2 0.50(0) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.612413 : 232-bf-hol-2 0.50(0) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.614459 : 232-bf-hol-2 0.50(0) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.617459 : 232-bf-hol-2 0.50(0) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.619459 : 232-bf-hol-2 0.50(0) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.622460 : 232-bf-hol-2 0.50(0) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.623461 : 232-bf-hol-2 0.50(0) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.624461 : 232-bf-hol-2 0.50(0) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.628461 : 232-bf-hol-2 0.50(0) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.629462 : 232-bf-hol-2 0.50(0) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.630462 : 232-bf-hol-2 0.50(0) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:11.645465 : 232-bf-hol-2 0.50(0) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.379773 : 232-bf-hol-2 0.52(1) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.379773 : 232-bf-hol-2 0.52(1) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.385825 : 232-bf-hol-2 0.52(1) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.385825 : 232-bf-hol-2 0.52(1) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.387826 : 232-bf-hol-2 0.52(1) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.387826 : 232-bf-hol-2 0.52(1) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.391827 : 232-bf-hol-2 0.52(1) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.391827 : 232-bf-hol-2 0.52(1) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.394827 : 232-bf-hol-2 0.52(1) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.396827 : 232-bf-hol-2 0.52(1) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.399828 : 232-bf-hol-2 0.52(1) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.400828 : 232-bf-hol-2 0.52(1) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.401828 : 232-bf-hol-2 0.52(1) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.405870 : 232-bf-hol-2 0.52(1) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.409920 : 232-bf-hol-2 0.52(1) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.410920 : 232-bf-hol-2 0.52(1) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.412921 : 232-bf-hol-2 0.52(1) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.414920 : 232-bf-hol-2 0.52(1) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.416921 : 232-bf-hol-2 0.52(1) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.418921 : 232-bf-hol-2 0.52(1) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.419963 : 232-bf-hol-2 0.52(1) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.423964 : 232-bf-hol-2 0.52(1) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.425011 : 232-bf-hol-2 0.52(1) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.426011 : 232-bf-hol-2 0.52(1) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.430012 : 232-bf-hol-2 0.52(1) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.431013 : 232-bf-hol-2 0.52(1) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.434013 : 232-bf-hol-2 0.52(1) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.436050 : 232-bf-hol-2 0.52(1) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.438050 : 232-bf-hol-2 0.52(1) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.439050 : 232-bf-hol-2 0.52(1) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.444051 : 232-bf-hol-2 0.52(1) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.444051 : 232-bf-hol-2 0.52(1) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.445051 : 232-bf-hol-2 0.52(1) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.446050 : 232-bf-hol-2 0.52(1) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.450053 : 232-bf-hol-2 0.52(1) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.451053 : 232-bf-hol-2 0.52(1) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.452053 : 232-bf-hol-2 0.52(1) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.453054 : 232-bf-hol-2 0.52(1) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.454054 : 232-bf-hol-2 0.52(1) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.459054 : 232-bf-hol-2 0.52(1) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.459054 : 232-bf-hol-2 0.52(1) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.465056 : 232-bf-hol-2 0.52(1) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.465056 : 232-bf-hol-2 0.52(1) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.468057 : 232-bf-hol-2 0.52(1) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.470058 : 232-bf-hol-2 0.52(1) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.473057 : 232-bf-hol-2 0.52(1) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.473057 : 232-bf-hol-2 0.52(1) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.476110 : 232-bf-hol-2 0.52(1) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.484154 : 232-bf-hol-2 0.52(1) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:13.503156 : 232-bf-hol-2 0.52(1) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.002627 : 232-bf-hol-2 0.54(2) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.011671 : 232-bf-hol-2 0.54(2) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.015672 : 232-bf-hol-2 0.54(2) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.015672 : 232-bf-hol-2 0.54(2) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.019673 : 232-bf-hol-2 0.54(2) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.021674 : 232-bf-hol-2 0.54(2) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.023673 : 232-bf-hol-2 0.54(2) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.026711 : 232-bf-hol-2 0.54(2) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.028712 : 232-bf-hol-2 0.54(2) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.030712 : 232-bf-hol-2 0.54(2) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.034747 : 232-bf-hol-2 0.54(2) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.036748 : 232-bf-hol-2 0.54(2) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.037748 : 232-bf-hol-2 0.54(2) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.039748 : 232-bf-hol-2 0.54(2) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.044803 : 232-bf-hol-2 0.54(2) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.045804 : 232-bf-hol-2 0.54(2) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.048804 : 232-bf-hol-2 0.54(2) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.051804 : 232-bf-hol-2 0.54(2) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.058805 : 232-bf-hol-2 0.54(2) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.061806 : 232-bf-hol-2 0.54(2) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.066808 : 232-bf-hol-2 0.54(2) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.072852 : 232-bf-hol-2 0.54(2) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.076853 : 232-bf-hol-2 0.54(2) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.080854 : 232-bf-hol-2 0.54(2) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.083897 : 232-bf-hol-2 0.54(2) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.086897 : 232-bf-hol-2 0.54(2) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.087898 : 232-bf-hol-2 0.54(2) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.094899 : 232-bf-hol-2 0.54(2) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.095899 : 232-bf-hol-2 0.54(2) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.099900 : 232-bf-hol-2 0.54(2) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.101901 : 232-bf-hol-2 0.54(2) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.102946 : 232-bf-hol-2 0.54(2) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.104946 : 232-bf-hol-2 0.54(2) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.105946 : 232-bf-hol-2 0.54(2) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.108997 : 232-bf-hol-2 0.54(2) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.108997 : 232-bf-hol-2 0.54(2) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.110999 : 232-bf-hol-2 0.54(2) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.111999 : 232-bf-hol-2 0.54(2) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.116999 : 232-bf-hol-2 0.54(2) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.122000 : 232-bf-hol-2 0.54(2) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.124001 : 232-bf-hol-2 0.54(2) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.126001 : 232-bf-hol-2 0.54(2) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.128042 : 232-bf-hol-2 0.54(2) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.130042 : 232-bf-hol-2 0.54(2) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.135043 : 232-bf-hol-2 0.54(2) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.139044 : 232-bf-hol-2 0.54(2) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.157147 : 232-bf-hol-2 0.54(2) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.171210 : 232-bf-hol-2 0.54(2) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.180212 : 232-bf-hol-2 0.54(2) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:15.209221 : 232-bf-hol-2 0.54(2) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.753343 : 232-bf-hol-2 0.56(3) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.759397 : 232-bf-hol-2 0.56(3) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.761397 : 232-bf-hol-2 0.56(3) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.763397 : 232-bf-hol-2 0.56(3) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.764398 : 232-bf-hol-2 0.56(3) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.767398 : 232-bf-hol-2 0.56(3) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.771399 : 232-bf-hol-2 0.56(3) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.771399 : 232-bf-hol-2 0.56(3) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.774474 : 232-bf-hol-2 0.56(3) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.775473 : 232-bf-hol-2 0.56(3) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.779530 : 232-bf-hol-2 0.56(3) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.783530 : 232-bf-hol-2 0.56(3) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.783530 : 232-bf-hol-2 0.56(3) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.786531 : 232-bf-hol-2 0.56(3) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.788531 : 232-bf-hol-2 0.56(3) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.789531 : 232-bf-hol-2 0.56(3) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.790531 : 232-bf-hol-2 0.56(3) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.794530 : 232-bf-hol-2 0.56(3) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.799584 : 232-bf-hol-2 0.56(3) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.799584 : 232-bf-hol-2 0.56(3) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.806586 : 232-bf-hol-2 0.56(3) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.813588 : 232-bf-hol-2 0.56(3) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.814588 : 232-bf-hol-2 0.56(3) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.815588 : 232-bf-hol-2 0.56(3) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.819641 : 232-bf-hol-2 0.56(3) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.820641 : 232-bf-hol-2 0.56(3) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.823642 : 232-bf-hol-2 0.56(3) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.829643 : 232-bf-hol-2 0.56(3) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.835644 : 232-bf-hol-2 0.56(3) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.835644 : 232-bf-hol-2 0.56(3) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.839645 : 232-bf-hol-2 0.56(3) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.841645 : 232-bf-hol-2 0.56(3) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.842692 : 232-bf-hol-2 0.56(3) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.847736 : 232-bf-hol-2 0.56(3) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.848735 : 232-bf-hol-2 0.56(3) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.853736 : 232-bf-hol-2 0.56(3) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.857737 : 232-bf-hol-2 0.56(3) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.860738 : 232-bf-hol-2 0.56(3) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.860738 : 232-bf-hol-2 0.56(3) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.865739 : 232-bf-hol-2 0.56(3) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.865739 : 232-bf-hol-2 0.56(3) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.871740 : 232-bf-hol-2 0.56(3) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.876742 : 232-bf-hol-2 0.56(3) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.877792 : 232-bf-hol-2 0.56(3) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.879791 : 232-bf-hol-2 0.56(3) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.883884 : 232-bf-hol-2 0.56(3) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.884885 : 232-bf-hol-2 0.56(3) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.884885 : 232-bf-hol-2 0.56(3) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.908932 : 232-bf-hol-2 0.56(3) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:16.937940 : 232-bf-hol-2 0.56(3) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.426865 : 232-bf-hol-2 0.58(4) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.435902 : 232-bf-hol-2 0.58(4) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.441905 : 232-bf-hol-2 0.58(4) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.442904 : 232-bf-hol-2 0.58(4) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.448945 : 232-bf-hol-2 0.58(4) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.451002 : 232-bf-hol-2 0.58(4) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.462002 : 232-bf-hol-2 0.58(4) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.466003 : 232-bf-hol-2 0.58(4) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.470004 : 232-bf-hol-2 0.58(4) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.470004 : 232-bf-hol-2 0.58(4) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.475049 : 232-bf-hol-2 0.58(4) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.479088 : 232-bf-hol-2 0.58(4) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.479088 : 232-bf-hol-2 0.58(4) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.483089 : 232-bf-hol-2 0.58(4) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.484089 : 232-bf-hol-2 0.58(4) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.486089 : 232-bf-hol-2 0.58(4) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.490090 : 232-bf-hol-2 0.58(4) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.492090 : 232-bf-hol-2 0.58(4) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.492090 : 232-bf-hol-2 0.58(4) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.496136 : 232-bf-hol-2 0.58(4) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.496136 : 232-bf-hol-2 0.58(4) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.497135 : 232-bf-hol-2 0.58(4) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.501180 : 232-bf-hol-2 0.58(4) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.502180 : 232-bf-hol-2 0.58(4) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.506181 : 232-bf-hol-2 0.58(4) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.509219 : 232-bf-hol-2 0.58(4) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.512219 : 232-bf-hol-2 0.58(4) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.518221 : 232-bf-hol-2 0.58(4) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.521222 : 232-bf-hol-2 0.58(4) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.525222 : 232-bf-hol-2 0.58(4) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.527282 : 232-bf-hol-2 0.58(4) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.529281 : 232-bf-hol-2 0.58(4) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.532281 : 232-bf-hol-2 0.58(4) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.536328 : 232-bf-hol-2 0.58(4) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.538329 : 232-bf-hol-2 0.58(4) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.543330 : 232-bf-hol-2 0.58(4) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.544330 : 232-bf-hol-2 0.58(4) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.550331 : 232-bf-hol-2 0.58(4) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.550331 : 232-bf-hol-2 0.58(4) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.553332 : 232-bf-hol-2 0.58(4) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.555332 : 232-bf-hol-2 0.58(4) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.556333 : 232-bf-hol-2 0.58(4) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.559334 : 232-bf-hol-2 0.58(4) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.560334 : 232-bf-hol-2 0.58(4) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.563335 : 232-bf-hol-2 0.58(4) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.565335 : 232-bf-hol-2 0.58(4) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.569385 : 232-bf-hol-2 0.58(4) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.573385 : 232-bf-hol-2 0.58(4) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.583387 : 232-bf-hol-2 0.58(4) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:18.604484 : 232-bf-hol-2 0.58(4) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.099332 : 232-bf-hol-2 0.61(5) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.128399 : 232-bf-hol-2 0.61(5) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.136400 : 232-bf-hol-2 0.61(5) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.138401 : 232-bf-hol-2 0.61(5) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.142441 : 232-bf-hol-2 0.61(5) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.143441 : 232-bf-hol-2 0.61(5) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.146486 : 232-bf-hol-2 0.61(5) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.150485 : 232-bf-hol-2 0.61(5) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.151487 : 232-bf-hol-2 0.61(5) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.153486 : 232-bf-hol-2 0.61(5) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.154487 : 232-bf-hol-2 0.61(5) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.158528 : 232-bf-hol-2 0.61(5) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.161529 : 232-bf-hol-2 0.61(5) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.164529 : 232-bf-hol-2 0.61(5) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.176611 : 232-bf-hol-2 0.61(5) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.184661 : 232-bf-hol-2 0.61(5) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.185662 : 232-bf-hol-2 0.61(5) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.193663 : 232-bf-hol-2 0.61(5) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.200664 : 232-bf-hol-2 0.61(5) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.209709 : 232-bf-hol-2 0.61(5) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.210709 : 232-bf-hol-2 0.61(5) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.214758 : 232-bf-hol-2 0.61(5) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.215759 : 232-bf-hol-2 0.61(5) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.215759 : 232-bf-hol-2 0.61(5) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.218758 : 232-bf-hol-2 0.61(5) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.229761 : 232-bf-hol-2 0.61(5) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.229761 : 232-bf-hol-2 0.61(5) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.230761 : 232-bf-hol-2 0.61(5) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.234762 : 232-bf-hol-2 0.61(5) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.241764 : 232-bf-hol-2 0.61(5) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.244764 : 232-bf-hol-2 0.61(5) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.251766 : 232-bf-hol-2 0.61(5) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.258818 : 232-bf-hol-2 0.61(5) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.259818 : 232-bf-hol-2 0.61(5) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.264863 : 232-bf-hol-2 0.61(5) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.265864 : 232-bf-hol-2 0.61(5) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.270864 : 232-bf-hol-2 0.61(5) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.281867 : 232-bf-hol-2 0.61(5) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.286868 : 232-bf-hol-2 0.61(5) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.291911 : 232-bf-hol-2 0.61(5) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.298959 : 232-bf-hol-2 0.61(5) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.314962 : 232-bf-hol-2 0.61(5) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.320963 : 232-bf-hol-2 0.61(5) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.321964 : 232-bf-hol-2 0.61(5) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.322964 : 232-bf-hol-2 0.61(5) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.327966 : 232-bf-hol-2 0.61(5) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.328966 : 232-bf-hol-2 0.61(5) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.330966 : 232-bf-hol-2 0.61(5) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.331966 : 232-bf-hol-2 0.61(5) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:20.353293 : 232-bf-hol-2 0.61(5) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.916558 : 232-bf-hol-2 0.63(6) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.920603 : 232-bf-hol-2 0.63(6) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.931646 : 232-bf-hol-2 0.63(6) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.931646 : 232-bf-hol-2 0.63(6) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.937647 : 232-bf-hol-2 0.63(6) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.937647 : 232-bf-hol-2 0.63(6) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.951744 : 232-bf-hol-2 0.63(6) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.951744 : 232-bf-hol-2 0.63(6) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.952745 : 232-bf-hol-2 0.63(6) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.958781 : 232-bf-hol-2 0.63(6) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.959782 : 232-bf-hol-2 0.63(6) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.960783 : 232-bf-hol-2 0.63(6) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.963832 : 232-bf-hol-2 0.63(6) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.964832 : 232-bf-hol-2 0.63(6) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.969870 : 232-bf-hol-2 0.63(6) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.970871 : 232-bf-hol-2 0.63(6) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.980873 : 232-bf-hol-2 0.63(6) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.987874 : 232-bf-hol-2 0.63(6) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.993921 : 232-bf-hol-2 0.63(6) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:21.995922 : 232-bf-hol-2 0.63(6) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.018970 : 232-bf-hol-2 0.63(6) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.027998 : 232-bf-hol-2 0.63(6) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.041208 : 232-bf-hol-2 0.63(6) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.047249 : 232-bf-hol-2 0.63(6) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.053250 : 232-bf-hol-2 0.63(6) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.056251 : 232-bf-hol-2 0.63(6) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.059251 : 232-bf-hol-2 0.63(6) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.063252 : 232-bf-hol-2 0.63(6) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.069309 : 232-bf-hol-2 0.63(6) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.069309 : 232-bf-hol-2 0.63(6) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.070309 : 232-bf-hol-2 0.63(6) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.074310 : 232-bf-hol-2 0.63(6) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.075310 : 232-bf-hol-2 0.63(6) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.076310 : 232-bf-hol-2 0.63(6) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.079310 : 232-bf-hol-2 0.63(6) 30 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.082359 : 232-bf-hol-2 0.63(6) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.085417 : 232-bf-hol-2 0.63(6) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.087418 : 232-bf-hol-2 0.63(6) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.088416 : 232-bf-hol-2 0.63(6) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.094418 : 232-bf-hol-2 0.63(6) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.100474 : 232-bf-hol-2 0.63(6) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.101474 : 232-bf-hol-2 0.63(6) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.102472 : 232-bf-hol-2 0.63(6) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.109523 : 232-bf-hol-2 0.63(6) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.109523 : 232-bf-hol-2 0.63(6) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.110522 : 232-bf-hol-2 0.63(6) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.113524 : 232-bf-hol-2 0.63(6) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.117524 : 232-bf-hol-2 0.63(6) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.118524 : 232-bf-hol-2 0.63(6) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:22.118524 : 232-bf-hol-2 0.63(6) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.722840 : 232-bf-hol-2 0.65(7) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.729919 : 232-bf-hol-2 0.65(7) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.735920 : 232-bf-hol-2 0.65(7) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.736920 : 232-bf-hol-2 0.65(7) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.742922 : 232-bf-hol-2 0.65(7) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.745923 : 232-bf-hol-2 0.65(7) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.752968 : 232-bf-hol-2 0.65(7) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.758056 : 232-bf-hol-2 0.65(7) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.759054 : 232-bf-hol-2 0.65(7) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.764055 : 232-bf-hol-2 0.65(7) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.766055 : 232-bf-hol-2 0.65(7) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.766055 : 232-bf-hol-2 0.65(7) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.776159 : 232-bf-hol-2 0.65(7) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.785193 : 232-bf-hol-2 0.65(7) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.806198 : 232-bf-hol-2 0.65(7) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.811200 : 232-bf-hol-2 0.65(7) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.823275 : 232-bf-hol-2 0.65(7) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.835316 : 232-bf-hol-2 0.65(7) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.839317 : 232-bf-hol-2 0.65(7) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.843318 : 232-bf-hol-2 0.65(7) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.849320 : 232-bf-hol-2 0.65(7) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.850320 : 232-bf-hol-2 0.65(7) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.857369 : 232-bf-hol-2 0.65(7) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.886412 : 232-bf-hol-2 0.65(7) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.886412 : 232-bf-hol-2 0.65(7) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.888413 : 232-bf-hol-2 0.65(7) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.894414 : 232-bf-hol-2 0.65(7) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.898415 : 232-bf-hol-2 0.65(7) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.904417 : 232-bf-hol-2 0.65(7) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.911461 : 232-bf-hol-2 0.65(7) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.928501 : 232-bf-hol-2 0.65(7) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.932503 : 232-bf-hol-2 0.65(7) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.935503 : 232-bf-hol-2 0.65(7) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.937503 : 232-bf-hol-2 0.65(7) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.942546 : 232-bf-hol-2 0.65(7) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.945608 : 232-bf-hol-2 0.65(7) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.945608 : 232-bf-hol-2 0.65(7) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.949607 : 232-bf-hol-2 0.65(7) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.950608 : 232-bf-hol-2 0.65(7) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.952609 : 232-bf-hol-2 0.65(7) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.956610 : 232-bf-hol-2 0.65(7) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.958610 : 232-bf-hol-2 0.65(7) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.964664 : 232-bf-hol-2 0.65(7) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.966665 : 232-bf-hol-2 0.65(7) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.973711 : 232-bf-hol-2 0.65(7) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.973711 : 232-bf-hol-2 0.65(7) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.974711 : 232-bf-hol-2 0.65(7) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.984788 : 232-bf-hol-2 0.65(7) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:23.992820 : 232-bf-hol-2 0.65(7) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:24.002822 : 232-bf-hol-2 0.65(7) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.504144 : 232-bf-hol-2 0.67(8) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.531193 : 232-bf-hol-2 0.67(8) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.532193 : 232-bf-hol-2 0.67(8) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.536194 : 232-bf-hol-2 0.67(8) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.538195 : 232-bf-hol-2 0.67(8) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.540195 : 232-bf-hol-2 0.67(8) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.541195 : 232-bf-hol-2 0.67(8) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.552282 : 232-bf-hol-2 0.67(8) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.554281 : 232-bf-hol-2 0.67(8) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.557324 : 232-bf-hol-2 0.67(8) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.564325 : 232-bf-hol-2 0.67(8) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.564325 : 232-bf-hol-2 0.67(8) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.568326 : 232-bf-hol-2 0.67(8) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.578328 : 232-bf-hol-2 0.67(8) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.587330 : 232-bf-hol-2 0.67(8) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.597413 : 232-bf-hol-2 0.67(8) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.598414 : 232-bf-hol-2 0.67(8) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.609452 : 232-bf-hol-2 0.67(8) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.615454 : 232-bf-hol-2 0.67(8) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.618454 : 232-bf-hol-2 0.67(8) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.618454 : 232-bf-hol-2 0.67(8) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.625456 : 232-bf-hol-2 0.67(8) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.627456 : 232-bf-hol-2 0.67(8) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.632500 : 232-bf-hol-2 0.67(8) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.633500 : 232-bf-hol-2 0.67(8) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.646541 : 232-bf-hol-2 0.67(8) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.648542 : 232-bf-hol-2 0.67(8) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.684550 : 232-bf-hol-2 0.67(8) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.685550 : 232-bf-hol-2 0.67(8) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.692552 : 232-bf-hol-2 0.67(8) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.699594 : 232-bf-hol-2 0.67(8) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.706637 : 232-bf-hol-2 0.67(8) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.719122 : 232-bf-hol-2 0.67(8) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.727123 : 232-bf-hol-2 0.67(8) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.736169 : 232-bf-hol-2 0.67(8) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.738212 : 232-bf-hol-2 0.67(8) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.741212 : 232-bf-hol-2 0.67(8) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.747214 : 232-bf-hol-2 0.67(8) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.764217 : 232-bf-hol-2 0.67(8) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.765217 : 232-bf-hol-2 0.67(8) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.771264 : 232-bf-hol-2 0.67(8) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.773305 : 232-bf-hol-2 0.67(8) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.781305 : 232-bf-hol-2 0.67(8) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.790308 : 232-bf-hol-2 0.67(8) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.792308 : 232-bf-hol-2 0.67(8) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.795309 : 232-bf-hol-2 0.67(8) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.797309 : 232-bf-hol-2 0.67(8) 33 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.798310 : 232-bf-hol-2 0.67(8) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.800311 : 232-bf-hol-2 0.67(8) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:25.846515 : 232-bf-hol-2 0.67(8) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.350128 : 232-bf-hol-2 0.69(9) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.353128 : 232-bf-hol-2 0.69(9) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.360175 : 232-bf-hol-2 0.69(9) 3 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.363176 : 232-bf-hol-2 0.69(9) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.368177 : 232-bf-hol-2 0.69(9) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.372177 : 232-bf-hol-2 0.69(9) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.391182 : 232-bf-hol-2 0.69(9) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.396228 : 232-bf-hol-2 0.69(9) 7 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.404265 : 232-bf-hol-2 0.69(9) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.410266 : 232-bf-hol-2 0.69(9) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.413267 : 232-bf-hol-2 0.69(9) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.422269 : 232-bf-hol-2 0.69(9) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.426270 : 232-bf-hol-2 0.69(9) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.430271 : 232-bf-hol-2 0.69(9) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.445388 : 232-bf-hol-2 0.69(9) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.461436 : 232-bf-hol-2 0.69(9) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.464437 : 232-bf-hol-2 0.69(9) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.476439 : 232-bf-hol-2 0.69(9) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.484690 : 232-bf-hol-2 0.69(9) 0 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.488769 : 232-bf-hol-2 0.69(9) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.492092 : 232-bf-hol-2 0.69(9) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.495092 : 232-bf-hol-2 0.69(9) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.500092 : 232-bf-hol-2 0.69(9) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.501094 : 232-bf-hol-2 0.69(9) 25 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.509181 : 232-bf-hol-2 0.69(9) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.519239 : 232-bf-hol-2 0.69(9) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.523239 : 232-bf-hol-2 0.69(9) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.527239 : 232-bf-hol-2 0.69(9) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.541242 : 232-bf-hol-2 0.69(9) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.549244 : 232-bf-hol-2 0.69(9) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.551244 : 232-bf-hol-2 0.69(9) 29 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.563247 : 232-bf-hol-2 0.69(9) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.569305 : 232-bf-hol-2 0.69(9) 33 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.573305 : 232-bf-hol-2 0.69(9) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.580370 : 232-bf-hol-2 0.69(9) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.585370 : 232-bf-hol-2 0.69(9) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.592417 : 232-bf-hol-2 0.69(9) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.609469 : 232-bf-hol-2 0.69(9) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.609469 : 232-bf-hol-2 0.69(9) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.625473 : 232-bf-hol-2 0.69(9) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.645477 : 232-bf-hol-2 0.69(9) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.649479 : 232-bf-hol-2 0.69(9) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.651525 : 232-bf-hol-2 0.69(9) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.659528 : 232-bf-hol-2 0.69(9) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.666528 : 232-bf-hol-2 0.69(9) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.668529 : 232-bf-hol-2 0.69(9) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.677531 : 232-bf-hol-2 0.69(9) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.711810 : 232-bf-hol-2 0.69(9) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:27.731893 : 232-bf-hol-2 0.69(9) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:28.518924 : 232-bf-hol-2 0.69(9) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.073641 : 232-bf-hol-2 0.71(10) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.104709 : 232-bf-hol-2 0.71(10) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.105709 : 232-bf-hol-2 0.71(10) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.115710 : 232-bf-hol-2 0.71(10) 6 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.148982 : 232-bf-hol-2 0.71(10) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.164029 : 232-bf-hol-2 0.71(10) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.167029 : 232-bf-hol-2 0.71(10) 0 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.173086 : 232-bf-hol-2 0.71(10) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.175086 : 232-bf-hol-2 0.71(10) 7 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.181088 : 232-bf-hol-2 0.71(10) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.186155 : 232-bf-hol-2 0.71(10) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.189155 : 232-bf-hol-2 0.71(10) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.196208 : 232-bf-hol-2 0.71(10) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.274413 : 232-bf-hol-2 0.71(10) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.282415 : 232-bf-hol-2 0.71(10) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.318423 : 232-bf-hol-2 0.71(10) 18 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.330475 : 232-bf-hol-2 0.71(10) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.333653 : 232-bf-hol-2 0.71(10) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.342677 : 232-bf-hol-2 0.71(10) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.348679 : 232-bf-hol-2 0.71(10) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.361680 : 232-bf-hol-2 0.71(10) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.368682 : 232-bf-hol-2 0.71(10) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.381685 : 232-bf-hol-2 0.71(10) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.406690 : 232-bf-hol-2 0.71(10) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.421693 : 232-bf-hol-2 0.71(10) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.437798 : 232-bf-hol-2 0.71(10) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.450843 : 232-bf-hol-2 0.71(10) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.475849 : 232-bf-hol-2 0.71(10) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.480850 : 232-bf-hol-2 0.71(10) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.489852 : 232-bf-hol-2 0.71(10) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.491853 : 232-bf-hol-2 0.71(10) 25 	: bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.495904 : 232-bf-hol-2 0.71(10) 29 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.501973 : 232-bf-hol-2 0.71(10) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.504975 : 232-bf-hol-2 0.71(10) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.528979 : 232-bf-hol-2 0.71(10) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.530980 : 232-bf-hol-2 0.71(10) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.556173 : 232-bf-hol-2 0.71(10) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.584230 : 232-bf-hol-2 0.71(10) 33 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.586231 : 232-bf-hol-2 0.71(10) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.600232 : 232-bf-hol-2 0.71(10) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.604235 : 232-bf-hol-2 0.71(10) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.615328 : 232-bf-hol-2 0.71(10) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.624378 : 232-bf-hol-2 0.71(10) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.629380 : 232-bf-hol-2 0.71(10) 45 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.641381 : 232-bf-hol-2 0.71(10) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.641381 : 232-bf-hol-2 0.71(10) 44 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.642382 : 232-bf-hol-2 0.71(10) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.658384 : 232-bf-hol-2 0.71(10) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:30.660385 : 232-bf-hol-2 0.71(10) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:31.047526 : 232-bf-hol-2 0.71(10) 3 	: pd hopa bf gdpa-pd
+2022-11-19 11:03:32.642954 : 232-bf-hol-2 0.73(11) 1 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.653047 : 232-bf-hol-2 0.73(11) 4 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.683053 : 232-bf-hol-2 0.73(11) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.684053 : 232-bf-hol-2 0.73(11) 0 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.699056 : 232-bf-hol-2 0.73(11) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.713135 : 232-bf-hol-2 0.73(11) 7 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.716176 : 232-bf-hol-2 0.73(11) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.719176 : 232-bf-hol-2 0.73(11) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.722177 : 232-bf-hol-2 0.73(11) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.744182 : 232-bf-hol-2 0.73(11) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.846874 : 232-bf-hol-2 0.73(11) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.875924 : 232-bf-hol-2 0.73(11) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.894928 : 232-bf-hol-2 0.73(11) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.897929 : 232-bf-hol-2 0.73(11) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.900929 : 232-bf-hol-2 0.73(11) 6 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.921934 : 232-bf-hol-2 0.73(11) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.924341 : 232-bf-hol-2 0.73(11) 18 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.932421 : 232-bf-hol-2 0.73(11) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.944423 : 232-bf-hol-2 0.73(11) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.948424 : 232-bf-hol-2 0.73(11) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.956426 : 232-bf-hol-2 0.73(11) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.967511 : 232-bf-hol-2 0.73(11) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.968511 : 232-bf-hol-2 0.73(11) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.978550 : 232-bf-hol-2 0.73(11) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:32.986552 : 232-bf-hol-2 0.73(11) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.024561 : 232-bf-hol-2 0.73(11) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.129584 : 232-bf-hol-2 0.73(11) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.193041 : 232-bf-hol-2 0.73(11) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.200116 : 232-bf-hol-2 0.73(11) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.240125 : 232-bf-hol-2 0.73(11) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.248127 : 232-bf-hol-2 0.73(11) 25 	: bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.256128 : 232-bf-hol-2 0.73(11) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.266208 : 232-bf-hol-2 0.73(11) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.279245 : 232-bf-hol-2 0.73(11) 36 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.291248 : 232-bf-hol-2 0.73(11) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.304251 : 232-bf-hol-2 0.73(11) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.339494 : 232-bf-hol-2 0.73(11) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.352560 : 232-bf-hol-2 0.73(11) 40 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.354560 : 232-bf-hol-2 0.73(11) 29 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.363562 : 232-bf-hol-2 0.73(11) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.381566 : 232-bf-hol-2 0.73(11) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.412573 : 232-bf-hol-2 0.73(11) 44 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.429678 : 232-bf-hol-2 0.73(11) 45 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.439714 : 232-bf-hol-2 0.73(11) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.452717 : 232-bf-hol-2 0.73(11) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.482723 : 232-bf-hol-2 0.73(11) 42 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.485725 : 232-bf-hol-2 0.73(11) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.492772 : 232-bf-hol-2 0.73(11) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:33.504775 : 232-bf-hol-2 0.73(11) 33 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:35.451288 : 232-bf-hol-2 0.73(11) 3 	: 
+2022-11-19 11:03:36.996262 : 232-bf-hol-2 0.75(12) 0 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.028818 : 232-bf-hol-2 0.75(12) 2 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.048823 : 232-bf-hol-2 0.75(12) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.118838 : 232-bf-hol-2 0.75(12) 6 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.230663 : 232-bf-hol-2 0.75(12) 1 	: bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.264737 : 232-bf-hol-2 0.75(12) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.269738 : 232-bf-hol-2 0.75(12) 4 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.270739 : 232-bf-hol-2 0.75(12) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.275338 : 232-bf-hol-2 0.75(12) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.279846 : 232-bf-hol-2 0.75(12) 7 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.284847 : 232-bf-hol-2 0.75(12) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.288848 : 232-bf-hol-2 0.75(12) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.313423 : 232-bf-hol-2 0.75(12) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.321425 : 232-bf-hol-2 0.75(12) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.332428 : 232-bf-hol-2 0.75(12) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.337429 : 232-bf-hol-2 0.75(12) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.344477 : 232-bf-hol-2 0.75(12) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.357479 : 232-bf-hol-2 0.75(12) 18 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.373483 : 232-bf-hol-2 0.75(12) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.378484 : 232-bf-hol-2 0.75(12) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.400623 : 232-bf-hol-2 0.75(12) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.426824 : 232-bf-hol-2 0.75(12) 13 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.432827 : 232-bf-hol-2 0.75(12) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.453410 : 232-bf-hol-2 0.75(12) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.473414 : 232-bf-hol-2 0.75(12) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.489495 : 232-bf-hol-2 0.75(12) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.627594 : 232-bf-hol-2 0.75(12) 29 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.687608 : 232-bf-hol-2 0.75(12) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.717615 : 232-bf-hol-2 0.75(12) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.774047 : 232-bf-hol-2 0.75(12) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.863098 : 232-bf-hol-2 0.75(12) 33 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.879100 : 232-bf-hol-2 0.75(12) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.885101 : 232-bf-hol-2 0.75(12) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.890103 : 232-bf-hol-2 0.75(12) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.899150 : 232-bf-hol-2 0.75(12) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.914206 : 232-bf-hol-2 0.75(12) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.919208 : 232-bf-hol-2 0.75(12) 36 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.962217 : 232-bf-hol-2 0.75(12) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.976221 : 232-bf-hol-2 0.75(12) 41 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:37.991306 : 232-bf-hol-2 0.75(12) 40 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:38.011386 : 232-bf-hol-2 0.75(12) 43 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:38.013387 : 232-bf-hol-2 0.75(12) 42 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:38.047396 : 232-bf-hol-2 0.75(12) 45 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:38.072599 : 232-bf-hol-2 0.75(12) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:38.080638 : 232-bf-hol-2 0.75(12) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:38.126649 : 232-bf-hol-2 0.75(12) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:38.141652 : 232-bf-hol-2 0.75(12) 44 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:38.153655 : 232-bf-hol-2 0.75(12) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:38.347227 : 232-bf-hol-2 0.75(12) 25 	: bf gdpa-r gdpa-pd
+2022-11-19 11:03:41.940891 : 232-bf-hol-2 0.75(12) 3 	: 
+2022-11-19 11:03:43.579065 : 232-bf-hol-2 0.77(13) 0 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.634227 : 232-bf-hol-2 0.77(13) 4 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.661282 : 232-bf-hol-2 0.77(13) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.666284 : 232-bf-hol-2 0.77(13) 2 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.708293 : 232-bf-hol-2 0.77(13) 6 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.724297 : 232-bf-hol-2 0.77(13) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.750303 : 232-bf-hol-2 0.77(13) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.762306 : 232-bf-hol-2 0.77(13) 1 	: bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.763305 : 232-bf-hol-2 0.77(13) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.779310 : 232-bf-hol-2 0.77(13) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.812316 : 232-bf-hol-2 0.77(13) 11 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.822319 : 232-bf-hol-2 0.77(13) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.829320 : 232-bf-hol-2 0.77(13) 7 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.874277 : 232-bf-hol-2 0.77(13) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.884316 : 232-bf-hol-2 0.77(13) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.922325 : 232-bf-hol-2 0.77(13) 18 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.925326 : 232-bf-hol-2 0.77(13) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.928328 : 232-bf-hol-2 0.77(13) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:43.942413 : 232-bf-hol-2 0.77(13) 21 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:44.006514 : 232-bf-hol-2 0.77(13) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:44.081531 : 232-bf-hol-2 0.77(13) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:44.083531 : 232-bf-hol-2 0.77(13) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:44.095534 : 232-bf-hol-2 0.77(13) 24 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:44.211237 : 232-bf-hol-2 0.77(13) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:44.237297 : 232-bf-hol-2 0.77(13) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:44.244299 : 232-bf-hol-2 0.77(13) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:44.631470 : 232-bf-hol-2 0.77(13) 29 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:44.918680 : 232-bf-hol-2 0.77(13) 30 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:44.923721 : 232-bf-hol-2 0.77(13) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:45.018784 : 232-bf-hol-2 0.77(13) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:45.772102 : 232-bf-hol-2 0.77(13) 25 	: 
+2022-11-19 11:03:45.788189 : 232-bf-hol-2 0.77(13) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:45.865207 : 232-bf-hol-2 0.77(13) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.232290 : 232-bf-hol-2 0.77(13) 36 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.253295 : 232-bf-hol-2 0.77(13) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.294677 : 232-bf-hol-2 0.77(13) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.295678 : 232-bf-hol-2 0.77(13) 13 	: 
+2022-11-19 11:03:46.319721 : 232-bf-hol-2 0.77(13) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.334724 : 232-bf-hol-2 0.77(13) 40 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.366731 : 232-bf-hol-2 0.77(13) 42 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.385899 : 232-bf-hol-2 0.77(13) 43 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.435949 : 232-bf-hol-2 0.77(13) 44 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.487960 : 232-bf-hol-2 0.77(13) 45 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.496962 : 232-bf-hol-2 0.77(13) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.506964 : 232-bf-hol-2 0.77(13) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.518045 : 232-bf-hol-2 0.77(13) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.526084 : 232-bf-hol-2 0.77(13) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:46.541087 : 232-bf-hol-2 0.77(13) 41 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:47.110931 : 232-bf-hol-2 0.77(13) 33 	: 
+2022-11-19 11:03:50.420006 : 232-bf-hol-2 0.77(13) 3 	: 
+2022-11-19 11:03:52.123234 : 232-bf-hol-2 0.79(14) 0 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.172592 : 232-bf-hol-2 0.79(14) 1 	: bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.173591 : 232-bf-hol-2 0.79(14) 2 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.202651 : 232-bf-hol-2 0.79(14) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.228657 : 232-bf-hol-2 0.79(14) 7 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.239659 : 232-bf-hol-2 0.79(14) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.245711 : 232-bf-hol-2 0.79(14) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.251770 : 232-bf-hol-2 0.79(14) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.287778 : 232-bf-hol-2 0.79(14) 4 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.303781 : 232-bf-hol-2 0.79(14) 12 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.312783 : 232-bf-hol-2 0.79(14) 6 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.328787 : 232-bf-hol-2 0.79(14) 14 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.388800 : 232-bf-hol-2 0.79(14) 11 	: bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.396802 : 232-bf-hol-2 0.79(14) 16 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.402803 : 232-bf-hol-2 0.79(14) 17 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.448175 : 232-bf-hol-2 0.79(14) 18 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.449176 : 232-bf-hol-2 0.79(14) 15 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:52.948100 : 232-bf-hol-2 0.79(14) 20 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:53.092176 : 232-bf-hol-2 0.79(14) 21 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:53.098177 : 232-bf-hol-2 0.79(14) 22 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:53.103178 : 232-bf-hol-2 0.79(14) 23 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:53.472801 : 232-bf-hol-2 0.79(14) 24 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:54.029557 : 232-bf-hol-2 0.79(14) 19 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:54.081616 : 232-bf-hol-2 0.79(14) 26 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:54.086617 : 232-bf-hol-2 0.79(14) 27 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:54.090618 : 232-bf-hol-2 0.79(14) 28 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:54.377211 : 232-bf-hol-2 0.79(14) 29 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:55.257058 : 232-bf-hol-2 0.79(14) 3 	: 
+2022-11-19 11:03:55.263099 : 232-bf-hol-2 0.79(14) 31 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:55.392127 : 232-bf-hol-2 0.79(14) 32 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:55.418133 : 232-bf-hol-2 0.79(14) 13 	: 
+2022-11-19 11:03:55.442139 : 232-bf-hol-2 0.79(14) 34 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:55.448187 : 232-bf-hol-2 0.79(14) 35 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:55.485237 : 232-bf-hol-2 0.79(14) 25 	: 
+2022-11-19 11:03:55.542250 : 232-bf-hol-2 0.79(14) 37 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:55.613267 : 232-bf-hol-2 0.79(14) 38 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:55.649565 : 232-bf-hol-2 0.79(14) 39 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:55.836641 : 232-bf-hol-2 0.79(14) 40 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:57.548338 : 232-bf-hol-2 0.79(14) 30 	: 
+2022-11-19 11:03:57.586386 : 232-bf-hol-2 0.79(14) 42 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:57.654402 : 232-bf-hol-2 0.79(14) 43 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:57.677407 : 232-bf-hol-2 0.79(14) 44 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:57.734420 : 232-bf-hol-2 0.79(14) 45 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:57.741421 : 232-bf-hol-2 0.79(14) 46 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:57.770428 : 232-bf-hol-2 0.79(14) 47 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:57.841538 : 232-bf-hol-2 0.79(14) 48 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:57.852592 : 232-bf-hol-2 0.79(14) 41 	: 
+2022-11-19 11:03:57.860594 : 232-bf-hol-2 0.79(14) 49 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:03:58.057843 : 232-bf-hol-2 0.79(14) 33 	: 
+2022-11-19 11:03:58.997061 : 232-bf-hol-2 0.79(14) 36 	: hopa bf
+2022-11-19 11:04:00.631011 : 232-bf-hol-2 0.82(15) 0 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:04:00.765986 : 232-bf-hol-2 0.82(15) 2 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:04:00.793153 : 232-bf-hol-2 0.82(15) 5 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:04:00.835196 : 232-bf-hol-2 0.82(15) 4 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:04:00.867203 : 232-bf-hol-2 0.82(15) 7 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:04:00.872204 : 232-bf-hol-2 0.82(15) 8 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:04:00.947221 : 232-bf-hol-2 0.82(15) 6 	: hopa bf gdpa-r gdpa-pd
+2022-11-19 11:04:00.977463 : 232-bf-hol-2 0.82(15) 10 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:04:00.988504 : 232-bf-hol-2 0.82(15) 9 	: pd hopa bf gdpa-r gdpa-pd
+2022-11-19 11:04:01.123535 : 232-bf-hol-2 0.82(15) 11 	: bf gdpa-r gdpa-pd
