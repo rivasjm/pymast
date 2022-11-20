@@ -1,7 +1,7 @@
 import unittest
 from vholistic import jitter_matrix, successor_matrix, get_vectors, VectorHolisticAnalysis
 import numpy as np
-from examples import get_medium_system
+import examples
 from assignment import PDAssignment
 from analysis import HolisticAnalyis
 from timeit import default_timer as timer
@@ -27,7 +27,7 @@ class VHolisticTest(unittest.TestCase):
         """Test different priority assignments with the medium system"""
         random = Random(42)
         pd = PDAssignment(normalize=True)
-        system = get_medium_system(random=random, utilization=0.5)
+        system = examples.get_medium_system(random=random, utilization=0.5)
         pd.apply(system)
 
         tasks = system.tasks
@@ -77,6 +77,18 @@ class VHolisticTest(unittest.TestCase):
             print(cond)
 
         self.assertTrue(cond)
+
+    def test_anomaly_system(self):
+        system = examples.generate_anomaly_system()
+        PDAssignment().apply(system)
+
+        vholistic = VectorHolisticAnalysis(limit_factor=10)
+        p = np.array([3, 2, 1, 3, 2, 2, 4, 3, 1, 3, 4, 3, 1, 2, 4, 2, 4, 1, 1, 4]).reshape(-1, 1)
+        vholistic.set_priority_scenarios(p)
+        vholistic.apply(system)
+        rv = vholistic.full_response_times[:, 1]
+
+        print(rv)
 
 
 if __name__ == '__main__':

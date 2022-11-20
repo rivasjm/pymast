@@ -1,7 +1,7 @@
 from random import Random
-
-from generator import generate_system
+from generator import generate_system, set_utilization
 from model import *
+import numpy as np
 
 
 def get_palencia_system() -> System:
@@ -108,4 +108,27 @@ def get_big_system(random=Random(), utilization=0.84) -> System:
                              period_max=100*3,
                              deadline_factor_min=0.5,
                              deadline_factor_max=1)
+    return system
+
+
+def generate_anomaly_system() -> System:
+    """
+    Anomaly trace: 8-th utilization, system 9 and 23
+    2105-bf-hol-2 0.67(8) 9 	-> hopa gdpa-r gdpa-pd
+    2105-bf-hol-2 0.67(8) 23 	-> hopa gdpa-pd
+    :return:
+    """
+    size = (2, 10, 5)  # flows, tasks/flow, processors
+    population = 50
+    utilization_min = 0.5
+    utilization_max = 0.9
+    utilization_steps = 20
+
+    random = Random(42)
+    utilizations = np.linspace(utilization_min, utilization_max, utilization_steps)
+    systems = [get_system(size, random, balanced=True, name=str(i)) for i in range(population)]
+
+    utilization = utilizations[8]  # 0.67 utilization
+    system = systems[9]  #
+    set_utilization(system, utilization)
     return system

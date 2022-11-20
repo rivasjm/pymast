@@ -18,6 +18,7 @@ from evaluation import brute_force_anomaly
 
 
 size = (2, 10, 5)  # flows, tasks/flow, processors
+# size = (2, 4, 2)  # flows, tasks/flow, processors
 lrs = [3]
 deltas = [1.5]
 beta1s = [0.9]
@@ -78,7 +79,7 @@ def save_log(label, u, utilization, system_name, tools, results):
         line = f"{datetime.now()} : {label} {utilization:.2f}({u}) {system_name} \t-> {res_str}\n"
         f.write(line)
         if brute_force_anomaly.has_anomaly(line):
-            print(line)
+            print("\nANOMALY: " + line, end="")
 
 
 def print_overview(label, names, utilizations, results):

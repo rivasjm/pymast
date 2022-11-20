@@ -28,12 +28,12 @@ def get_vectors(system: System):
     """Transform a system into vectors. The vectorized analysis is based on these vectors"""
     tasks = system.tasks
     t = len(tasks)
-    wcets = np.zeros((t, 1), dtype=np.float32)
-    periods = np.zeros((t, 1), dtype=np.float32)
-    deadlines = np.zeros((t, 1), dtype=np.float32)
-    successors = np.zeros((t, 1), dtype=np.int32)
+    wcets = np.zeros((t, 1), dtype=np.float64)
+    periods = np.zeros((t, 1), dtype=np.float64)
+    deadlines = np.zeros((t, 1), dtype=np.float64)
+    successors = np.zeros((t, 1), dtype=np.int64)
     mappings = np.zeros((t, 1), dtype=object)
-    priorities = np.zeros((t, 1), dtype=np.float32)
+    priorities = np.zeros((t, 1), dtype=np.float64)
 
     taskmap = {task: i for i, task in enumerate(tasks)}
 
@@ -83,6 +83,7 @@ def analysis(wcets, periods, deadlines, successors, mappings, priorities, verbos
     # r mask. 3D column vector
     # when a task response time converges, its value here is set to 0
     # when a task reaches its r-limit, the values for the whole scenario are set to 0
+    # TODO this should be a bit per scenario: if a scenario converges or any task reaches its limit, mask=0
     rmask = np.ones_like(Rmax)
 
     # stop convergence of response time if all tasks converged, or reached their r-limit
@@ -124,7 +125,7 @@ def analysis(wcets, periods, deadlines, successors, mappings, priorities, verbos
 
                 # update worst-case response times and jitters
                 # there may be a task that have reached its r-limit, no problem,
-                # take the wcrt into account, and afterwards mask the task, so it's convergence stops
+                # take the wcrt into account, and afterwards mask the scenario, so it's convergence stops
                 Rmax = np.maximum(Rprov, Rmax)
                 J = jitter_matrix(S, Rmax)
 
