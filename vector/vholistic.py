@@ -66,7 +66,7 @@ def analysis(wcets, periods, deadlines, successors, mappings, priorities, verbos
 
     # initialize response times
     # 3D column vector, each plane for each scenario
-    Rmax = np.zeros((s, t, 1), dtype=np.float32)
+    Rmax = np.zeros((s, t, 1), dtype=np.float64)
     R = np.full_like(Rmax, 0.)
 
     # update jitter matrix with current response times
