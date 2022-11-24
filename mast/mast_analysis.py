@@ -6,8 +6,8 @@ import mast.mast_writer as mast_writer
 import uuid
 import examples
 
-# ROOT = "E:/dev/pymast/"
-ROOT = "D:/dev/pymast/"
+ROOT = "E:/dev/pymast/"
+# ROOT = "D:/dev/pymast/"
 TEMP = "mast/temp/"
 MAST_PATH = "mast/mast-1-5-1-0-bin/"
 # MAST_PATH = "D:/dev/pymast/mast/mast-1-5-1-0-bin/"
