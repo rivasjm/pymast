@@ -33,21 +33,7 @@ def get_palencia_system() -> System:
         Task(name="a6", wcet=10, priority=LOW, processor=cpu1)
     )
     system.add_flows(flow1, flow2)
-    return system
-
-
-def get_barely_schedulable() -> System:
-    random = Random(123)
-    n_flows, t_tasks, n_procs = (4, 5, 3)
-    system = generate_system(random,
-                             n_flows=n_flows,
-                             n_tasks=t_tasks,
-                             n_procs=n_procs,
-                             utilization=0.84,
-                             period_min=100,
-                             period_max=100*3,
-                             deadline_factor_min=0.5,
-                             deadline_factor_max=1)
+    system.name = "palencia"
     return system
 
 
@@ -67,48 +53,25 @@ def get_system(size, random=Random(), utilization=0.5, balanced=False, name=None
     return system
 
 
+def get_barely_schedulable() -> System:
+    random = Random(123)
+    n_flows, t_tasks, n_procs = (4, 5, 3)
+    return get_system((n_flows, t_tasks, n_procs), random, 0.84, name="barely")
+
+
 def get_small_system(random=Random(), utilization=0.5, balanced=False) -> System:
     n_flows, t_tasks, n_procs = (3, 4, 3)
-    system = generate_system(random,
-                             n_flows=n_flows,
-                             n_tasks=t_tasks,
-                             n_procs=n_procs,
-                             utilization=utilization,
-                             period_min=100,
-                             period_max=100*3,
-                             deadline_factor_min=0.5,
-                             deadline_factor_max=1,
-                             balanced=balanced)
-    return system
+    return get_system((n_flows, t_tasks, n_procs), random, utilization, balanced, name="small")
 
 
 def get_medium_system(random=Random(), utilization=0.84, balanced=False) -> System:
     n_flows, t_tasks, n_procs = (4, 5, 3)
-    system = generate_system(random,
-                             n_flows=n_flows,
-                             n_tasks=t_tasks,
-                             n_procs=n_procs,
-                             utilization=utilization,
-                             period_min=100,
-                             period_max=100*3,
-                             deadline_factor_min=0.5,
-                             deadline_factor_max=1,
-                             balanced=balanced)
-    return system
+    return get_system((n_flows, t_tasks, n_procs), random, utilization, balanced, name="medium")
 
 
-def get_big_system(random=Random(), utilization=0.84) -> System:
+def get_big_system(random=Random(), utilization=0.84, balanced=False) -> System:
     n_flows, t_tasks, n_procs = (8, 8, 5)
-    system = generate_system(random,
-                             n_flows=n_flows,
-                             n_tasks=t_tasks,
-                             n_procs=n_procs,
-                             utilization=utilization,
-                             period_min=100,
-                             period_max=100*3,
-                             deadline_factor_min=0.5,
-                             deadline_factor_max=1)
-    return system
+    return get_system((n_flows, t_tasks, n_procs), random, utilization, balanced, name="big")
 
 
 def generate_anomaly_system() -> System:

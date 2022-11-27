@@ -3,7 +3,7 @@ from vector.vholistic import VectorHolisticAnalysis
 from mast.mast_wrapper import MastHolisticAnalysis
 import time
 import numpy as np
-from examples import get_medium_system
+from examples import get_medium_system, get_big_system
 from assignment import PDAssignment
 from random import Random
 import pandas as pd
@@ -45,22 +45,26 @@ def step(system, scenarios):
     return np.asarray((mast_time, hol_time, vec_time))
 
 
-def run(system, name):
+def run(systems, name):
+    print(f"Running {name}")
     pd = PDAssignment()
-    system.apply(pd)
-
     scenarios = [1, 10, 100, 1000, 10000]
     tools = ["mast", "holistic", "holistic-vector"]
     results = np.zeros(shape=(len(tools), len(scenarios)), dtype=np.float64)
 
-    for i, s in enumerate(scenarios):
-        res = step(system, s)
-        results[:, i] += res
-        save(results, tools, scenarios, name)
+    for s, system in enumerate(systems):
+        print(f"  system {s}:", end="")
+        system.apply(pd)
+        for i, scenario in enumerate(scenarios):
+            print(f" {scenario}", end="")
+            res = step(system, scenario)
+            results[:, i] += res
+            save(results, s+1, tools, scenarios, name)
+        print()
 
 
-def save(results, columns, index, name):
-    df = pd.DataFrame(results.T, columns=columns, index=index)
+def save(results, number, columns, index, name):
+    df = pd.DataFrame(results.T, columns=columns, index=index) / number
     df.to_excel(f"{name}.xlsx")
 
     fig, ax = plt.subplots()
@@ -73,7 +77,11 @@ def save(results, columns, index, name):
 
 if __name__ == '__main__':
     random = Random(42)
-    system = get_medium_system(random, utilization=0.8)
-    run(system, "vector-time-medium")
 
+    # medium-size systems
+    mediums = [get_medium_system(random, utilization=0.7) for _ in range(10)]
+    run(mediums, "vector-time-medium")
 
+    # big-size systems
+    bigs = [get_big_system(random, utilization=0.7) for _ in range(10)]
+    run(bigs, "vector-time-big")
